@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,12 +9,34 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        mintCream: "#F7F7FF",
+        night: "#000F08",
+        gunMetal: "#1C3738",
+        davyGray: "#4D4847",
+        offRed: "#8E1B13",
+        gray: {
+          800: "#2d3748",
+          900: "#1a202c",
+          700: "#4a5568",
+        },
+      },
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
       },
     },
+    screens: {
+      xsm: "375px",
+      "3xl": "1920px",
+      ...defaultTheme.screens,
+    },
   },
-  plugins: [],
+
+  plugins: [require("@tailwindcss/forms")],
 };
