@@ -6,7 +6,7 @@ const Proizvodi = async (context) => {
   const { params } = context;
   const { kategorija, pretraga, sifra } = params;
   const { page = 1, limit = 20 } = context.searchParams;
-  console.log(context);
+
   const categoriesPromise = getCategories();
   const articlesPromise = fetchArticlesByCategory(kategorija, page, limit);
 

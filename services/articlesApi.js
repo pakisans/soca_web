@@ -15,13 +15,17 @@ export function fetchArticles() {
 }
 
 export const fetchArticlesByCategory = async (
-  category = "",
+  category,
+  group,
   page = 1,
   limit = 20
 ) => {
   const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/articles/category`);
   if (category) {
     url.searchParams.append("kategorija", category);
+  }
+  if (group) {
+    url.searchParams.append("grupa", group);
   }
   url.searchParams.append("page", page);
   url.searchParams.append("limit", limit);

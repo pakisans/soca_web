@@ -2,6 +2,7 @@
 
 import { memo, useState, useEffect, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import usePagination from "../hooks/usePagination";
 import CategoryItem from "./CategoryItem";
 import ProductsList from "../products/ProductsList";
@@ -24,10 +25,10 @@ const CategoriesClientComponent = ({
 
   const handleCategorySelect = useCallback(
     (category) => {
-      if (!category.children.length) {
+      if (!category.groups.length) {
         setSelectedCategory(category);
       }
-      setActiveParent(activeParent === category.sifra ? null : category.sifra);
+      setActiveParent(activeParent === category.id ? null : category.id);
     },
     [activeParent]
   );
@@ -36,7 +37,7 @@ const CategoriesClientComponent = ({
     () =>
       categories?.map((category) => (
         <CategoryItem
-          key={category.sifra}
+          key={category.id}
           category={category}
           setSelectedCategory={setSelectedCategory}
           activeParent={activeParent}
@@ -45,14 +46,6 @@ const CategoriesClientComponent = ({
       )),
     [categories, activeParent, handleCategorySelect]
   );
-
-  const handlePageChange = (newPage) => {
-    router.push(
-      `/proizvodi/${encodeURIComponent(
-        selectedCategory?.naziv
-      )}?page=${newPage}`
-    );
-  };
 
   return (
     <div className="md:py-10 mx-auto w-full lg:mx-0">

@@ -3,31 +3,39 @@ import { fetchArticlesByCategory } from "@/services/articlesApi";
 import CategoriesClientComponent from "@/components/categories/CategoriesClientComponent";
 
 export async function generateMetadata({ params }) {
-  const categoryName = params.kategorija;
-  const categoryTitle = categoryName
-    ? categoryName?.charAt(0).toUpperCase() +
-      categoryName?.slice(1).toLowerCase()
+  const { kategorija, grupa } = params;
+  const decodedKategorija = kategorija ? decodeURIComponent(kategorija) : "";
+  const decodedGrupa = grupa ? decodeURIComponent(grupa) : "";
+
+  const categoryTitle = decodedKategorija
+    ? decodedKategorija.charAt(0).toUpperCase() +
+      decodedKategorija.slice(1).toLowerCase()
+    : "";
+  const groupTitle = decodedGrupa
+    ? decodedGrupa.charAt(0).toUpperCase() + decodedGrupa.slice(1).toLowerCase()
     : "";
 
   return {
-    title: `Proizvodi ${categoryTitle ? `$ - {categoryTitle}` : ""}`,
-    description: `Pregledajte naše proizvode iz kategorije ${categoryTitle}. Otkrijte širok asortiman proizvoda u našoj ponudi.`,
+    title: `Proizvodi${categoryTitle ? ` - ${categoryTitle}` : ""}${
+      groupTitle ? ` - ${groupTitle}` : ""
+    }`,
+    description: `Pregledajte naše proizvode iz kategorije ${categoryTitle} i grupe ${groupTitle}. Otkrijte širok asortiman proizvoda u našoj ponudi.`,
   };
 }
 
 export default async function Proizvodi({ params, searchParams }) {
-  const { kategorija } = params;
-  const { pretraga, sifra } = searchParams;
+  const { kategorija, grupa } = params;
+  const decodedKategorija = kategorija ? decodeURIComponent(kategorija) : "";
+  const decodedGrupa = grupa ? decodeURIComponent(grupa) : "";
   const page = parseInt(searchParams.page) || 1;
   const limit = parseInt(searchParams.limit) || 20;
 
   const categoriesPromise = getCategories();
   const articlesPromise = fetchArticlesByCategory(
-    kategorija,
+    decodedKategorija,
+    decodedGrupa,
     page,
-    limit,
-    pretraga,
-    sifra
+    limit
   );
 
   const [categories, articlesData] = await Promise.all([
@@ -36,7 +44,6 @@ export default async function Proizvodi({ params, searchParams }) {
   ]);
 
   const { articles, totalProducts } = articlesData;
-
   return (
     <main className="flex flex-col justify-center items-center md:justify-between md:pr-[4rem]">
       <CategoriesClientComponent

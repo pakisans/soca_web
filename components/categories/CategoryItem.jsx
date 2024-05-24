@@ -1,11 +1,12 @@
 import { memo } from "react";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
 import { Transition } from "@headlessui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const CategoryItem = memo(
   ({ category, setSelectedCategory, activeParent, handleCategorySelect }) => {
-    const isActive = activeParent === category.sifra;
+    const isActive = activeParent === category.id;
     const router = useRouter();
 
     return (
@@ -25,7 +26,7 @@ const CategoryItem = memo(
             <ChevronDownIcon width={15} height={15} color={"#F7F7FF"} />
           </div>
         </div>
-        {isActive && category.children.length > 0 && (
+        {isActive && category.groups.length > 0 && (
           <Transition
             show={isActive}
             enter="transition ease-out duration-100"
@@ -36,17 +37,24 @@ const CategoryItem = memo(
             leaveTo="transform opacity-0 scale-95"
           >
             <div className="bg-gray-800 text-white rounded-b-lg shadow-lg">
-              {category.children.map((child) => (
-                <div
-                  key={child.sifra}
-                  onClick={() => {
-                    setSelectedCategory(child);
-                    router.push(`/proizvodi?kategorija=${child.naziv}`);
-                  }}
-                  className="cursor-pointer text-[1.6rem] p-4 pl-[4.8rem] hover:bg-gray-700 hover:text-offRed transition duration-300"
+              {category.groups.map((group) => (
+                <Link
+                  key={group.id}
+                  href={`/proizvodi/${category.naziv
+                    .toLowerCase()
+                    .replace(/ /g, "-")}/${group.naziv
+                    .toLowerCase()
+                    .replace(/ /g, "-")}`}
                 >
-                  {child.naziv}
-                </div>
+                  <div
+                    onClick={() => {
+                      setSelectedCategory(group);
+                    }}
+                    className="cursor-pointer text-[1.6rem] p-4 pl-[4.8rem] hover:bg-gray-700 hover:text-offRed transition duration-300"
+                  >
+                    {group.naziv}
+                  </div>
+                </Link>
               ))}
             </div>
           </Transition>
