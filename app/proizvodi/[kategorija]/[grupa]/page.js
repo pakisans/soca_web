@@ -43,15 +43,16 @@ export default async function Proizvodi({ params, searchParams }) {
     articlesPromise,
   ]);
 
-  const { articles, totalProducts } = articlesData;
+  const { articles, count, totalPages } = articlesData;
   return (
-    <main className="flex flex-col justify-center items-center md:justify-between md:pr-[4rem]">
+    <div className="w-full flex flex-col justify-center items-center md:justify-between">
       <CategoriesClientComponent
         articles={articles}
         categories={categories}
         currentPage={page}
-        totalProducts={totalProducts}
+        totalProducts={count}
+        totalPages={totalPages}
       />
-    </main>
+    </div>
   );
 }

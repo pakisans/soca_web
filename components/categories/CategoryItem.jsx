@@ -2,18 +2,17 @@ import { memo } from "react";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { capitalizeFirstLetter } from "@/utils/textUtil";
 
 const CategoryItem = memo(
-  ({ category, setSelectedCategory, activeParent, handleCategorySelect }) => {
+  ({ category, activeParent, handleCategorySelect }) => {
     const isActive = activeParent === category.id;
-    const router = useRouter();
 
     return (
       <div className="w-full">
         <div
           onClick={() => handleCategorySelect(category)}
-          className={`flex justify-between items-center cursor-pointer p-4 pl-[4rem] text-white shadow-md hover:shadow-lg hover:text-offRed transition duration-300 text-[1.8rem] ${
+          className={`flex justify-between items-center cursor-pointer p-4 text-white shadow-md hover:shadow-lg hover:text-offRed transition duration-300 text-lg ${
             isActive ? "shadow-lg" : ""
           }`}
         >
@@ -36,7 +35,7 @@ const CategoryItem = memo(
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <div className="bg-gray-800 text-white rounded-b-lg shadow-lg">
+            <div className="bg-gray-800 text-white rounded-b-lg shadow-lg max-h-[500px] overflow-y-auto">
               {category.groups.map((group) => (
                 <Link
                   key={group.id}
@@ -46,13 +45,8 @@ const CategoryItem = memo(
                     .toLowerCase()
                     .replace(/ /g, "-")}`}
                 >
-                  <div
-                    onClick={() => {
-                      setSelectedCategory(group);
-                    }}
-                    className="cursor-pointer text-[1.6rem] p-4 pl-[4.8rem] hover:bg-gray-700 hover:text-offRed transition duration-300"
-                  >
-                    {group.naziv}
+                  <div className="cursor-pointer p-4 hover:bg-gray-700 hover:text-offRed transition duration-300">
+                    {capitalizeFirstLetter(group.naziv)}
                   </div>
                 </Link>
               ))}

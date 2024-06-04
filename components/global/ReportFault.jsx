@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import Settingsicon from "../icons/Settingsicon";
 import useOutsideClick from "../hooks/useOutsideclick";
 import Select from "react-select";
+import usePreventBodyScroll from "../hooks/usePreventBodyScroll";
 
 const customStyles = {
   control: (provided) => ({
@@ -117,6 +118,7 @@ const ReportFault = () => {
     pdf: null,
   });
   const modalRef = useRef(null);
+  usePreventBodyScroll(isModalOpen);
 
   const handleCloseModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -493,7 +495,7 @@ const ReportFault = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-davyGray text-mintCream rounded-md text-[1.6rem] hover:bg-offRed focus:outline-none focus:ring focus:ring-offRed"
+                className="w-full py-4 bg-davyGray text-mintCream rounded-md text-[1.6rem] hover:bg-offRed hover:transition-colors hover:transition-duration-600  focus:outline-none focus:ring focus:ring-offRed"
                 disabled={isSubmitting || isUploadingImage || isUploadingPdf}
               >
                 {isSubmitting ? "Slanje..." : "Pošalji nalog"}

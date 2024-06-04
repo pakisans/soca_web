@@ -6,7 +6,7 @@ const Partners = () => {
   return (
     <section
       id="partners"
-      className="py-[4rem] px-[15rem] border-t border-t-night border-b border-b-night mt-[4rem]"
+      className="py-[4rem] px-[4rem] lg:px-[15rem] border-t border-t-night border-b border-b-night mt-[4rem] w-full"
     >
       <h1 className="text-[4.2rem] text-center mb-[2rem]">PARTNERSTVA</h1>
       <p className="text-center text-[1.6rem] md:text-[2.2rem] mb-[3rem]">

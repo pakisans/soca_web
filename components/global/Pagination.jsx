@@ -1,11 +1,7 @@
-"use client";
-
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import Button from "../global/Button";
-import Select from "../global/Select";
-import LeftIcon from "../icons/LeftIcon";
-import RightIcon from "../icons/RightIcon";
-import { useCallback } from "react";
+import React, { memo } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import clsx from "clsx";
+import CustomSelect from "./CustomSelect";
 
 const Pagination = ({
   currentPage,
@@ -14,95 +10,124 @@ const Pagination = ({
   rowsPerPageOptions,
   onPageChange,
   onRowsPerPageChange,
-  page,
-  shouldScroll = true,
+  totalPages,
 }) => {
   const router = useRouter();
-  const pageCount = Math.ceil(totalItems / rowsPerPage);
-  const isLastPage = currentPage === pageCount;
-  const firstItemIndex = (currentPage - 1) * rowsPerPage + 1;
-  const lastItemIndex = Math.min(firstItemIndex + rowsPerPage - 1, totalItems);
-  const searchParams = useSearchParams();
-  const path = usePathname();
+  const pathname = usePathname();
 
-  const updateUrl = useCallback(
-    (pageNumber, rows) => {
-      const newSearchParams = new URLSearchParams(searchParams);
-      newSearchParams.set("page", pageNumber.toString());
-      newSearchParams.set("limit", rows.toString());
-      const currentUrl = `${path}?${newSearchParams.toString()}`;
-      router.push(currentUrl, { scroll: shouldScroll });
-    },
+  const handlePageChange = (newPage) => {
+    onPageChange(newPage);
+    router.push({
+      pathname,
+      query: { ...router.query, page: newPage, limit: rowsPerPage },
+    });
+  };
 
-    [path, router, searchParams, shouldScroll]
-  );
+  const handleRowsPerPageChange = (newRowsPerPage) => {
+    onRowsPerPageChange(newRowsPerPage);
+    router.push({
+      pathname,
+      query: { ...router.query, page: 1, limit: newRowsPerPage },
+    });
+  };
 
-  const goToPage = useCallback(
-    (pageNumber) => {
-      if (pageNumber >= 0 && pageNumber <= totalItems) {
-        onPageChange(pageNumber);
-        updateUrl(pageNumber, rowsPerPage);
+  const generatePageNumbers = () => {
+    const pageNumbers = [];
+    const maxVisiblePages = 5;
+
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
       }
-    },
-    [onPageChange, rowsPerPage, totalItems, updateUrl]
-  );
+    } else {
+      let startPage = Math.max(
+        currentPage - Math.floor(maxVisiblePages / 2),
+        1
+      );
+      let endPage = startPage + maxVisiblePages - 1;
 
-  const handleRowsPerPageChange = useCallback(
-    (selectedOption) => {
-      const newRowsPerPage =
-        typeof selectedOption === "number"
-          ? selectedOption
-          : parseInt(selectedOption, 10);
-      onRowsPerPageChange(newRowsPerPage);
-      onPageChange(1);
-      updateUrl(1, newRowsPerPage);
-    },
-    [onPageChange, onRowsPerPageChange, updateUrl]
-  );
+      if (endPage > totalPages) {
+        endPage = totalPages;
+        startPage = endPage - maxVisiblePages + 1;
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        pageNumbers.push(i);
+      }
+    }
+
+    return pageNumbers;
+  };
+
+  const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between mt-[3.1rem] pl-[1.3rem]">
-      <div className="flex items-center">
-        <span className="text-dark dark:text-white text-[1.4rem] leading-[2.4rem]">
-          Prikaži
-        </span>
-        <Select
-          options={rowsPerPageOptions}
-          selectedOption={rowsPerPage}
-          mainContainerClass="ml-8"
-          onSelectOption={(option) => handleRowsPerPageChange(Number(option))}
-          iconColor="#fff"
-          optionContainerClass="w-fit"
-          optionMainContainerClass="w-fit px-2 gap-5 cursor-pointer text-white bg-transparent border-white z-[999]"
-          selectContainerClass="text-dark pl-[1.1rem] rounded-[.4rem] border border-white text-white"
-        />
-        <p className="ml-[1rem] text-[1.4rem] text-dark dark:text-white leading-[2.4rem]">
-          {page}
-        </p>
-      </div>
-      <div className="flex items-center mt-[2rem] sm:mt-0">
-        <Button
-          handleClick={() => goToPage(currentPage - 1)}
-          aria={"Go to previous page"}
-          icon={
-            <LeftIcon styles={"fill-gold rotate-180"} width={24} height={24} />
-          }
-          disabled={currentPage === 1}
-        />
-        <div className="px-[.6rem] leading-[2.4rem] text-[1.2rem] bg-gold rounded-[.4rem] mx-[1rem]">
-          {`${firstItemIndex}-${lastItemIndex} od ${totalItems}`}
+    <div className="flex flex-col md:flex-row items-center mt-4 w-fit gap-40 px-[4rem] ml-auto">
+      <div className="flex items-center space-x-2 mb-2">
+        <span className="w-full">Po stranici:</span>
+        <div className="w-[20rem]">
+          <CustomSelect
+            options={rowsPerPageOptions.map((option) => ({
+              value: option,
+              label: option,
+            }))}
+            value={rowsPerPage}
+            onChange={(selectedOption) =>
+              handleRowsPerPageChange(selectedOption.value)
+            }
+            label=""
+          />
         </div>
-        <Button
-          aria={"Go to next page"}
-          handleClick={() => goToPage(currentPage + 1)}
-          icon={
-            <RightIcon styles={"fill-gold mt-[.8rem]"} width={24} height={24} />
-          }
-          disabled={isLastPage}
-        />
+      </div>
+      <div className="flex items-center space-x-2">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage == 1}
+          className={clsx(
+            "px-3 py-1 border border-gray-300 rounded  md:text-[1.6rem]",
+            currentPage == 1 && "cursor-not-allowed opacity-50",
+            currentPage != 1 && "hover:bg-gray-300"
+          )}
+        >
+          Prethodna
+        </button>
+        {pageNumbers.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            onClick={() => handlePageChange(pageNumber)}
+            className={clsx(
+              "px-3 py-1 border border-gray-300 md:text-[1.6rem] rounded hover:bg-gray-300 ",
+              currentPage == pageNumber && "bg-gray-300 text-offRed"
+            )}
+          >
+            {pageNumber}
+          </button>
+        ))}
+        {totalPages > 5 && currentPage < totalPages - 2 && (
+          <>
+            <span>...</span>
+            <button
+              onClick={() => handlePageChange(totalPages)}
+              className="px-3 py-1 border border-gray-300 rounded md:text-[1.6rem]"
+            >
+              {totalPages}
+            </button>
+          </>
+        )}
+        <button
+          onClick={() => handlePageChange(Number(currentPage) + 1)}
+          disabled={currentPage == totalPages}
+          className={clsx(
+            "px-3 py-1 border border-gray-300 rounded  md:text-[1.6rem]",
+            currentPage == totalPages && "cursor-not-allowed opacity-50",
+            currentPage != totalPages && "hover:bg-gray-300"
+          )}
+        >
+          Sledeća
+        </button>
       </div>
     </div>
   );
 };
 
-export default Pagination;
+export default memo(Pagination);

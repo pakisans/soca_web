@@ -1,5 +1,8 @@
 "use client";
-import { capitalizeFirstLetter } from "@/utils/textUtil";
+import {
+  capitalizeFirstLetter,
+  replaceUnderscoreWithSlash,
+} from "@/utils/textUtil";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useMemo } from "react";
@@ -60,7 +63,9 @@ const Breadcrumbs = () => {
                 <span className="mx-2 text-mintCream text-[1.8rem]">/</span>
               </>
             ) : (
-              <span className="text-mintCream text-[1.6rem]">{name}</span>
+              <span className="text-mintCream text-[1.6rem]">
+                {replaceUnderscoreWithSlash(name)}
+              </span>
             )}
           </li>
         ))}

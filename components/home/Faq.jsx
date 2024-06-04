@@ -215,7 +215,7 @@ const Faq = () => {
         ]}
       />
       <div className="mx-auto w-fit flex flex-col md:flex-row items-center gap-y-10 gap-x-40 mt-[1rem]">
-        <p className="text-night font-semibold text-[2.2rem] leading-[3.2rem] mt-[1rem]">
+        <p className="text-night font-semibold text-[2.2rem] leading-[3.2rem] mt-[1rem] bg-gray-100 shadow-lg rounded-lg p-6">
           Niste pronašli odgovor koji ste tražili? <br />
           Tu smo da pomognemo! <br /> Kontaktirajte nas za ličnu asistenciju i{" "}
           <br />
@@ -223,7 +223,7 @@ const Faq = () => {
         </p>
         <Link
           className="text-mintCream text-center bg-gradient-to-r from-gray-700 rounded-tr-xl rounded-bl-xl to-gray-900 p-10 font-bold hover:text-offRed text-[3.2rem]"
-          href={"/kontakt"}
+          href={"/o-nama-i-kontakt"}
         >
           Kontaktirajte nas
         </Link>

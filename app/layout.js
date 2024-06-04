@@ -4,6 +4,8 @@ import Foooter from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import ReportFault from "@/components/global/ReportFault";
+import { Toaster } from "react-hot-toast";
+import { ShopCartWrapper } from "@/context/ShopCartContext";
 
 const font = Kanit({
   subsets: ["latin"],
@@ -15,7 +17,7 @@ export const metadata = {
     "SOĆA - Servis bele tehnike Novi Sad - Prodaja rezervnih delova za belu tehniku i kućne aparate Novi Sad",
   description:
     "Servis bele tehnike Novi Sad. Servis i popravka veš mašina, frižidera, zamrzivača, šporeta i kućnih aparata u Novom Sadu. Prodaja rezervnih delova za belu tehniku, veš mašine, frižidere, zamrzivače, šporete i kućne aparate - Novi Sad. Popravka električnih uređaja. Distribucija HORECA programa u normi HACC. Partneri Tefal, Krups, Rowenta, Moulinex, Electrolux, AEG, Zanussi, Primus, Liebherr, Franke.",
-  author: "Servis bele tehnike",
+  author: "SOĆA - Servis bele tehnike Novi Sad",
   keywords:
     "servis bele tehnike, bela tehnika rezervni delovi, bela tehnika, rezervni delovi bele tehnike, popravka, popravak, popravka bele tehnike, uredjaji popravka, uređaji popravka, rezervni delovi, rezervni delovi za belu tehniku, sporet, šporet, masina, mašina, ves, veš, sudove, sudo, frizider, frižider, bojler, elektricni uredjaji, električni uređaji, Novi Sad, u Novom Sadu, Srbija, Tefal, Krups, Rowenta, Moulinex, Electrolux, AEG, Zanussi, Primus, Liebherr, Franke",
   openGraph: {
@@ -51,17 +53,20 @@ export default function RootLayout({ children }) {
       <body
         className={`${font.className} flex flex-col min-h-screen bg-mintCream`}
       >
-        <Header />
-        <Breadcrumbs />
-        <main className="flex flex-grow">
-          <>
-            <div className="fixed bottom-[10rem] right-0 mt-5 pr-[2rem] py-5 pl-4 bg-offRed rounded-tl-2xl rounded-bl-2xl z-[9999]">
-              <ReportFault />
-            </div>
-            {children}
-          </>
-        </main>
-        <Foooter />
+        <ShopCartWrapper>
+          <Header />
+          <Breadcrumbs />
+          <main className="flex flex-grow">
+            <>
+              <div className="fixed bottom-[10rem] right-0 mt-5 pr-[2rem] py-5 pl-4 bg-offRed rounded-tl-2xl rounded-bl-2xl z-[9999]">
+                <ReportFault />
+              </div>
+              {children}
+            </>
+          </main>
+          <Foooter />
+          <Toaster position="bottom-right" />
+        </ShopCartWrapper>
       </body>
     </html>
   );

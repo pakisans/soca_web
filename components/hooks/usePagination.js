@@ -9,7 +9,7 @@ const usePagination = () => {
   const [currentPage, setCurrentPage] = useState(
     Number(searchParams.get("page")) || 1
   );
-  const rowsPerPageOptions = [10, 25, 50, 100];
+  const rowsPerPageOptions = [10, 25, 50, 100, 200];
 
   return {
     rowsPerPage,
