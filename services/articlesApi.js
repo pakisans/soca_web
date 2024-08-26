@@ -18,9 +18,12 @@ export const fetchArticlesByCategory = async (
   category,
   group,
   page = 1,
-  limit = 20
+  limit = 20,
+  sort
 ) => {
-  const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/articles/category`);
+  const url = new URL(
+    `${process.env.NEXT_PUBLIC_API_URL}/articles/category/group`
+  );
   if (category) {
     url.searchParams.append("kategorija", category);
   }
@@ -29,13 +32,44 @@ export const fetchArticlesByCategory = async (
   }
   url.searchParams.append("page", page);
   url.searchParams.append("limit", limit);
+  if (sort) {
+    url.searchParams.append("sort", sort);
+  }
 
   return fetch(url.toString())
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Failed to fetch articles:", error);
+      throw error;
+    });
+};
 
+export const fetchArticlesByCategoryAll = async (
+  category,
+  page = 1,
+  limit = 20,
+  sort
+) => {
+  const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/articles/category`);
+  if (category) {
+    url.searchParams.append("kategorija", category);
+  }
+  url.searchParams.append("page", page);
+  url.searchParams.append("limit", limit);
+  if (sort) {
+    url.searchParams.append("sort", sort);
+  }
+
+  return fetch(url.toString())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
       return response.json();
     })
     .catch((error) => {
@@ -65,10 +99,12 @@ export async function getArticleById(id) {
   return response.json();
 }
 
-export const fetchAllArticles = async (page, limit) => {
+export const fetchAllArticles = async (page, limit, search, sort) => {
   try {
+    const searchQuery = search ? `&search=${encodeURIComponent(search)}` : "";
+    const sortQuery = sort ? `&sort=${encodeURIComponent(sort)}` : "";
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/articles?page=${page}&limit=${limit}`
+      `${process.env.NEXT_PUBLIC_API_URL}/articles?page=${page}&limit=${limit}${searchQuery}${sortQuery}`
     );
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -105,6 +141,32 @@ export const sendCartEmail = async (formData, artikalPodaci, ukupnaCena) => {
     })
     .catch((error) => {
       console.error("Failed to send cart email:", error);
+      throw error;
+    });
+};
+
+export const sendInquiryEmail = async (formData) => {
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/sendInquiry`;
+
+  const payload = {
+    ...formData,
+  };
+
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Failed to send inquiry email:", error);
       throw error;
     });
 };

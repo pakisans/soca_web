@@ -8,7 +8,7 @@ const InfiniteScroll = ({ children }) => {
   const scrollLeft = () => {
     if (containerRef.current) {
       const container = containerRef.current;
-      const scrollAmount = container.firstChild.offsetWidth + 16; // Assuming gap between cards is 16px
+      const scrollAmount = container.firstChild.offsetWidth + 16;
       if (container.scrollLeft === 0) {
         container.scrollLeft = container.scrollWidth;
       }
@@ -19,7 +19,7 @@ const InfiniteScroll = ({ children }) => {
   const scrollRight = () => {
     if (containerRef.current) {
       const container = containerRef.current;
-      const scrollAmount = container.firstChild.offsetWidth + 16; // Assuming gap between cards is 16px
+      const scrollAmount = container.firstChild.offsetWidth + 16;
       if (
         container.scrollLeft + container.clientWidth >=
         container.scrollWidth

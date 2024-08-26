@@ -21,6 +21,10 @@
     font-size: 62.5%;
   }
 
+  html {
+    @apply no-scrollbar;
+  }
+
   @keyframes slideDown {
     from {
       transform: translateY(-100%);
@@ -55,10 +59,65 @@
   .text-animation {
     animation: slideDown 1s ease-out forwards;
   }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    outline: none;
+    border-color: #8e1b13;
+  }
+
+  input[type="search"]:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #8e1b13; /* Ensure no default border */
+  }
 }
 @layer utilities {
+  .dropdown-menu,
+  .submenu,
+  .sub-submenu {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .group:hover > .dropdown-menu,
+  .group:hover > .submenu,
+  .group:hover > .sub-submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .submenu,
+  .sub-submenu {
+    transform: translateX(10px);
+  }
+
+  .max-w {
+    @apply 3xl:max-w-[143.2rem] 3xl:mx-auto;
+  }
+
+  .group .submenu .group:hover > .submenu,
+  .group .submenu .group:hover > .sub-submenu {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-base {
+    @apply text-[1.4rem] leading-[2.4rem];
   }
 
   @keyframes fadeIn {

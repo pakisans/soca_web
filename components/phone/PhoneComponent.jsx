@@ -3,10 +3,7 @@ import { cloneElement, memo } from "react";
 
 const PhoneComponent = ({ phoneNumber, Icon }) => {
   return (
-    <a
-      href={`tel:${phoneNumber}`}
-      className="flex items-center gap-2 ml-[2rem] group"
-    >
+    <a href={`tel:${phoneNumber}`} className="flex items-center gap-2 group">
       {cloneElement(Icon, {
         width: 20,
         height: 20,

@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import { useRouter, usePathname } from "next/navigation";
 import clsx from "clsx";
 import CustomSelect from "./CustomSelect";
 
@@ -12,23 +11,12 @@ const Pagination = ({
   onRowsPerPageChange,
   totalPages,
 }) => {
-  const router = useRouter();
-  const pathname = usePathname();
-
   const handlePageChange = (newPage) => {
     onPageChange(newPage);
-    router.push({
-      pathname,
-      query: { ...router.query, page: newPage, limit: rowsPerPage },
-    });
   };
 
   const handleRowsPerPageChange = (newRowsPerPage) => {
     onRowsPerPageChange(newRowsPerPage);
-    router.push({
-      pathname,
-      query: { ...router.query, page: 1, limit: newRowsPerPage },
-    });
   };
 
   const generatePageNumbers = () => {
@@ -62,10 +50,10 @@ const Pagination = ({
   const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="flex flex-col md:flex-row items-center mt-4 w-fit gap-40 px-[4rem] ml-auto">
-      <div className="flex items-center space-x-2 mb-2">
-        <span className="w-full">Po stranici:</span>
-        <div className="w-[20rem]">
+    <div className="flex flex-col md:flex-row mx-auto items-center mt-4 w-fit gap-y-10 gap-x-40 md:px-[4rem] md:mx-0 md:ml-auto pb-[2rem]">
+      <div className="flex items-center mb-2 gap-10">
+        <span className="w-fit text-xl">Po stranici:</span>
+        <div className="w-[10rem]">
           <CustomSelect
             options={rowsPerPageOptions.map((option) => ({
               value: option,
@@ -86,7 +74,7 @@ const Pagination = ({
           className={clsx(
             "px-3 py-1 border border-gray-300 rounded  md:text-[1.6rem]",
             currentPage == 1 && "cursor-not-allowed opacity-50",
-            currentPage != 1 && "hover:bg-gray-300"
+            currentPage !== 1 && "hover:bg-gray-300"
           )}
         >
           Prethodna
@@ -116,7 +104,7 @@ const Pagination = ({
         )}
         <button
           onClick={() => handlePageChange(Number(currentPage) + 1)}
-          disabled={currentPage == totalPages}
+          disabled={currentPage === totalPages}
           className={clsx(
             "px-3 py-1 border border-gray-300 rounded  md:text-[1.6rem]",
             currentPage == totalPages && "cursor-not-allowed opacity-50",

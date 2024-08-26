@@ -6,6 +6,8 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import ReportFault from "@/components/global/ReportFault";
 import { Toaster } from "react-hot-toast";
 import { ShopCartWrapper } from "@/context/ShopCartContext";
+import Link from "next/link";
+import SearchIcon from "@/components/icons/SearchIcon";
 
 const font = Kanit({
   subsets: ["latin"],
@@ -58,7 +60,25 @@ export default function RootLayout({ children }) {
           <Breadcrumbs />
           <main className="flex flex-grow">
             <>
-              <div className="fixed bottom-[10rem] right-0 mt-5 pr-[2rem] py-5 pl-4 bg-offRed rounded-tl-2xl rounded-bl-2xl z-[9999]">
+              <div className="fixed bottom-[2rem] left-0 mt-5 pl-[.5rem] sm:pl-[2rem]  sm:py-5 pr-2 sm:pr-4 bg-offRed rounded-tr-2xl rounded-br-2xl z-[9999]">
+                <Link
+                  href={"/proizvodi"}
+                  passHref
+                  legacyBehavior
+                  className="flex items-center p-2"
+                >
+                  <a className="flex items-center text-white  text-[1.2rem] p-4 sm:text-[1.6rem] group-hover:opacity-100 transition-opacity font-semibold duration-300">
+                    <SearchIcon
+                      width={24}
+                      height={24}
+                      color={"#fff"}
+                      styles={"mr-1 sm:mr-5"}
+                    />
+                    Pronađi deo
+                  </a>
+                </Link>
+              </div>
+              <div className="fixed bottom-[2rem] right-0 mt-5 pr-[.5rem] sm:pr-[2rem] py-2 sm:py-5 pl-2 sm:pl-4 bg-offRed rounded-tl-2xl rounded-bl-2xl z-[9999]">
                 <ReportFault />
               </div>
               {children}

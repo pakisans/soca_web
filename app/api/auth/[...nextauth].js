@@ -6,7 +6,6 @@ export default NextAuth({
     CredentialsProvider({
       name: "Credentials",
       authorize: async (credentials) => {
-        // Simulate verifying credentials and getting the user
         const user = { id: 1, name: "John Doe", email: credentials.email };
         if (
           credentials.email === "user@example.com" &&

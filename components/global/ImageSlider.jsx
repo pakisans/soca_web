@@ -29,7 +29,7 @@ const ImageSlider = ({ images, interval = 6000 }) => {
     const nextSection = document.getElementById("partners");
     if (nextSection) {
       window.scrollTo({
-        top: nextSection.offsetTop - 50, // Adjust this value to control the offset
+        top: nextSection.offsetTop - 50,
         behavior: "smooth",
       });
     }

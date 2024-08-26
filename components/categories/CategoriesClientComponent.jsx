@@ -1,11 +1,20 @@
 "use client";
 
-import { memo, useState, useEffect, useCallback, useMemo } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import {
+  memo,
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  Fragment,
+} from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import usePagination from "../hooks/usePagination";
 import CategoryItem from "./CategoryItem";
 import ProductsList from "../products/ProductsList";
 import Pagination from "@/components/global/Pagination";
+import CustomDropdown from "../global/CustomDropDown";
+import Link from "next/link";
 
 const CategoriesClientComponent = ({
   categories,
@@ -13,13 +22,18 @@ const CategoriesClientComponent = ({
   totalProducts,
   currentPage,
   totalPages,
+  manufacturers,
+  utilizedSearchParams,
 }) => {
   const [activeParent, setActiveParent] = useState(null);
   const [currentArticles, setCurrentArticles] = useState(articles);
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams.get("pretraga");
   const { rowsPerPage, setRowsPerPage, rowsPerPageOptions, setCurrentPage } =
     usePagination();
+
   useEffect(() => {
     setCurrentArticles(articles);
   }, [articles]);
@@ -31,13 +45,17 @@ const CategoriesClientComponent = ({
     [activeParent]
   );
 
-  const handleSortChange = (e) => {
-    const sort = e.target.value;
+  const handleSortChange = (sort) => {
     router.push(`${pathname}?sort=${sort}`);
   };
 
   const handlePageChange = (newPage) => {
-    router.push(`${pathname}?page=${newPage}&limit=${rowsPerPage}`);
+    let pageUrl = `${pathname}?page=${newPage}&limit=${rowsPerPage}`;
+    if (search) {
+      pageUrl = `${pathname}?page=${newPage}&limit=${rowsPerPage}&pretraga=${search}`;
+    }
+
+    router.push(pageUrl);
   };
 
   const handleRowsPerPageChange = (newRowsPerPage) => {
@@ -58,12 +76,19 @@ const CategoriesClientComponent = ({
     [categories, activeParent, handleCategorySelect]
   );
 
-  // Extract the last part of the pathname for the category name
   const categoryName = pathname.split("/").pop().replace(/-/g, " ");
+
+  const sortOptions = [
+    { value: "relevance", label: "Relevantnost" },
+    { value: "price-asc", label: "Cena - rastuće" },
+    { value: "price-desc", label: "Cena - opadajuće" },
+    { value: "name-asc", label: "Naziv - A-Z" },
+    { value: "name-desc", label: "Naziv - Z-A" },
+  ];
 
   return (
     <div className="mx-auto w-full lg:mx-0 border-t border-t-mintCream">
-      <div className="w-full bg-gradient-to-r from-gray-700 to-gray-900 py-4 px-[4rem] flex gap-x-10 items-center">
+      <div className="w-full bg-gradient-to-r from-gray-700 to-black py-4 px-[2rem] sm:px-[4rem] flex gap-10 xl:gap-x-[12rem] items-center">
         <div className="relative group">
           <button className="text-white text-lg lg:text-[1.5rem] font-bold">
             Kategorije
@@ -76,33 +101,36 @@ const CategoriesClientComponent = ({
           <button className="text-white text-lg lg:text-[1.5rem] font-bold">
             Partneri
           </button>
-          <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity max-h-[500px] overflow-y-auto">
-            <ul>
-              <li className="p-2 hover:bg-gray-700">Partner 1</li>
-              <li className="p-2 hover:bg-gray-700">Partner 2</li>
+          <div className="absolute left-0 mt-2 w-80 bg-gray-800 text-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity max-h-[500px] overflow-y-auto">
+            <ul className="flex flex-col py-10 p-4 w-full">
+              {manufacturers?.map((item, key) => {
+                if (!item.vidljiv) {
+                  return;
+                }
+                const queryParams = new URLSearchParams(utilizedSearchParams);
+                queryParams.set("partner", item.sifra);
+
+                return (
+                  <li
+                    key={`proizvodjac-${key}`}
+                    className="w-full hover:bg-gray-700 transition duration-300 py-4 px-2 hover:text-offRed"
+                  >
+                    <Link
+                      className="w-full text-[1.4rem]"
+                      href={`/proizvodi?${queryParams.toString()}`}
+                    >
+                      {item.naziv}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
-        <div className="relative group">
-          <button className="text-white text-lg lg:text-[1.5rem] font-bold">
-            Sortiranje
-          </button>
-          <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-            <select
-              className="w-full p-2 bg-gray-800 text-white border-none"
-              onChange={handleSortChange}
-            >
-              <option value="relevance">Relevantnost</option>
-              <option value="price-asc">Cena - rastuće</option>
-              <option value="price-desc">Cena - opadajuće</option>
-              <option value="name-asc">Naziv - A-Z</option>
-              <option value="name-desc">Naziv - Z-A</option>
-            </select>
-          </div>
-        </div>
+        <CustomDropdown options={sortOptions} onChange={handleSortChange} />
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 w-full mt-4 px-[4rem]">
+      <div className="flex flex-col md:flex-row gap-8 w-full mt-4 px-[2rem] sm:px-[4rem]">
         <div className="flex-1 w-full md:w-2/3 ml-auto">
           {categoryName && categoryName !== "proizvodi" ? (
             <>
@@ -117,11 +145,19 @@ const CategoriesClientComponent = ({
               <ProductsList articles={currentArticles} />
             </>
           ) : null}
+
           {!categoryName || categoryName === "proizvodi" ? (
             <>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Proizvodi
               </h2>
+              {search && (
+                <div className="w-full mt-4">
+                  <p className="text-xl text-gray-700">
+                    Rezultati pretrage za: <strong>{search}</strong>
+                  </p>
+                </div>
+              )}
               <ProductsList articles={currentArticles} />
             </>
           ) : null}
@@ -132,7 +168,7 @@ const CategoriesClientComponent = ({
         currentPage={currentPage}
         rowsPerPage={rowsPerPage}
         totalItems={totalProducts}
-        rowsPerPageOptions={[10, 20, 50]}
+        rowsPerPageOptions={rowsPerPageOptions}
         onPageChange={handlePageChange}
         onRowsPerPageChange={handleRowsPerPageChange}
         page={currentPage}

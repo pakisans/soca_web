@@ -1,11 +1,19 @@
-import AddToCartButton from "@/components/buttons/AddToCartButton";
 import ImageWithFallback from "@/components/global/ImageWithFallback";
 import { getArticleById } from "@/services/articlesApi";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+import AddToCartButton from "@/components/buttons/AddToCartButton";
+import PageHeader from "@/components/global/PageHeader";
+
+const ProizvodPageClient = dynamic(
+  () => import("@/components/pages/ProizvodPageClient"),
+  {
+    ssr: false,
+  }
+);
 
 export async function generateMetadata({ searchParams }) {
   const { id } = searchParams;
-
   const article = await getArticleById(id);
 
   return {
@@ -21,7 +29,6 @@ export async function generateMetadata({ searchParams }) {
 
 export default async function ProizvodPage({ params, searchParams }) {
   const { id } = searchParams;
-
   const article = await getArticleById(id);
 
   const jsonLd = {
@@ -80,42 +87,52 @@ export default async function ProizvodPage({ params, searchParams }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         strategy="beforeInteractive"
       />
-      <div className="w-full mx-auto p-[4rem] flex flex-col items-center">
-        <div className="bg-white shadow-lg rounded-lg p-6 w-[40rem]">
-          <h1 className="text-3xl font-bold mb-4 text-night text-center md:text-4xl uppercase">
-            {article.naziv}
-          </h1>
-          <div className="mb-4">
-            <ImageWithFallback
-              width={200}
-              height={200}
-              src={decodeURIComponent(decodeSrcForSeo(article))}
-              alt={article.naziv}
-              styles="rounded-lg shadow-lg mx-auto min-h-[20rem]"
-            />
-          </div>
-          <div className="text-center">
-            <p className="mb-4 text-lg md:text-xl uppercase">
-              <strong>ŠIFRA:</strong> {article.sifra}
-            </p>
-            {article.aktivan === 1 ? (
-              article.kolicina > 0 ? (
-                <p className="text-green-600 font-bold text-xl md:text-2xl mb-2 uppercase">
-                  CENA: {article.prodajna_cena} RSD
-                </p>
+      <div className="w-full flex flex-col items-center">
+        <PageHeader title={`Detalji proizvoda - ${article.naziv}`} />
+        <div className="mx-auto p-[2rem] sm:p-[4rem]">
+          <div className="bg-white shadow-lg rounded-lg p-6 w-[30rem] xsm:w-[40rem]">
+            <h1 className="text-3xl font-bold mb-4 text-night text-center md:text-4xl uppercase">
+              {article.naziv}
+            </h1>
+            <div className="mb-4">
+              <ImageWithFallback
+                width={200}
+                height={200}
+                src={decodeURIComponent(decodeSrcForSeo(article))}
+                alt={`Slika proizvoda ${article.naziv}`}
+                styles="rounded-lg shadow-lg mx-auto min-h-[20rem]"
+              />
+            </div>
+            <div className="text-center">
+              <p className="mb-4 text-lg md:text-xl uppercase">
+                <strong>ŠIFRA:</strong> {article.sifra}
+              </p>
+              {article.aktivan === 1 ? (
+                article.kolicina > 0 ? (
+                  <>
+                    <p className="text-green-600 font-bold text-xl md:text-2xl mb-2 uppercase">
+                      CENA:{" "}
+                      {article.prodajna_cena.toLocaleString("sr-RS", {
+                        style: "currency",
+                        currency: "RSD",
+                      })}
+                    </p>
+                    <AddToCartButton article={article} />
+                  </>
+                ) : (
+                  <>
+                    <p className="text-red-600 font-bold text-lg md:text-xl mb-2 uppercase">
+                      DEO NIJE NA STANJU
+                    </p>
+                    <ProizvodPageClient article={article} />
+                  </>
+                )
               ) : (
                 <p className="text-red-600 font-bold text-lg md:text-xl mb-2 uppercase">
-                  DEO NIJE NA STANJU
+                  DEO NIJE DOBAVLJIV
                 </p>
-              )
-            ) : (
-              <p className="text-red-600 font-bold text-lg md:text-xl mb-2 uppercase">
-                DEO NIJE DOBAVLJIV
-              </p>
-            )}
-            {article.aktivan === 1 && article.kolicina > 0 && (
-              <AddToCartButton article={article} />
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

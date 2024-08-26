@@ -3,7 +3,7 @@ import InfiniteScroll from "../global/InfinitiveScroll";
 
 const CardSection = ({ cards }) => {
   return (
-    <div className="w-full pt-16 px-[4rem] overflow-hidden">
+    <div className="w-full pt-16 px-[2rem] sm:px-[4rem] overflow-hidden">
       <InfiniteScroll>
         {cards.map((card, index) => (
           <div

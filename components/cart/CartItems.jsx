@@ -1,7 +1,6 @@
 "use client";
 
 import { Fragment, useState, useEffect } from "react";
-import Image from "next/image";
 import XIcon from "../icons/XIcon";
 import CartForm from "../forms/CartForm";
 import { useCart } from "@/context/ShopCartContext";
@@ -49,7 +48,7 @@ const CartItems = () => {
   }, [cartItems]);
 
   return (
-    <section className="w-full px-[4rem] pt-10 bg-gray-100 animate-fade-in mb-[4rem]">
+    <section className="w-full px-[2rem] sm:px-[4rem] pt-10 bg-gray-100 animate-fade-in mb-[4rem]">
       <div className="mb-10">
         <h2 className="text-4xl font-bold text-night mb-4 text-left">
           Kako funkcioniše naša usluga?

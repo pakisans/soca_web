@@ -4,7 +4,7 @@ import Accordion from "../global/Accordion";
 const Faq = () => {
   return (
     <div>
-      <p className="w-fit mx-auto mb-[2rem] text-[4.2rem]">
+      <p className="w-fit mx-auto mb-[2rem] text-[3.6rem]">
         Saveti i često postavljana pitanja
       </p>
       <Accordion

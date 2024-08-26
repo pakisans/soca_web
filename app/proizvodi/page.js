@@ -1,17 +1,24 @@
 import { getCategories } from "@/services/categoriesAPI";
 import { fetchAllArticles } from "@/services/articlesApi";
 import CategoriesClientComponent from "@/components/categories/CategoriesClientComponent";
-import Script from "next/script";
+import { fetchAllManufacturers } from "@/services/manufacturersApi";
 
 const Proizvodi = async (context) => {
-  const { page = 1, limit = 20 } = context.searchParams;
-
+  const { page = 1, limit = 20, pretraga, sort } = context.searchParams;
+  const utilizedSearchParams = {
+    page,
+    limit,
+    pretraga,
+    sort,
+  };
   const categoriesPromise = getCategories();
-  const articlesPromise = fetchAllArticles(page, limit);
+  const manufacturersPromies = fetchAllManufacturers();
+  const articlesPromise = fetchAllArticles(page, limit, pretraga, sort);
 
-  const [categories, articlesData] = await Promise.all([
+  const [categories, articlesData, manufacturersData] = await Promise.all([
     categoriesPromise,
     articlesPromise,
+    manufacturersPromies,
   ]);
 
   const { articles, totalProducts, totalPages } = articlesData;
@@ -30,7 +37,7 @@ const Proizvodi = async (context) => {
   };
   return (
     <>
-      <Script
+      <script
         id="application/ld+json-product-list"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -43,6 +50,8 @@ const Proizvodi = async (context) => {
           currentPage={page}
           totalProducts={totalProducts}
           totalPages={totalPages}
+          manufacturers={manufacturersData}
+          utilizedSearchParams={utilizedSearchParams}
         />
       </main>
     </>

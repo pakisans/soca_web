@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const SettingsIcon = ({ width, height, color }) => (
+const SettingsIcon = ({ width, height, color, styles }) => (
   <svg
     fill={color}
     width={width}
@@ -9,6 +9,7 @@ const SettingsIcon = ({ width, height, color }) => (
     preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
+    className={styles}
   >
     <title>{"file-settings-solid"}</title>
     <path

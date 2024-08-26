@@ -8,7 +8,7 @@ const AddToCartButton = ({ article }) => {
   return (
     <button
       onClick={() => addToCart(article)}
-      className="bg-offRed text-white font-bold py-2 px-4 rounded hover:bg-red-700 transition duration-300 md:text-base uppercase"
+      className="bg-offRed text-white py-4 px-4 text-[1.4rem] rounded hover:bg-red-700 transition duration-300 mt-auto"
     >
       Dodaj u korpu
     </button>

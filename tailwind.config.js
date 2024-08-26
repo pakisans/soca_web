@@ -16,6 +16,8 @@ module.exports = {
         gunMetal: "#1C3738",
         davyGray: "#4D4847",
         offRed: "#8E1B13",
+        gold: "#FFD700",
+        tomato: "#FF6347",
         gray: {
           800: "#2d3748",
           900: "#1a202c",
@@ -56,6 +58,7 @@ module.exports = {
     screens: {
       xsm: "375px",
       "3xl": "1920px",
+      xlg: "1120px",
       ...defaultTheme.screens,
     },
   },
@@ -66,5 +69,20 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none", // IE and Edge
+          "scrollbar-width": "none", // Firefox
+          "&::-webkit-scrollbar": {
+            display: "none", // Safari and Chrome
+          },
+        },
+      };
+
+      addUtilities(newUtilities, ["responsive"]);
+    },
+  ],
 };

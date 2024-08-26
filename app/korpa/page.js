@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function Cart() {
   return (
-    <section className="flex flex-col items-center justify-between px-[4rem] w-full h-full py-[4rem]">
+    <section className="flex flex-col items-center justify-between px-[2rem] sm:px-[4rem] w-full h-full py-[4rem]">
       <h1 className="text-[3.6rem] leading-[3.6rem] font-bold text-center mb-10">
         Korpa
       </h1>
