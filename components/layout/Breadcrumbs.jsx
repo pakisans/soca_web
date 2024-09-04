@@ -58,7 +58,7 @@ const Breadcrumbs = () => {
         <ol className="list-none p-0 flex flex-wrap items-center">
           <li className="inline">
             <Link href={"/"} passHref legacyBehavior>
-              <a className="text-blue-600 und text-[1.8rem] hover:text-offRed">
+              <a className="text-[#66B2FF] und text-[1.8rem] hover:text-offRed">
                 Početna
               </a>
             </Link>
@@ -72,7 +72,7 @@ const Breadcrumbs = () => {
               {!isLast ? (
                 <>
                   <Link href={url} passHref legacyBehavior>
-                    <a className="text-blue-600 text-[1.6rem] hover:text-offRed">
+                    <a className="text-[#66B2FF] text-[1.6rem] hover:text-offRed">
                       {name}
                     </a>
                   </Link>

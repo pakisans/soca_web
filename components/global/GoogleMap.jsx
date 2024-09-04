@@ -58,7 +58,12 @@ const GoogleMap = () => {
 
   useEffect(() => {
     loadGoogleMapsScript();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    return () => {
+      if (googleMapRef.current) {
+        googleMapRef.current.innerHTML = "";
+      }
+    };
   }, []);
 
   return (

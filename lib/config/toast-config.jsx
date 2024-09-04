@@ -22,7 +22,7 @@ const customToast = {
 
     toast(
       (t) => (
-        <div className="border border-offRed rounded-[1rem] animate-fadeIn relative py-[1rem] mt-10 text-gunMetal opacity-85 bg-mintCream px-[2rem]">
+        <div className="border border-offRed rounded-[1rem] animate-fadeIn relative py-[1rem] mt-10 text-gunMetal opacity-100 bg-mintCream px-[2rem]">
           <div className="flex items-center">
             <div className="shake-animation border-gol">
               <CheckmarkIcon
@@ -69,14 +69,14 @@ const customToast = {
 
     toast(
       (t) => (
-        <div className="border border-red-500 rounded-[1rem] animate-fadeIn relative py-[1rem] mt-10 text-white opacity-85 bg-red-500 px-[2rem]">
+        <div className="border border-red-500 rounded-[1rem] animate-fadeIn relative py-[1rem] mt-10 text-white opacity-100 bg-offRed px-[2rem]">
           <div className="flex items-center">
             <div className="shake-animation border-gol">
               <XIcon
                 background={"#FFFFFF"}
-                color={"#8E1B13"}
-                width={30}
-                height={30}
+                color={"#FFFFFF"}
+                width={15}
+                height={15}
               />
             </div>
             <span className="text-[1.5rem] leading-[2.4rem] font-semibold  mx-[1rem]">
@@ -94,7 +94,7 @@ const customToast = {
                 }
               }}
             >
-              <XIcon width={10} height={10} color="#1C3738" />
+              <XIcon width={10} height={10} color="#FFFFFF" />
             </button>
           </div>
         </div>

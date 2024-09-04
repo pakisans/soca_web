@@ -5,14 +5,23 @@ import Link from "next/link";
 import { capitalizeFirstLetter } from "@/utils/textUtil";
 
 const CategoryItem = memo(
-  ({ category, activeParent, handleCategorySelect }) => {
+  ({
+    category,
+    activeParent,
+    handleCategorySelect,
+    onMouseOver,
+    onMouseOut,
+  }) => {
     const isActive = activeParent === category.id;
-
     return (
-      <div className="w-full">
+      <div
+        className="w-full md:flex md:flex-wrap"
+        onMouseOver={onMouseOver}
+        onMouseOut={onMouseOut}
+      >
         <div
           onClick={() => handleCategorySelect(category)}
-          className={`flex justify-between items-center cursor-pointer p-4 text-white shadow-md hover:shadow-lg hover:text-offRed transition duration-300 text-lg ${
+          className={`flex justify-between items-center gap-8 cursor-pointer p-4 text-white hover:text-mint transition duration-300 text-lg ${
             isActive ? "shadow-lg" : ""
           }`}
         >
@@ -35,7 +44,7 @@ const CategoryItem = memo(
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <div className="bg-gray-800 text-white rounded-b-lg shadow-lg max-h-[500px] overflow-y-auto">
+            <div className="md:flex md:flex-wrap bg-gray-800 text-white rounded-b-lg shadow-lg max-h-[500px] overflow-y-auto">
               {category.groups.map((group) => (
                 <Link
                   key={group.id}
@@ -45,8 +54,8 @@ const CategoryItem = memo(
                     .toLowerCase()
                     .replace(/ /g, "-")}`}
                 >
-                  <div className="cursor-pointer p-4 hover:bg-gray-700 hover:text-offRed transition duration-300">
-                    {capitalizeFirstLetter(group.naziv)}
+                  <div className="cursor-pointe text-[14px] p-4 hover:bg-gray-700 hover:text-mint transition duration-300">
+                    &#x2022; {capitalizeFirstLetter(group.naziv)}
                   </div>
                 </Link>
               ))}

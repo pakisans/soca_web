@@ -1,7 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, memo } from "react";
 import { Transition } from "@headlessui/react";
+import { cn } from "@/utils/CN";
 
-const CustomDropdown = ({ options, onChange }) => {
+const CustomDropdown = ({ options, onChange, label }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -12,26 +13,17 @@ const CustomDropdown = ({ options, onChange }) => {
 
   return (
     <div
-      className="relative inline-block text-left"
+      className="relative"
+      onClick={() => setIsOpen(!isOpen)}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="inline-flex justify-between w-full px-4 py-2 bg-gray-800 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none cursor-pointer">
-        <span>Sortiraj</span>
-        <svg
-          className="ml-2 h-5 w-5"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </div>
-
+      <button
+        className="text-white text-lg lg:text-[1.5rem] font-bold"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {label}
+      </button>
       <Transition
         show={isOpen}
         enter="transition ease-out duration-100"
@@ -43,23 +35,29 @@ const CustomDropdown = ({ options, onChange }) => {
       >
         <div
           ref={dropdownRef}
-          className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5"
+          className={cn(
+            "absolute -left-40 mt-[10px] md:mt-0 w-[20rem] md:w-[30rem] bg-gray-800 text-white shadow-lg transition-opacity duration-300 ease-in-out transform-gpu",
+            {
+              hidden: !isOpen,
+              block: isOpen,
+            }
+          )}
         >
-          <div className="py-1">
+          <ul className="flex flex-col gap-4 p-4">
             {options.map((option) => (
-              <button
+              <li
                 key={option.value}
                 onClick={() => handleOptionClick(option.value)}
-                className="text-white flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                className="w-full hover:bg-gray-700 transition duration-300 text-[1.4rem] py-4 px-2 hover:text-offRed cursor-pointer"
               >
                 {option.label}
-              </button>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </Transition>
     </div>
   );
 };
 
-export default CustomDropdown;
+export default memo(CustomDropdown);

@@ -110,7 +110,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 mx-auto md:mx-0">
               <div className="flex flex-col items-center lg:items-start">
                 <h3 className="text-lg font-bold mb-2">Korisni linkovi</h3>
                 <nav className="flex flex-col gap-2 text-center lg:text-left">

@@ -1,6 +1,7 @@
 import { getCategories } from "@/services/categoriesAPI";
 import { fetchArticlesByCategory } from "@/services/articlesApi";
 import CategoriesClientComponent from "@/components/categories/CategoriesClientComponent";
+import { fetchAllManufacturers } from "@/services/manufacturersApi";
 
 export async function generateMetadata({ params }) {
   const { kategorija, grupa } = params;
@@ -29,18 +30,22 @@ export default async function Proizvodi({ params, searchParams }) {
   const decodedGrupa = grupa ? decodeURIComponent(grupa) : "";
   const page = parseInt(searchParams.page) || 1;
   const limit = parseInt(searchParams.limit) || 20;
+  const sort = searchParams.sort || "";
 
+  const manufacturersPromies = fetchAllManufacturers();
   const categoriesPromise = getCategories();
   const articlesPromise = fetchArticlesByCategory(
     decodedKategorija,
     decodedGrupa,
     page,
-    limit
+    limit,
+    sort
   );
 
-  const [categories, articlesData] = await Promise.all([
+  const [categories, articlesData, manufacturersData] = await Promise.all([
     categoriesPromise,
     articlesPromise,
+    manufacturersPromies,
   ]);
 
   const { articles, count, totalPages } = articlesData;
@@ -52,6 +57,7 @@ export default async function Proizvodi({ params, searchParams }) {
         currentPage={page}
         totalProducts={count}
         totalPages={totalPages}
+        manufacturers={manufacturersData}
       />
     </div>
   );

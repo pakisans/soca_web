@@ -88,7 +88,7 @@ export default async function ProizvodPage({ params, searchParams }) {
         strategy="beforeInteractive"
       />
       <div className="w-full flex flex-col items-center">
-        <PageHeader title={`Detalji proizvoda - ${article.naziv}`} />
+        <PageHeader title={`Detalji proizvoda`} description={article.naziv} />
         <div className="mx-auto p-[2rem] sm:p-[4rem]">
           <div className="bg-white shadow-lg rounded-lg p-6 w-[30rem] xsm:w-[40rem]">
             <h1 className="text-3xl font-bold mb-4 text-night text-center md:text-4xl uppercase">

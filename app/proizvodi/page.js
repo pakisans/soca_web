@@ -4,16 +4,29 @@ import CategoriesClientComponent from "@/components/categories/CategoriesClientC
 import { fetchAllManufacturers } from "@/services/manufacturersApi";
 
 const Proizvodi = async (context) => {
-  const { page = 1, limit = 20, pretraga, sort } = context.searchParams;
+  const {
+    page = 1,
+    limit = 20,
+    pretraga,
+    sort,
+    partner,
+  } = context.searchParams;
   const utilizedSearchParams = {
     page,
     limit,
     pretraga,
     sort,
   };
+  console.log("partner", partner);
   const categoriesPromise = getCategories();
   const manufacturersPromies = fetchAllManufacturers();
-  const articlesPromise = fetchAllArticles(page, limit, pretraga, sort);
+  const articlesPromise = fetchAllArticles(
+    page,
+    limit,
+    pretraga,
+    sort,
+    partner
+  );
 
   const [categories, articlesData, manufacturersData] = await Promise.all([
     categoriesPromise,

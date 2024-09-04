@@ -85,109 +85,113 @@ export default function ProfesionlneMasineVeseraj() {
         </section>
         <section className="space-y-20 w-full">
           <div className="space-y-10">
+            <div className="flex flex-col md:flex-row gap-10">
+              <div className="p-8 bg-gunMetal text-mintCream rounded-lg shadow-md transition-transform transform duration-600 md:w-[49%] ease">
+                <h3 className="text-2xl sm:text-3xl font-semibold mb-5">
+                  Zašto i kada odabrati profesionalne umesto kućnih uređaja?
+                </h3>
+                <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
+                  <li>Kada se prevaziđe radna efikasnost/dnevni kapacitet</li>
+                  <li>
+                    Kada vek trajanja (par godina) i zastoji u radu zbog
+                    popravki + troškovi, prevaziđu posao
+                  </li>
+                  <li>
+                    Ekonomska vrednost po 1kg kapaciteta pranja na nivou 10
+                    godina investicije (kupovina opreme + održavanje + popravke)
+                    je približno jednaka za sve uređaje
+                  </li>
+                  <li>
+                    Na ciklusu 10 god. upotrebe – 4-5 kom. kućnih veš mašina sa
+                    vekom od OKO 3 godine = 1 kom. profesionalne veš mašine
+                  </li>
+                  <li>
+                    Treba birati opremu na nivou dnevnog kapaciteta pranja (što
+                    manje zastoja zbog održavanja i kvarova) i optimalnog
+                    investiranja
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-8 bg-davyGray text-mintCream rounded-lg shadow-md transition-transform transform duration-600 md:w-[49%] ease">
+                <h3 className="text-2xl sm:text-3xl font-semibold mb-5">
+                  Profesionalna oprema vešeraja se deli po efikasnosti rada
+                </h3>
+                <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
+                  <li>
+                    Komercijalne (u punom kapacitetu rade 5-7 ciklusa dnevno ili
+                    oko 8h rada)
+                  </li>
+                  <li>
+                    Industrijske (u punom kapacitetu rade 10-15 ciklusa dnevno
+                    ili oko 16h rada)
+                  </li>
+                  <li>
+                    Aparati sa higijenskom barijerom (bolnice, infektivna
+                    odeljenja - odvojen unos prljavog veša u kontaminiranoj
+                    prostoriji – iznos čistog veša sa daljom obradom u čistoj
+                    prostoriji, kapaciteti i efikasnost na nivou industrijske
+                    mašine)
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <div className="p-8 bg-gunMetal text-mintCream rounded-lg shadow-md transition-transform transform duration-600 ease">
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-5">
-                Zašto i kada odabrati profesionalne umesto kućnih uređaja?
-              </h3>
-              <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
-                <li>Kada se prevaziđe radna efikasnost/dnevni kapacitet</li>
-                <li>
-                  Kada vek trajanja (par godina) i zastoji u radu zbog popravki
-                  + troškovi, prevaziđu posao
-                </li>
-                <li>
-                  Ekonomska vrednost po 1kg kapaciteta pranja na nivou 10 godina
-                  investicije (kupovina opreme + održavanje + popravke) je
-                  približno jednaka za sve uređaje
-                </li>
-                <li>
-                  Na ciklusu 10 god. upotrebe – 4-5 kom. kućnih veš mašina sa
-                  vekom od OKO 3 godine = 1 kom. profesionalne veš mašine
-                </li>
-                <li>
-                  Treba birati opremu na nivou dnevnog kapaciteta pranja (što
-                  manje zastoja zbog održavanja i kvarova) i optimalnog
-                  investiranja
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-8 bg-davyGray text-mintCream rounded-lg shadow-md transition-transform transform duration-600 ease">
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-5">
-                Profesionalna oprema vešeraja se deli po efikasnosti rada
-              </h3>
-              <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
-                <li>
-                  Komercijalne (u punom kapacitetu rade 5-7 ciklusa dnevno ili
-                  oko 8h rada)
-                </li>
-                <li>
-                  Industrijske (u punom kapacitetu rade 10-15 ciklusa dnevno ili
-                  oko 16h rada)
-                </li>
-                <li>
-                  Aparati sa higijenskom barijerom (bolnice, infektivna
-                  odeljenja - odvojen unos prljavog veša u kontaminiranoj
-                  prostoriji – iznos čistog veša sa daljom obradom u čistoj
-                  prostoriji, kapaciteti i efikasnost na nivou industrijske
-                  mašine)
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-8 bg-offRed text-mintCream rounded-lg shadow-md transition-transform transform duration-600 ease">
               <h3 className="text-2xl sm:text-3xl font-semibold mb-5">
                 Razlika kućnih i profesionalnih (komercijalnih i industrijskih)
                 uređaja (primer - veš mašina kapaciteta 10kg)
               </h3>
               <div className="space-y-6">
-                <div className="bg-gray-700 p-4 rounded-lg">
-                  <h4 className="text-xl font-semibold mb-2">Kućna mašina</h4>
-                  <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
-                    <li>
-                      Ne postoji kućna mašina 10 kg – sve su realnog kapaciteta
-                      5-7kg bez obzira na nazivne oznake
-                    </li>
-                    <li>
-                      Svi prozviđači kućnih mašina projektuju radni vek na bazi
-                      upotrebe od par ciklusa nedeljno (ne dnevno)
-                    </li>
-                    <li>
-                      Pranje na 90° traje OKO 150 min (aparat se priključuje na
-                      monofazni priključak)
-                    </li>
-                    <li>
-                      Izbacivanje vode - pumpom (odvod u zidu u približnoj
-                      visini vrata aparata)
-                    </li>
-                    <li>Nema opcije uzimanja tople vode</li>
-                    <li>
-                      Prosečna težina (konstruktivna specifičnost) – OKO 70kg
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-gray-700 p-4 rounded-lg">
-                  <h4 className="text-xl font-semibold mb-2">
-                    Komercijalna mašina
-                  </h4>
-                  <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
-                    <li>
-                      Projektovana za rad do 8h dnevno (oko 10 god. bez velikih
-                      remonta)
-                    </li>
-                    <li>
-                      Pranje na 90°C traje OKO 90 min sa hladnom vodom, a sa
-                      toplom vodom OKO 70 min (topla voda ubrzava proces, kao i
-                      trofazni priključak)
-                    </li>
-                    <li>
-                      Izbacivanje vode – ispusnim ventilom (odvod u nivou poda –
-                      brže i efikasnije izbacivanje, bolje ispiranje, OPCIONO
-                      zbog uslova rada postoji mogućnost dodavanja pumpe za
-                      izbacivanje)
-                    </li>
-                    <li>Prosečna težina – OKO 120kg</li>
-                  </ul>
+                <div className="flex flex-col md:flex-row gap-10">
+                  <div className="bg-gray-700 p-4 rounded-lg md:w-[49%]">
+                    <h4 className="text-xl font-semibold mb-2">Kućna mašina</h4>
+                    <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
+                      <li>
+                        Ne postoji kućna mašina 10 kg – sve su realnog
+                        kapaciteta 5-7kg bez obzira na nazivne oznake
+                      </li>
+                      <li>
+                        Svi prozviđači kućnih mašina projektuju radni vek na
+                        bazi upotrebe od par ciklusa nedeljno (ne dnevno)
+                      </li>
+                      <li>
+                        Pranje na 90° traje OKO 150 min (aparat se priključuje
+                        na monofazni priključak)
+                      </li>
+                      <li>
+                        Izbacivanje vode - pumpom (odvod u zidu u približnoj
+                        visini vrata aparata)
+                      </li>
+                      <li>Nema opcije uzimanja tople vode</li>
+                      <li>
+                        Prosečna težina (konstruktivna specifičnost) – OKO 70kg
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-700 p-4 rounded-lg md:w-[49%]">
+                    <h4 className="text-xl font-semibold mb-2">
+                      Komercijalna mašina
+                    </h4>
+                    <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
+                      <li>
+                        Projektovana za rad do 8h dnevno (oko 10 god. bez
+                        velikih remonta)
+                      </li>
+                      <li>
+                        Pranje na 90°C traje OKO 90 min sa hladnom vodom, a sa
+                        toplom vodom OKO 70 min (topla voda ubrzava proces, kao
+                        i trofazni priključak)
+                      </li>
+                      <li>
+                        Izbacivanje vode – ispusnim ventilom (odvod u nivou poda
+                        – brže i efikasnije izbacivanje, bolje ispiranje,
+                        OPCIONO zbog uslova rada postoji mogućnost dodavanja
+                        pumpe za izbacivanje)
+                      </li>
+                      <li>Prosečna težina – OKO 120kg</li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="bg-gray-700 p-4 rounded-lg">
                   <h4 className="text-xl font-semibold mb-2">

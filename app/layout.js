@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 import { ShopCartWrapper } from "@/context/ShopCartContext";
 import Link from "next/link";
 import SearchIcon from "@/components/icons/SearchIcon";
+import CookieBanner from "@/components/layout/CookieBanner";
 
 const font = Kanit({
   subsets: ["latin"],
@@ -84,6 +85,7 @@ export default function RootLayout({ children }) {
               {children}
             </>
           </main>
+          <CookieBanner />
           <Foooter />
           <Toaster position="bottom-right" />
         </ShopCartWrapper>

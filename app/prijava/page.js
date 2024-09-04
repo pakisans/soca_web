@@ -1,13 +1,40 @@
 import { redirect } from "next/navigation";
-import { getSession, login } from "@/lib/auth";
+import { loginUser } from "@/lib/auth";
+import { cookies } from "next/headers";
 
 export const metadata = {
   title: "Prijava - SOĆA",
   description: "Prijavi se na svoj nalog",
 };
 
+export async function handleLogin(formData) {
+  "use server"; // Marking this function as a server function
+
+  const email = formData.get("email");
+  const password = formData.get("password");
+
+  try {
+    const response = await loginUser(email, password);
+
+    if (response.token) {
+      cookies().set("session", response.token, {
+        secure: true,
+        path: "/",
+      });
+      cookies().set("username", response.name, {
+        secure: true,
+        path: "/",
+      });
+      redirect("/");
+    }
+  } catch (error) {
+    console.error("Login failed:", error);
+    return { error: "Pogrešan email ili lozinka." };
+  }
+}
+
 export default async function Page() {
-  const session = await getSession();
+  const session = cookies().get("session");
 
   if (session) {
     redirect("/");
@@ -19,14 +46,8 @@ export default async function Page() {
         <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
           Prijava na sistem
         </h2>
-        <form
-          action={async (formData) => {
-            "use server";
-            await login(formData);
-            redirect("/");
-          }}
-          className="space-y-6"
-        >
+        {/* Handle error messages here if needed */}
+        <form action={handleLogin} className="space-y-6">
           <div>
             <label
               htmlFor="email"

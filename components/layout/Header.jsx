@@ -6,8 +6,17 @@ import ResponsiveHeader from "./ResponsiveHeader";
 import Search from "../global/Search";
 import HomeIcon from "../icons/HomeIcon";
 import { headerSchemaData } from "@/lib/SEO/schemaData";
+import { cookies } from "next/headers";
+import LogoutButton from "../buttons/LogoutButton";
+import DataSocaButton from "../buttons/DataSocaButton";
 
 const Header = () => {
+  const sessionCookie = cookies().get("session");
+  const usernameCookie = cookies().get("username");
+  const username = usernameCookie
+    ? decodeURIComponent(usernameCookie.value)
+    : null;
+
   return (
     <>
       <script
@@ -131,12 +140,12 @@ const Header = () => {
                               </li>
                               <li>
                                 <Link
-                                  href="/prodajni-program/meiko-profesionalne-masine/masine-za-pranje-sa-haubom/upster-h"
+                                  href="/prodajni-program/meiko-profesionalne-masine/masine-za-pranje-sa-haubom/upster-h500"
                                   passHref
                                   legacyBehavior
                                 >
-                                  <a className="block text-night text-[1.4rem] hover:bg-gray-600 hover:font-medium hover:text-mintCream hover:transition-colors transition-all duration-200 ease-in-out px-4 py-2">
-                                    UPster H
+                                  <a className="block text-night text-[1.4rem] hover:bg-gray-600 hover:font-medium hover:text-mintCream hover:transition-colors transition-all duration-200 ease-in-out px-4 py-2 whitespace-nowrap">
+                                    UPster H500
                                   </a>
                                 </Link>
                               </li>
@@ -176,12 +185,23 @@ const Header = () => {
               </div>
             </li>
 
-            <li>
+            <li className="relative group">
               <Link href="/servis" passHref legacyBehavior>
                 <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
                   Servis
                 </a>
               </Link>
+              <div className="absolute left-0 dropdown-menu">
+                <ul className="w-full mt-[2.1rem] bg-mintCream border border-white shadow-xl rounded-[.2rem]">
+                  <li>
+                    <Link href="/servis/partnerstva" passHref legacyBehavior>
+                      <a className="block text-night text-[1.4rem] hover:bg-gray-600 hover:font-medium hover:text-mintCream transition-all duration-200 ease-in-out px-4 py-2">
+                        Partnerstva
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <Link href="/o-nama-i-kontakt" passHref legacyBehavior>
@@ -199,11 +219,23 @@ const Header = () => {
               <CartIcon width={30} height={30} color={"#1C3738"} />
             </button>
           </Link>
-          <Link href="/prijava" passHref legacyBehavior>
-            <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
-              Prijava
-            </a>
-          </Link>
+          {username ? (
+            <div className="relative group">
+              <span className="text-night text-[1.2rem] lg:text-[1.6rem] uppercase hover:text-offRed font-bold cursor-pointer">
+                {username}
+              </span>
+              <div className="absolute left-0 mt-[10px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <DataSocaButton />
+                <LogoutButton />
+              </div>
+            </div>
+          ) : (
+            <Link href="/prijava" passHref legacyBehavior>
+              <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold hidden sm:block">
+                Prijava
+              </a>
+            </Link>
+          )}
         </div>
         <ResponsiveHeader />
       </header>

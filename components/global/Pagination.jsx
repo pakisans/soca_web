@@ -69,7 +69,9 @@ const Pagination = ({
       </div>
       <div className="flex items-center space-x-2">
         <button
-          onClick={() => handlePageChange(currentPage - 1)}
+          onClick={() => {
+            if (currentPage != 1) handlePageChange(currentPage - 1);
+          }}
           disabled={currentPage == 1}
           className={clsx(
             "px-3 py-1 border border-gray-300 rounded  md:text-[1.6rem]",
@@ -103,7 +105,10 @@ const Pagination = ({
           </>
         )}
         <button
-          onClick={() => handlePageChange(Number(currentPage) + 1)}
+          onClick={() => {
+            if (currentPage != totalPages)
+              handlePageChange(Number(currentPage) + 1);
+          }}
           disabled={currentPage === totalPages}
           className={clsx(
             "px-3 py-1 border border-gray-300 rounded  md:text-[1.6rem]",

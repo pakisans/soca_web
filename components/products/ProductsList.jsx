@@ -74,7 +74,7 @@ const ProductsList = memo(({ articles }) => {
                 styles="w-full h-full"
               />
             </div>
-            <p className="text-gray-600 mb-2 text-[1.4rem]">
+            <p className="text-gray-600 mb-2 text-[1.8rem]">
               Šifra: {article.sifra}
             </p>
             {article.aktivan === 1 ? (
@@ -96,7 +96,7 @@ const ProductsList = memo(({ articles }) => {
                 </>
               ) : (
                 <>
-                  <p className="text-red-600 font-bold mb-2">
+                  <p className="text-red-600 font-bold mb-2 text-[12px]">
                     Deo nije na stanju
                   </p>
                   <button

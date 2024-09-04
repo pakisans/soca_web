@@ -25,12 +25,11 @@ export default function AboutAndContact() {
       <div className="px-[2rem] py-[4rem] sm:px-[4rem]">
         <div className="space-y-20 w-full mx-auto">
           <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-10 lg:space-y-0 lg:space-x-10">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 relative h-[300px] md:h-[500px]">
               <Image
-                src="https://www.soca.rs/public/images/soca/o_nama.jpg"
+                src="https://www.soca.rs/public/images/soca-servis-home.jpg"
                 alt="O nama"
-                width={500}
-                height={300}
+                fill
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -97,22 +96,20 @@ export default function AboutAndContact() {
               </div>
             </div>
           </div>
-
-          <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h3 className="text-[2.4rem] md:text-[2.8rem] font-semibold mb-5">
-              DELATNOST
-            </h3>
-            <p className="text-[1.6rem] leading-relaxed">
-              "Soća servis AD" se bavi ugradnjom, popravkom i održavanjem
-              samostojećih i ugradnih aparata za domaćinstvo, bele tehnike,
-              profesionalne ugostiteljske opreme, opreme za vešeraje.
-              Servisiranje se radi po ugovoru, u garanciji i van garancije, za
-              autorizovane brendove, kao i samostalno, po zahtevu korisnika.
-            </p>
-          </div>
-
-          <div className="space-y-10">
-            <div className="p-6 bg-white rounded-lg shadow-lg">
+          <div className="flex flex-col gap-10 lg:flex-row justify-between">
+            <div className="p-6 bg-white rounded-lg shadow-lg lg:w-[48%]">
+              <h3 className="text-[2.4rem] md:text-[2.8rem] font-semibold mb-5">
+                DELATNOST
+              </h3>
+              <p className="text-[1.6rem] leading-relaxed">
+                "Soća servis AD" se bavi ugradnjom, popravkom i održavanjem
+                samostojećih i ugradnih aparata za domaćinstvo, bele tehnike,
+                profesionalne ugostiteljske opreme, opreme za vešeraje.
+                Servisiranje se radi po ugovoru, u garanciji i van garancije, za
+                autorizovane brendove, kao i samostalno, po zahtevu korisnika.
+              </p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-lg lg:w-[48%]">
               <h3 className="text-[2.4rem] md:text-[2.8rem] font-semibold mb-5">
                 VIZIJA
               </h3>
@@ -124,41 +121,40 @@ export default function AboutAndContact() {
                 kupcima.
               </p>
             </div>
+          </div>
 
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-[2.4rem] md:text-[2.8rem] font-semibold mb-5">
-                MISIJA
-              </h3>
-              <p className="text-[1.6rem] leading-relaxed">
-                Misija "Soća servis AD" jeste da na teritoriji Republike Srbije
-                postigne kompletno zaokružen nivo usluge ka korisnicima bele
-                tehnike, profesionalnih uređaja ugostiteljstva i gastro opreme.
-              </p>
-              <p className="text-[1.6rem] leading-relaxed">
-                Počevši od preporuka kupovine (asisitiranje u odabiru,
-                planiranju i projektovanju uređaja i njegovog okruženja, sistema
-                i procesa), preko isporuka, montaže i puštanja u rad, zatim
-                preporuke korišćenja, praćenje rada uređaja i opreme, kako za
-                vreme garancije, tako i u preostalom životnom veku korišćenja
-                uređaja i opreme uz posebno obraćanje pažnje na tehničku
-                funkcionalnost, bezbednost korisnika i okoline, ekonomičnog
-                korišćenja i upravljanja istima, preko prijava eventualnih
-                kvarova, obezbeđivanja delova uz kompletnu uslugu popravke i
-                održavanja, do obezbeđivanja prateće opreme i svih sredstava za
-                održavanje uređaja u širokom smislu. Tendendcija saradnje je ka
-                ugovorenim partnerima i dugoročna saradnja, koja svakako daje
-                najbolje rezultate - kako po brzini reagovanja i minimalnim
-                brojem kvarova/nedostataka, do najmanjih troškova održavanja i
-                maksimalne efikasnosti samih uređaja, što je verujemo cilj
-                svakog korisnika. Namera je da se uz kontinualno obrazovanje i
-                unapređenje stručne spreme tehničkih lica, kroz korišćenje
-                kvalitetnih alata, opreme i savremenih tehnologija - svi procesi
-                podignu na nivo visoke efikasnosti i efektivnosti u odnosu na
-                cenu pružene usluge, a sve u korist kupca uz poštovanje vremena
-                i dogovorenih obaveza, kako od strane prodavca tako i od strane
-                kupca.
-              </p>
-            </div>
+          <div className="p-6 bg-white rounded-lg shadow-lg">
+            <h3 className="text-[2.4rem] md:text-[2.8rem] font-semibold mb-5">
+              MISIJA
+            </h3>
+            <p className="text-[1.6rem] leading-relaxed">
+              Misija "Soća servis AD" jeste da na teritoriji Republike Srbije
+              postigne kompletno zaokružen nivo usluge ka korisnicima bele
+              tehnike, profesionalnih uređaja ugostiteljstva i gastro opreme.
+            </p>
+            <p className="text-[1.6rem] leading-relaxed">
+              Počevši od preporuka kupovine (asisitiranje u odabiru, planiranju
+              i projektovanju uređaja i njegovog okruženja, sistema i procesa),
+              preko isporuka, montaže i puštanja u rad, zatim preporuke
+              korišćenja, praćenje rada uređaja i opreme, kako za vreme
+              garancije, tako i u preostalom životnom veku korišćenja uređaja i
+              opreme uz posebno obraćanje pažnje na tehničku funkcionalnost,
+              bezbednost korisnika i okoline, ekonomičnog korišćenja i
+              upravljanja istima, preko prijava eventualnih kvarova,
+              obezbeđivanja delova uz kompletnu uslugu popravke i održavanja, do
+              obezbeđivanja prateće opreme i svih sredstava za održavanje
+              uređaja u širokom smislu. Tendendcija saradnje je ka ugovorenim
+              partnerima i dugoročna saradnja, koja svakako daje najbolje
+              rezultate - kako po brzini reagovanja i minimalnim brojem
+              kvarova/nedostataka, do najmanjih troškova održavanja i maksimalne
+              efikasnosti samih uređaja, što je verujemo cilj svakog korisnika.
+              Namera je da se uz kontinualno obrazovanje i unapređenje stručne
+              spreme tehničkih lica, kroz korišćenje kvalitetnih alata, opreme i
+              savremenih tehnologija - svi procesi podignu na nivo visoke
+              efikasnosti i efektivnosti u odnosu na cenu pružene usluge, a sve
+              u korist kupca uz poštovanje vremena i dogovorenih obaveza, kako
+              od strane prodavca tako i od strane kupca.
+            </p>
           </div>
         </div>
 

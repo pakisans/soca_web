@@ -19,7 +19,8 @@ export const fetchArticlesByCategory = async (
   group,
   page = 1,
   limit = 20,
-  sort
+  sort,
+  partner = ""
 ) => {
   const url = new URL(
     `${process.env.NEXT_PUBLIC_API_URL}/articles/category/group`
@@ -99,13 +100,17 @@ export async function getArticleById(id) {
   return response.json();
 }
 
-export const fetchAllArticles = async (page, limit, search, sort) => {
+export const fetchAllArticles = async (page, limit, search, sort, partner) => {
   try {
     const searchQuery = search ? `&search=${encodeURIComponent(search)}` : "";
     const sortQuery = sort ? `&sort=${encodeURIComponent(sort)}` : "";
+    const partnerQuery = partner
+      ? `&partner=${encodeURIComponent(partner)}`
+      : "";
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/articles?page=${page}&limit=${limit}${searchQuery}${sortQuery}`
+      `${process.env.NEXT_PUBLIC_API_URL}/articles?page=${page}&limit=${limit}${searchQuery}${sortQuery}${partnerQuery}`
     );
+    console.log("alo debilu", response);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }

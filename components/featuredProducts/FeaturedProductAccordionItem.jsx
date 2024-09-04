@@ -41,14 +41,16 @@ const FeatureProductAccordionItem = ({
           </div>
         ) : null}
 
-        <Image
-          width={700}
-          height={700}
-          src={dimennsionImageUrl}
-          alt={`${title} dimenzije`}
-          objectFit="fill"
-          className="mt-5"
-        />
+        {dimennsionImageUrl ? (
+          <Image
+            width={700}
+            height={700}
+            src={dimennsionImageUrl}
+            alt={`${title} dimenzije`}
+            objectFit="fill"
+            className="mt-5"
+          />
+        ) : null}
 
         <div className="flex-1 mt-5">
           {dimensionListUrl ? (
