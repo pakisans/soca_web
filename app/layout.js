@@ -40,7 +40,7 @@ export const metadata = {
       "Servis bele tehnike Novi Sad. Servis i popravka veš mašina, frižidera, zamrzivača, šporeta i kućnih aparata u Novom Sadu.",
     image: "https://www.soca.rs/public/images/logo.jpg",
   },
-  // robots: "index, follow",
+  robots: "index, follow",
   charset: "UTF-8",
   language: "Serbian",
 };

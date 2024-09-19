@@ -107,6 +107,27 @@ const Partners = () => {
         proizvode i usluge, osiguravajući zadovoljstvo i kvalitet u svakodnevnom
         životu.
       </p>
+      <Image
+        src="/images/logo_soca.png"
+        alt="Logo"
+        width={120}
+        height={50}
+        className="mx-auto mt-[40px]"
+      />
+      <p className="text-center text-lg md:text-xl mt-12 text-night">
+        Naši ovlašćeni servisni partneri širom Srbije pružaju pouzdane usluge
+        popravke bele tehnike sa originalnim delovima. Bez obzira gde se
+        nalazite, naši partneri su dostupni za brzu i kvalitetnu uslugu, bilo u
+        Beogradu, Novom Sadu, Nišu, ili manjim mestima. <br />
+        Za kompletnu listu ovlašćenih servisnih partnera i njihove kontakt
+        informacije, posetite našu stranicu{" "}
+        <b>
+          <Link className="hover:text-offRed" href={"/servis/partnerstva"}>
+            ovde
+          </Link>
+        </b>
+        .
+      </p>
     </section>
   );
 };

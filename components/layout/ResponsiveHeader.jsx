@@ -111,7 +111,7 @@ const ResponsiveHeader = () => {
                           className="text-mintCream text-[1.4rem] hover:text-offRed"
                           onClick={handleCloseMenu}
                         >
-                          Profesionalne mašine za vešeraj
+                          Profesionalne mašine za vešeraje
                         </a>
                       </Link>
                       <button

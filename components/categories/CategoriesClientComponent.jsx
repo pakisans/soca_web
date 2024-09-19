@@ -59,7 +59,13 @@ const CategoriesClientComponent = ({
   );
 
   const handleSortChange = (sort) => {
-    router.push(`${pathname}?sort=${sort}`);
+    const queryParams = new URLSearchParams(searchParams);
+
+    // Dodajemo ili ažuriramo sort parametar
+    queryParams.set("sort", sort);
+
+    // Prosleđujemo sve query parametre nazad u URL
+    router.push(`${pathname}?${queryParams.toString()}`);
   };
 
   const handlePageChange = (newPage) => {
@@ -278,18 +284,16 @@ const CategoriesClientComponent = ({
         </div>
       </div>
 
-      {totalProducts > rowsPerPage && totalPages > 1 ? (
-        <Pagination
-          currentPage={currentPage}
-          rowsPerPage={rowsPerPage}
-          totalItems={totalProducts}
-          rowsPerPageOptions={rowsPerPageOptions}
-          onPageChange={handlePageChange}
-          onRowsPerPageChange={handleRowsPerPageChange}
-          page={currentPage}
-          totalPages={totalPages}
-        />
-      ) : null}
+      <Pagination
+        currentPage={currentPage}
+        rowsPerPage={rowsPerPage}
+        totalItems={totalProducts}
+        rowsPerPageOptions={rowsPerPageOptions}
+        onPageChange={handlePageChange}
+        onRowsPerPageChange={handleRowsPerPageChange}
+        page={currentPage}
+        totalPages={totalPages}
+      />
     </div>
   );
 };

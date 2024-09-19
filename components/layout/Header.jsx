@@ -62,7 +62,7 @@ const Header = () => {
                       legacyBehavior
                     >
                       <a className="block text-night text-[1.4rem] hover:bg-gray-600 hover:font-medium hover:text-mintCream hover:transition-colors transition-all duration-200 ease-in-out px-4 py-2">
-                        Profesionalne mašine za vešeraj
+                        Profesionalne mašine za vešeraje
                       </a>
                     </Link>
                   </li>
@@ -221,9 +221,15 @@ const Header = () => {
           </Link>
           {username ? (
             <div className="relative group">
-              <span className="text-night text-[1.2rem] lg:text-[1.6rem] uppercase hover:text-offRed font-bold cursor-pointer">
+              <span className="text-night text-[1.2rem] lg:text-[1.6rem] uppercase hover:text-offRed font-bold cursor-pointer hidden xl:block">
                 {username}
               </span>
+              <div className="flex justify-center items-center xl:hidden bg-gray-800 text-white rounded-full w-[40px] h-[40px] cursor-pointer">
+                {username
+                  .split(" ")
+                  .map((name) => name[0].toUpperCase())
+                  .join("")}
+              </div>
               <div className="absolute left-0 mt-[10px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <DataSocaButton />
                 <LogoutButton />

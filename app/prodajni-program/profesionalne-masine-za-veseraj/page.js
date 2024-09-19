@@ -2,19 +2,21 @@ import PageHeader from "@/components/global/PageHeader";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Profesionalne mašine za vešeraj | SOĆA Servis",
+  title: "Profesionalne mašine za vešeraje | SOĆA Servis",
   description:
-    "Otkrivamo visokokvalitetne profesionalne mašine za vešeraj, partneri smo proizvođača PRIMUS. Oprema, tehnologija i prateća sredstva koja omogućuju visoku efikasnost, niske troškove i dugotrajnu pouzdanost.",
+    "Otkrivamo visokokvalitetne profesionalne mašine za vešeraje, partneri smo proizvođača PRIMUS. Oprema, tehnologija i prateća sredstva koja omogućuju visoku efikasnost, niske troškove i dugotrajnu pouzdanost.",
   author: "SOĆA Servis AD",
   keywords:
-    "PRIMUS, profesionalne mašine, vešeraj, oprema za vešeraj, efikasnost, niske troškove, dugotrajna pouzdanost, Novi Sad",
+    "PRIMUS, profesionalne mašine, vešeraj, oprema za vešeraje, efikasnost, niske troškove, dugotrajna pouzdanost, Novi Sad",
 };
 
 export default function ProfesionlneMasineVeseraj() {
   return (
     <section className="bg-mintCream w-full">
-      <h1 className="sr-only">Profesionalne mašine za vešeraj - SOĆA Servis</h1>
-      <PageHeader title={"Profesionalne mašine za vešeraj"} />
+      <h1 className="sr-only">
+        Profesionalne mašine za vešeraje - SOĆA Servis
+      </h1>
+      <PageHeader title={"Profesionalne mašine za vešeraje"} />
       <div className="py-16 px-[2rem] sm:px-[4rem]">
         <div className="text-left mb-12 w-full">
           <div className="bg-white p-8 rounded-lg shadow-md">
