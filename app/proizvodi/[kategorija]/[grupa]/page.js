@@ -31,6 +31,7 @@ export default async function Proizvodi({ params, searchParams }) {
   const page = parseInt(searchParams.page) || 1;
   const limit = parseInt(searchParams.limit) || 20;
   const sort = searchParams.sort || "";
+  const partner = searchParams.partner  || "";
 
   const manufacturersPromies = fetchAllManufacturers();
   const categoriesPromise = getCategories();
@@ -39,7 +40,8 @@ export default async function Proizvodi({ params, searchParams }) {
     decodedGrupa,
     page,
     limit,
-    sort
+    sort,
+    partner
   );
 
   const [categories, articlesData, manufacturersData] = await Promise.all([

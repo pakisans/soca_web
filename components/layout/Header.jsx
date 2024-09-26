@@ -57,7 +57,7 @@ const Header = () => {
                 <ul className="w-full mt-[2.1rem] bg-mintCream border border-white shadow-xl rounded-[.2rem] ">
                   <li>
                     <Link
-                      href="/prodajni-program/profesionalne-masine-za-veseraj"
+                      href="/prodajni-program/profesionalne-masine-za-veseraje"
                       passHref
                       legacyBehavior
                     >
@@ -230,7 +230,7 @@ const Header = () => {
                   .map((name) => name[0].toUpperCase())
                   .join("")}
               </div>
-              <div className="absolute left-0 mt-[10px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute right-0 mt-[15px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <DataSocaButton />
                 <LogoutButton />
               </div>
@@ -243,7 +243,7 @@ const Header = () => {
             </Link>
           )}
         </div>
-        <ResponsiveHeader />
+        <ResponsiveHeader username={username} />
       </header>
     </>
   );

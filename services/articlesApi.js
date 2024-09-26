@@ -31,34 +31,8 @@ export const fetchArticlesByCategory = async (
   if (group) {
     url.searchParams.append("grupa", group);
   }
-  url.searchParams.append("page", page);
-  url.searchParams.append("limit", limit);
-  if (sort) {
-    url.searchParams.append("sort", sort);
-  }
-
-  return fetch(url.toString())
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-      console.error("Failed to fetch articles:", error);
-      throw error;
-    });
-};
-
-export const fetchArticlesByCategoryAll = async (
-  category,
-  page = 1,
-  limit = 20,
-  sort
-) => {
-  const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/articles/category`);
-  if (category) {
-    url.searchParams.append("kategorija", category);
+  if(partner) {
+    url.searchParams.append("partner", partner)
   }
   url.searchParams.append("page", page);
   url.searchParams.append("limit", limit);
@@ -110,7 +84,7 @@ export const fetchAllArticles = async (page, limit, search, sort, partner) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/articles?page=${page}&limit=${limit}${searchQuery}${sortQuery}${partnerQuery}`
     );
-    console.log("alo debilu", response);
+
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }

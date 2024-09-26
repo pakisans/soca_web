@@ -50,9 +50,20 @@ const CategoryItem = memo(
                   key={group.id}
                   href={`/proizvodi/${category.naziv
                     .toLowerCase()
-                    .replace(/ /g, "-")}/${group.naziv
+                    .replace(/ /g, "-")
+                    .replace(/č/g, "c")
+                    .replace(/ć/g, "c")
+                    .replace(/š/g, "s")
+                    .replace(/Š/g, "s")
+                    .replace(/đ/g, "dj")
+                    .replace(/ž/g, "z")}/${group.naziv
                     .toLowerCase()
-                    .replace(/ /g, "-")}`}
+                    .replace(/ /g, "-")
+                    .replace(/č/g, "c")
+                    .replace(/ć/g, "c")
+                    .replace(/š/g, "s")
+                    .replace(/đ/g, "dj")
+                    .replace(/ž/g, "z")}`}
                 >
                   <div className="cursor-pointe text-[14px] p-4 hover:bg-gray-700 hover:text-mint transition duration-300">
                     &#x2022; {capitalizeFirstLetter(group.naziv)}

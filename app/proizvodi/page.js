@@ -17,7 +17,7 @@ const Proizvodi = async (context) => {
     pretraga,
     sort,
   };
-  console.log("partner", partner);
+
   const categoriesPromise = getCategories();
   const manufacturersPromies = fetchAllManufacturers();
   const articlesPromise = fetchAllArticles(

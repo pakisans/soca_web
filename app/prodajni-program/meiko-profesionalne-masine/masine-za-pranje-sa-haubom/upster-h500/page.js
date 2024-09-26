@@ -175,14 +175,6 @@ export default function UpsterH500Details() {
               }
             />
           </section>
-
-          <section className="py-16 px-8 md:px-16 bg-gray-50 text-center">
-            <Link href="/kontakt" legacyBehavior passHref>
-              <a className="text-lg font-semibold text-white bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">
-                Zatražite ponudu
-              </a>
-            </Link>
-          </section>
         </div>
       </div>
     </>

@@ -171,7 +171,7 @@ const CategoriesClientComponent = ({
           </button>
           <div
             className={cn(
-              "absolute left-0 mt-4 w-[35rem] xl:w-[110rem] 2xl:w-[140rem] bg-gray-800 text-white shadow-lg transition-opacity duration-300 ease-in-out transform-gpu",
+              "absolute left-0 mt-4 w-[35rem] xl:w-[110rem] 2xl:w-[140rem] bg-gray-800 text-white shadow-lg transition-opacity duration-300 ease-in-out transform-gpu z-[9999]",
               {
                 hidden: !isCategoryMenuOpen,
                 block: isCategoryMenuOpen,
@@ -217,8 +217,9 @@ const CategoriesClientComponent = ({
 
                 return (
                   <Link
+                  key={`proizvodjac-${key}`}
                     className="w-full text-[1.4rem]"
-                    href={`/proizvodi?${queryParams.toString()}`}
+                    href={`${pathname}?${queryParams.toString()}`}
                   >
                     <li
                       key={`proizvodjac-${key}`}

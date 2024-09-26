@@ -44,7 +44,7 @@ export default function ProdajniProgram() {
             </p>
             <div className="flex justify-center mt-6">
               <Link
-                href="/prodajni-program/profesionalne-masine-za-veseraj"
+                href="/prodajni-program/profesionalne-masine-za-veseraje"
                 className="text-lg font-semibold text-white bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md"
               >
                 Saznajte više

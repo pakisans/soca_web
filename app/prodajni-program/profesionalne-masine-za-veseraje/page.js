@@ -1,4 +1,5 @@
 import PageHeader from "@/components/global/PageHeader";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -50,38 +51,42 @@ export default function ProfesionlneMasineVeseraj() {
             <Link
               href="https://www.soca.rs/public/pdf/PrimusSusare.pdf"
               passHref
-              className="text-lg font-semibold text-white bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md text-center"
+              className="text-lg font-semibold text-white text-center"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Primus Sušare
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Sušare</button>
+              <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-susare.png'} />
             </Link>
             <Link
               href="https://www.soca.rs/public/pdf/PrimusKomercijalniAparati.pdf              "
               passHref
-              className="text-lg font-semibold text-white bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md text-center"
+              className="text-lg font-semibold text-white text-center"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Primus Komercijalni Aparati
+               <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Komercijalni Aparati</button>
+               <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-komercijalni-aparati.png'} />
             </Link>
             <Link
               href="https://www.soca.rs/public/pdf/PrimusValjciZaPeglanje.pdf"
               passHref
-              className="text-lg font-semibold text-white bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md text-center"
+              className="text-lg font-semibold text-white text-center"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Primus Valjci za Peglanje
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Valjci za Peglanje</button>
+               <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-valjci-za-peglanje.png'} />
             </Link>
             <Link
               href="https://www.soca.rs/public/pdf/PrimusVesMasine.pdf"
               passHref
               rel="noopener noreferrer"
               target="_blank"
-              className="text-lg font-semibold text-white bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md text-center"
+              className="text-lg font-semibold text-white text-center"
             >
-              Primus Veš Mašine
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Veš Mašine</button>
+               <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-ves-masine.png'} />
             </Link>
           </div>
         </section>

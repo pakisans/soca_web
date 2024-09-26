@@ -3,6 +3,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import GoogleMap from "@/components/global/GoogleMap";
 import PageHeader from "@/components/global/PageHeader";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "O nama i Kontakt - SOĆA Servis bele tehnike Novi Sad",
@@ -169,7 +170,7 @@ export default function AboutAndContact() {
             <div className="bg-gradient-to-r from-gray-700 rounded-tr-lg to-gray-900 text-mintCream p-10 rounded-lg shadow-lg lg:w-[45%] ">
               <div>
                 <h3 className="text-mintCream text-center md:text-left text-[2.4rem] md:text-[2.8rem] mb-6">
-                  Soća Servis AD, Identifikacioni podaci
+                  Soća Servis AD, <Link className="underline hover:text-offRed" target="_blank" href='https://www.soca.rs/public/pdf/obrazacidentifikacija.pdf'>Identifikacioni podaci</Link>
                 </h3>
                 <div className="space-y-6 text-[1.6rem]">
                   <div className="flex flex-col">

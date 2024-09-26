@@ -110,14 +110,8 @@ export default function ServisProfesionalnihMasinaZaSudove() {
             <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6 text-center">
               Dijagnostika i otklanjanje kvarova
             </h3>
-            <div className="flex flex-col md:flex-row gap-10 md:gap-20">
-              <p className="text-base md:text-lg leading-8 md:leading-[2.4rem]">
-                Kao servis mašina za sudove koji posluje gotovo 35 godina –
-                bavimo se isključivo novim i originalnim delovima. Naš posao je
-                da svaki kvar otklonimo tako da stanje mašine za pranje sudova
-                bude fabričko.
-              </p>
-              <div className="w-full relative h-[400px] md:h-[400px]">
+              <div className="flex flex-col gap-10 lg:gap-20 lg:flex-row mt-[20px]">
+              <div className="w-full lg:w-[50%] mx-auto relative h-[500px] md:h-[700px]">
                 <Image
                   fill
                   // objectFit="cover"
@@ -126,6 +120,22 @@ export default function ServisProfesionalnihMasinaZaSudove() {
                   className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                 />
               </div>
+            <div className="lg:w-[50%] pl-[20px] lg:pl-0">
+              <ul className="flex flex-col gap-[10px] lg:gap-[20px] list-disc">
+              <li className="text-base md:text-lg leading-8 md:leading-[2.4rem]">
+                Naš tim stručnjaka je specijalizovan za dijagnostiku i otklanjanje kvarova na profesionalnim mašinama za sudove svih brendova, uključujući MEIKO, Hobart, Winterhalter, i Electrolux. Sa više od 35 godina iskustva, nudimo pouzdanu uslugu sa ciljem da mašinu vratimo u fabričko stanje.
+              </li>
+              <li className="text-base md:text-lg leading-8 md:leading-[2.4rem]">
+                Koristimo naprednu dijagnostiku kako bismo precizno identifikovali svaki kvar i otklonili ga koristeći samo nove i originalne delove. Naša misija je da vaša mašina za sudove ponovo radi kao nova, osiguravajući maksimalnu efikasnost i dugotrajnost.
+              </li>
+              <li className="text-base md:text-lg leading-8 md:leading-[2.4rem]">
+                Bez obzira na vrstu problema – bilo da je u pitanju zapušenje, kvar grejača ili elektronike – naši tehničari su opremljeni za brzo rešavanje problema. Naša usluga uključuje analizu rada mašine, procenu stanja i predlog rešenja sa jasnim informacijama o potrebnim popravkama.
+              </li>
+              <li className="text-base md:text-lg leading-8 md:leading-[2.4rem]">
+                Uz stručnu podršku i savete naših servisera, vaša mašina za sudove će raditi pouzdano, omogućujući vam da se fokusirate na ono što je važno – kvalitetnu uslugu prema vašim klijentima.
+              </li>
+              </ul>
+            </div>
             </div>
           </div>
         </section>
@@ -237,7 +247,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
                   ponudu za kupovinu nove mašine za sudove:{" "}
                   <Link
                     className="text-blue-500 hover:text-offRed transition-colors duration-200"
-                    href="/prodajni-program/profesionalne-masine-za-veseraj"
+                    href="/prodajni-program/profesionalne-masine-za-veseraje"
                   >
                     Pogledajte našu <b>PRIMUS</b> ponudu
                   </Link>

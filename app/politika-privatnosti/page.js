@@ -45,10 +45,10 @@ export default function PolitikaPrivatnosti() {
             Ako imate pitanja o našoj politici privatnosti, kontaktirajte nas
             putem e-pošte na{" "}
             <Link
-              href="mailto:soca@soca.rs"
+              href="mailto:servis@soca.rs "
               className="text-blue-500 hover:text-blue-700"
             >
-              soca@soca.rs
+              servis@soca.rs 
             </Link>
             .
           </p>

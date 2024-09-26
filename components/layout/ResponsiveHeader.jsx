@@ -1,12 +1,13 @@
 "use client";
-import { useState } from "react";
+import { memo, useState } from "react";
 import Link from "next/link";
 import CartIcon from "../icons/CartIcon";
 
 import { useRouter } from "next/navigation";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
+import { handleLogout } from "@/utils/logoutUtil";
 
-const ResponsiveHeader = () => {
+const ResponsiveHeader = ({username}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState({});
   const [animateMenu, setAnimateMenu] = useState(false);
@@ -103,7 +104,7 @@ const ResponsiveHeader = () => {
                   <li className="relative">
                     <div className="flex justify-between items-center">
                       <Link
-                        href="/prodajni-program/profesionalne-masine-za-veseraj"
+                        href="/prodajni-program/profesionalne-masine-za-veseraje"
                         passHref
                         legacyBehavior
                       >
@@ -117,7 +118,7 @@ const ResponsiveHeader = () => {
                       <button
                         className="focus:outline-none"
                         onClick={() =>
-                          toggleSubMenu("profesionalne-masine-za-veseraj")
+                          toggleSubMenu("profesionalne-masine-za-veseraje")
                         }
                       >
                         <ChevronDownIcon
@@ -125,18 +126,18 @@ const ResponsiveHeader = () => {
                           height={8}
                           color="mintCream"
                           styles={`transition-transform transform ${
-                            subMenuOpen["profesionalne-masine-za-veseraj"]
+                            subMenuOpen["profesionalne-masine-za-veseraje"]
                               ? "rotate-180"
                               : "rotate-0"
                           }`}
                         />
                       </button>
                     </div>
-                    {subMenuOpen["profesionalne-masine-za-veseraj"] && (
+                    {subMenuOpen["profesionalne-masine-za-veseraje"] && (
                       <ul className="mt-2 pl-4 space-y-2">
                         <li>
                           <Link
-                            href="/prodajni-program/profesionalne-masine-za-veseraj/masina-za-pranje"
+                            href="/prodajni-program/profesionalne-masine-za-veseraje/masina-za-pranje"
                             passHref
                             legacyBehavior
                           >
@@ -428,20 +429,27 @@ const ResponsiveHeader = () => {
                   <a className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold">
                     Korpa
                   </a>
-                  <CartIcon width={30} height={30} color={"#1C3738"} />
+                  <CartIcon width={30} height={30} color={"#8E1B13"} />
                 </div>
               </Link>
             </li>
-            <li>
-              <Link href="/prijava" passHref legacyBehavior>
-                <a
-                  className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold"
-                  onClick={handleCloseMenu}
-                >
-                  Prijava
-                </a>
-              </Link>
-            </li>
+            {username ? (
+              <li onClick={() => {handleLogout(); handleCloseMenu()}}>
+                <Link href="/#" passHref legacyBehavior>
+                  <a className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold">
+                    Odjava
+                  </a>
+                </Link>
+              </li>
+            ) : (
+              <li onClick={handleCloseMenu}>
+                <Link href="/prijava" passHref legacyBehavior>
+                  <a className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold">
+                    Prijava
+                  </a>
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
       )}
@@ -449,4 +457,4 @@ const ResponsiveHeader = () => {
   );
 };
 
-export default ResponsiveHeader;
+export default memo(ResponsiveHeader);
