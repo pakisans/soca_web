@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Profesionalne mašine za vešeraje | SOĆA Servis",
+  title: "Profesionalne mašine za vešeraje - SOĆA Servis",
   description:
     "Otkrivamo visokokvalitetne profesionalne mašine za vešeraje, partneri smo proizvođača PRIMUS. Oprema, tehnologija i prateća sredstva koja omogućuju visoku efikasnost, niske troškove i dugotrajnu pouzdanost.",
   author: "SOĆA Servis AD",

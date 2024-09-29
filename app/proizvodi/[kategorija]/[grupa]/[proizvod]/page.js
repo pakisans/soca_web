@@ -122,7 +122,7 @@ export default async function ProizvodPage({ params, searchParams }) {
                 ) : (
                   <>
                     <p className="text-red-600 font-bold text-lg md:text-xl mb-2 uppercase">
-                      DEO NIJE NA STANJU
+                      PROIZVOD NIJE NA STANJU
                     </p>
                     <ProizvodPageClient article={article} />
                   </>

@@ -82,7 +82,7 @@ export default function AboutAndContact() {
                   },
                   {
                     year: 2007,
-                    text: "Direktni ugovor sa SEB grupom i FRANKE.",
+                    text: "Direktni ugovor sa FRANKE grupom.",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-4">
@@ -170,7 +170,7 @@ export default function AboutAndContact() {
             <div className="bg-gradient-to-r from-gray-700 rounded-tr-lg to-gray-900 text-mintCream p-10 rounded-lg shadow-lg lg:w-[45%] ">
               <div>
                 <h3 className="text-mintCream text-center md:text-left text-[2.4rem] md:text-[2.8rem] mb-6">
-                  Soća Servis AD, <Link className="underline hover:text-offRed" target="_blank" href='https://www.soca.rs/public/pdf/obrazacidentifikacija.pdf'>Identifikacioni podaci</Link>
+                  Soća Servis AD, <Link className="underline hover:text-offRed" target="_blank" href='https://www.soca.rs/public/pdf/obrazacidentifikacija.pdf'>Identifikacioni podaci.pdf</Link>
                 </h3>
                 <div className="space-y-6 text-[1.6rem]">
                   <div className="flex flex-col">
@@ -205,7 +205,7 @@ export default function AboutAndContact() {
                     <div className="ml-10">
                       <p>
                         <a
-                          href="tel:+381021444147"
+                          href="tel:+38121444147"
                           className="hover:text-offRed"
                         >
                           (+381) 021 444 147
@@ -213,7 +213,7 @@ export default function AboutAndContact() {
                       </p>
                       <p>
                         <a
-                          href="tel:+3810216339731"
+                          href="tel:+381216339731"
                           className="hover:text-offRed"
                         >
                           (+381) 021 6339 731
@@ -228,7 +228,7 @@ export default function AboutAndContact() {
                     </div>
 
                     <p className="ml-10">
-                      <a href="tel:+381063444085" className="hover:text-offRed">
+                      <a href="tel:+38163444085" className="hover:text-offRed">
                         (+381) 063 444 085
                       </a>
                     </p>
@@ -243,6 +243,7 @@ export default function AboutAndContact() {
                       <a
                         href="mailto:servis@soca.rs"
                         className="hover:text-offRed"
+                        target="_blank"
                       >
                         servis@soca.rs
                       </a>

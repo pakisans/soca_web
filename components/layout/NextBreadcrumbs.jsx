@@ -43,7 +43,7 @@ const NextBreadcrumbs = ({ breadcrumbs }) => {
 
       <div className="flex flex-col xsm:flex-row items-center lg:gap-x-8 mt-4 xsm:mt-0">
         <a
-          href={`tel:(+381) 063 444 085`}
+          href={`tel:(+381) 63 444 085`}
           className="flex items-center gap-2 group"
         >
           <PhoneIcon
@@ -59,6 +59,7 @@ const NextBreadcrumbs = ({ breadcrumbs }) => {
         <a
           href="mailto:servis@soca.rs"
           className="flex items-center gap-2 ml-0 xsm:ml-4 mt-2 xsm:mt-0 group"
+          target="_blank"
         >
           <MailIcon
             width={30}

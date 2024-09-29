@@ -1,38 +1,21 @@
 import Link from "next/link";
 import Accordion from "../global/Accordion";
 
+export const metadata = {
+  title: "Bela tehnika saveti i pitanja, frižideri i ugradne rerne, veš mašine i sudo mašine, klima uređaji, bela tehnika i kućni aparati - Saveti SOĆA Servis",
+  description:
+    "Bela tehnika - saveti. Frižideri, Zamrzivači, Šporeti i Ugradne rerne, Ugradne ploče i Indukcijske ploče, Veš mašine, Klima uređaji i Mašine za suđe, sušenje, usisivači i kafe aparati. Termostat na aparatima, brzo hlađenje, neprijatni mirisi, samootapajućeg frižidera. Mašina ne izbacuje vodu, izgužvan veš, ne radi centrifuga. Čišćenje klima uređaja. Sudomašina i tablete za pranje, kamenac. Sušare. Prodaja i servis tehnike.",
+  author: "SOĆA Servis AD",
+  keywords:
+    "servis bele tehnike, saveti za održavanje, Frižideri, Zamrzivači, Šporeti i Ugradne rerne, Ugradne ploče, Indukcijske ploče, Veš mašine, Klima uređaji, Mašine za suđe, sušenje, usisivači i kafe aparati, Duraflow, electrolux, sudo mašina, održavanje, Mašine za sušenje, Usisivači, Kafe aparati, veš mašine, čišćenje kamenca",
+};
+
 const Faq = () => {
   return (
     <div>
       <p className="w-fit mx-auto mb-[2rem] text-[3.6rem]">
         Saveti i često postavljana pitanja
       </p>
-      <Accordion
-        title={
-          "Frižideri - Kombinovani frižideri - Zamrzivači - Frižideri Side by Side"
-        }
-        childrens={[
-          {
-            subtitle:
-              '"Frižider otapan, malo pomagao nožem ... i samo krenulo da se čuje: pšššššššš ?"',
-            text: 'Nikako ne radite "ubrzavanje" otapanja leda oštrim predmetima, postoji velika opasnost probijanja sistema cevi i verovatnoće da rashladna tečnost (freon) "iscuri", već treba pustiti da se prirodnim putem otopi, eventualno otapanje pomoći toplom vodom.',
-          },
-          {
-            subtitle:
-              '"Treba mi BRZO hlađenje, termostat je na maksimumu, ali frižider i dalje sporo i slabo hladi. Da li da pozovem servis za frižider?"',
-            text: "Termostat na aparatima ne držati na maksimumu, već izmedju 1/3 do 2/3 u zavisnosti od željene postignute temperature (razlika od maksimuma do minimuma je relativno mala, a sam položaj termostata ne utiče na brzinu hladjenja, već samo na krajnju dostignutu temperaturu.",
-          },
-          {
-            subtitle:
-              '"Zamrzivač je napunjen svežim mesom, uključen je SUPER prekidač (sijaju i crvena i žuta lampica), i posle 10 sati rada i dalje sija "žuta lampica". Da li je zamrzivač pokvaren?"',
-            text: 'Funkciju "SUPER-a" aktivirati minimalno 24h pre unosa sveže hrane da bi zamrzivač postigao što nižu temperaturu, i nakon unosa sveže hrane uprosečivanjem temperature što pre zamrzao novi sadržaj. U protivnom nema svrhe aktiviranja prekidača. SVI kućni uređaji rade ISTOM brzinom hlađenja, menja se samo krajnja temperatura koju treba da postigne. Sa druge strane, ako ne isključite ovu funkciju uređaj će raditi neprestano.',
-          },
-          {
-            subtitle: '"Neprijatni mirisi, samootapajućeg frižidera"',
-            text: "Bez obzira na automatski rad i funkcje samootapanja kako frižidera, tako i zamrzivača, preporuka je da se uređaj periodično isključi i otopi zbog higijenskog održavanja. Rashladni aparati koji imaju filtere mirisa i sl. (npr. Electrolux-ov AIR FILTER FOR REFRIGERATOR - šifra za poručivanje 814.26.001), treba da se po preporuci proizvođača proveravaju i menjaju, jer apsorpcijom mirisa vremenom postaju izvor neprijatnih mirisa i zaraze. Unutrašnjost aparata, takođe treba periodično prati i očistiti sredstvima adekvatnim za rashladne uređaje (preporuka za REFRIGERATOR CLEANER - šifra za poručivanje 925.26.004)",
-          },
-        ]}
-      />
       <Accordion
         title={
           "Šporeti  -  Ugradne rerne  -  Ugradne ploče  -  Indukcijske ploče"
@@ -103,28 +86,6 @@ const Faq = () => {
           {
             subtitle: '"Neprijatni miris iz veš mašine"',
             text: "Preporučuje se korišćenje sredstava za čišćenje i pranje veš mašine. Jedno od njih je Calc Buster (od istoimenog proizvođača, šifra za poručivanje - 920.00.038) ili CLEAN&CARE (šifra za poručivanje 925.26.007) efikasno uklanjaju i kamenac i neprijatne mirise iz veš mašina i mašina za suđe",
-          },
-        ]}
-      />
-      <Accordion
-        title={"Klima uređaji - Održavanje i upotreba"}
-        childrens={[
-          {
-            subtitle: '"Neprijatan miris kada klima radi"',
-            text: "Godišnje, pre sezone (i grejanja i hlađenja) pozovite servis da uradi tehničko i higijensko čišćenje klima uređaja. Čistite filtere redovno – što češće to bolje – ne ređe od jednom nedeljno. Pri održavanju, uređaj maksimalno čistiti sa sredstvima koja nisu na bazi teških hemija (vazduhom se lako prenose i udišu!!!) već koristiti sredstva koja su prirodnog porekla, bio razgradiva i minimalno štetna.",
-          },
-          {
-            subtitle:
-              '"Neprijatnosti i nelagode pri korišćenju i radu klima uređaja"',
-            text: "Ne zadavati prevelike temperaturne razlike u prostoru u odnosu na spoljašnju temperaturu. Koristiti što indirektnije duvanje (po ovom pitanju su 'kanalske klime' najpoželjnije, a 'zidne' najnepožeđnije za korišćenje) kako u grejanju, tako i u hlađenju. Za korišćenje klima uređaja noću, preporuka je upotrebe takozvanog SLEEP mode, gde uređaj u toku rada podigne par stepeni temperaturu (u hlađenju, a spušta u grejanju) – kako da bi stvorio prijatniju atmosferu, ujedno i da bi dobili izvesne uštede u radu.",
-          },
-          {
-            subtitle: '"Korišćenje funkcije isušivanja isparivača"',
-            text: "Koristiti funkciju isušivanja isparivača (unutrašnje jedinice) svaki put kad uređaj prekida sa radom (ako to već ne radi automatski). Time se smanjuje skupljanje neprijatnih mirisa, i smanjuje mogućnost za skupljanje bakterija na unutrašnjoj jedinici. Korisnici koji koriste klime i za grejanje (osim hlađenja) bi trebali češće pozivati servis da kontroliše uređaj kao i da češće rade čišćenja.",
-          },
-          {
-            subtitle: '"REDOVNO radite godišnji servis"',
-            text: "Kvalitetniji klima uređaji mogu grejati na SVIM temperaturama (npr. na -20°C) – pitanje je samo njihove efikasnosti (odnos utrošene i proizvedene energije). REDOVNO radite godišnji servis. Na kraju, to je uslov SVIH uvoznika za produženje garancije.",
           },
         ]}
       />
@@ -211,6 +172,55 @@ const Faq = () => {
           {
             subtitle: '"Kafa je neprijatnog mirisa"',
             text: "Pored redovnog čišćenja od kamenca i masnoća, bi bar jednom godišnje trebali aparat doneti u servis na čišćenje koje podrazumeva detaljno rastavljanje i pranje – prvenstveno kao higijensko-zdravstveno čišćenje, a zatim i zbog lepšeg ukusa i boljeg ugođaja u konzumiranju kafe.",
+          },
+        ]}
+      />
+
+      <Accordion
+        title={
+          "Frižideri - Kombinovani frižideri - Zamrzivači - Frižideri Side by Side"
+        }
+        childrens={[
+          {
+            subtitle:
+              '"Frižider otapan, malo pomagao nožem ... i samo krenulo da se čuje: pšššššššš ?"',
+            text: 'Nikako ne radite "ubrzavanje" otapanja leda oštrim predmetima, postoji velika opasnost probijanja sistema cevi i verovatnoće da rashladna tečnost (freon) "iscuri", već treba pustiti da se prirodnim putem otopi, eventualno otapanje pomoći toplom vodom.',
+          },
+          {
+            subtitle:
+              '"Treba mi BRZO hlađenje, termostat je na maksimumu, ali frižider i dalje sporo i slabo hladi. Da li da pozovem servis za frižider?"',
+            text: "Termostat na aparatima ne držati na maksimumu, već izmedju 1/3 do 2/3 u zavisnosti od željene postignute temperature (razlika od maksimuma do minimuma je relativno mala, a sam položaj termostata ne utiče na brzinu hladjenja, već samo na krajnju dostignutu temperaturu.",
+          },
+          {
+            subtitle:
+              '"Zamrzivač je napunjen svežim mesom, uključen je SUPER prekidač (sijaju i crvena i žuta lampica), i posle 10 sati rada i dalje sija "žuta lampica". Da li je zamrzivač pokvaren?"',
+            text: 'Funkciju "SUPER-a" aktivirati minimalno 24h pre unosa sveže hrane da bi zamrzivač postigao što nižu temperaturu, i nakon unosa sveže hrane uprosečivanjem temperature što pre zamrzao novi sadržaj. U protivnom nema svrhe aktiviranja prekidača. SVI kućni uređaji rade ISTOM brzinom hlađenja, menja se samo krajnja temperatura koju treba da postigne. Sa druge strane, ako ne isključite ovu funkciju uređaj će raditi neprestano.',
+          },
+          {
+            subtitle: '"Neprijatni mirisi, samootapajućeg frižidera"',
+            text: "Bez obzira na automatski rad i funkcje samootapanja kako frižidera, tako i zamrzivača, preporuka je da se uređaj periodično isključi i otopi zbog higijenskog održavanja. Rashladni aparati koji imaju filtere mirisa i sl. (npr. Electrolux-ov AIR FILTER FOR REFRIGERATOR - šifra za poručivanje 814.26.001), treba da se po preporuci proizvođača proveravaju i menjaju, jer apsorpcijom mirisa vremenom postaju izvor neprijatnih mirisa i zaraze. Unutrašnjost aparata, takođe treba periodično prati i očistiti sredstvima adekvatnim za rashladne uređaje (preporuka za REFRIGERATOR CLEANER - šifra za poručivanje 925.26.004)",
+          },
+        ]}
+      />
+      <Accordion
+        title={"Klima uređaji - Održavanje i upotreba"}
+        childrens={[
+          {
+            subtitle: '"Neprijatan miris kada klima radi"',
+            text: "Godišnje, pre sezone (i grejanja i hlađenja) pozovite servis da uradi tehničko i higijensko čišćenje klima uređaja. Čistite filtere redovno – što češće to bolje – ne ređe od jednom nedeljno. Pri održavanju, uređaj maksimalno čistiti sa sredstvima koja nisu na bazi teških hemija (vazduhom se lako prenose i udišu!!!) već koristiti sredstva koja su prirodnog porekla, bio razgradiva i minimalno štetna.",
+          },
+          {
+            subtitle:
+              '"Neprijatnosti i nelagode pri korišćenju i radu klima uređaja"',
+            text: "Ne zadavati prevelike temperaturne razlike u prostoru u odnosu na spoljašnju temperaturu. Koristiti što indirektnije duvanje (po ovom pitanju su 'kanalske klime' najpoželjnije, a 'zidne' najnepožeđnije za korišćenje) kako u grejanju, tako i u hlađenju. Za korišćenje klima uređaja noću, preporuka je upotrebe takozvanog SLEEP mode, gde uređaj u toku rada podigne par stepeni temperaturu (u hlađenju, a spušta u grejanju) – kako da bi stvorio prijatniju atmosferu, ujedno i da bi dobili izvesne uštede u radu.",
+          },
+          {
+            subtitle: '"Korišćenje funkcije isušivanja isparivača"',
+            text: "Koristiti funkciju isušivanja isparivača (unutrašnje jedinice) svaki put kad uređaj prekida sa radom (ako to već ne radi automatski). Time se smanjuje skupljanje neprijatnih mirisa, i smanjuje mogućnost za skupljanje bakterija na unutrašnjoj jedinici. Korisnici koji koriste klime i za grejanje (osim hlađenja) bi trebali češće pozivati servis da kontroliše uređaj kao i da češće rade čišćenja.",
+          },
+          {
+            subtitle: '"REDOVNO radite godišnji servis"',
+            text: "Kvalitetniji klima uređaji mogu grejati na SVIM temperaturama (npr. na -20°C) – pitanje je samo njihove efikasnosti (odnos utrošene i proizvedene energije). REDOVNO radite godišnji servis. Na kraju, to je uslov SVIH uvoznika za produženje garancije.",
           },
         ]}
       />

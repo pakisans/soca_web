@@ -47,6 +47,7 @@ export default function PolitikaPrivatnosti() {
             <Link
               href="mailto:servis@soca.rs "
               className="text-blue-500 hover:text-blue-700"
+              target="_blank"
             >
               servis@soca.rs 
             </Link>

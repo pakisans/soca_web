@@ -55,36 +55,6 @@ const Faq = () => {
               .
             </p>
           </section>
-
-          <section className="">
-            <Accordion
-              title={
-                "Frižideri - Kombinovani frižideri - Zamrzivači - Frižideri Side by Side"
-              }
-              childrens={[
-                {
-                  subtitle:
-                    '"Frižider otapan, malo pomagao nožem ... i samo krenulo da se čuje: pšššššššš ?"',
-                  text: 'Nikako ne radite "ubrzavanje" otapanja leda oštrim predmetima, postoji velika opasnost probijanja sistema cevi i verovatnoće da rashladna tečnost (freon) "iscuri", već treba pustiti da se prirodnim putem otopi, eventualno otapanje pomoći toplom vodom.',
-                },
-                {
-                  subtitle:
-                    '"Treba mi BRZO hlađenje, termostat je na maksimumu, ali frižider i dalje sporo i slabo hladi. Da li da pozovem servis za frižider?"',
-                  text: "Termostat na aparatima ne držati na maksimumu, već izmedju 1/3 do 2/3 u zavisnosti od željene postignute temperature (razlika od maksimuma do minimuma je relativno mala, a sam položaj termostata ne utiče na brzinu hladjenja, već samo na krajnju dostignutu temperaturu.",
-                },
-                {
-                  subtitle:
-                    '"Zamrzivač je napunjen svežim mesom, uključen je SUPER prekidač (sijaju i crvena i žuta lampica), i posle 10 sati rada i dalje sija "žuta lampica". Da li je zamrzivač pokvaren?"',
-                  text: 'Funkciju "SUPER-a" aktivirati minimalno 24h pre unosa sveže hrane da bi zamrzivač postigao što nižu temperaturu, i nakon unosa sveže hrane uprosečivanjem temperature što pre zamrzao novi sadržaj. U protivnom nema svrhe aktiviranja prekidača. SVI kućni uređaji rade ISTOM brzinom hlađenja, menja se samo krajnja temperatura koju treba da postigne. Sa druge strane, ako ne isključite ovu funkciju uređaj će raditi neprestano.',
-                },
-                {
-                  subtitle: '"Neprijatni mirisi, samootapajućeg frižidera"',
-                  text: "Bez obzira na automatski rad i funkcje samootapanja kako frižidera, tako i zamrzivača, preporuka je da se uređaj periodično isključi i otopi zbog higijenskog održavanja. Rashladni aparati koji imaju filtere mirisa i sl. (npr. Electrolux-ov AIR FILTER FOR REFRIGERATOR - šifra za poručivanje 814.26.001), treba da se po preporuci proizvođača proveravaju i menjaju, jer apsorpcijom mirisa vremenom postaju izvor neprijatnih mirisa i zaraze. Unutrašnjost aparata, takođe treba periodično prati i očistiti sredstvima adekvatnim za rashladne uređaje (preporuka za REFRIGERATOR CLEANER - šifra za poručivanje 925.26.004)",
-                },
-              ]}
-            />
-          </section>
-
           <section className="">
             <Accordion
               title={
@@ -259,6 +229,35 @@ const Faq = () => {
                 {
                   subtitle: '"Kafa je neprijatnog mirisa"',
                   text: "Pored redovnog čišćenja od kamenca i masnoća, bi bar jednom godišnje trebali aparat doneti u servis na čišćenje koje podrazumeva detaljno rastavljanje i pranje – prvenstveno kao higijensko-zdravstveno čišćenje, a zatim i zbog lepšeg ukusa i boljeg ugođaja u konzumiranju kafe.",
+                },
+              ]}
+            />
+          </section>
+
+          <section className="">
+            <Accordion
+              title={
+                "Frižideri - Kombinovani frižideri - Zamrzivači - Frižideri Side by Side"
+              }
+              childrens={[
+                {
+                  subtitle:
+                    '"Frižider otapan, malo pomagao nožem ... i samo krenulo da se čuje: pšššššššš ?"',
+                  text: 'Nikako ne radite "ubrzavanje" otapanja leda oštrim predmetima, postoji velika opasnost probijanja sistema cevi i verovatnoće da rashladna tečnost (freon) "iscuri", već treba pustiti da se prirodnim putem otopi, eventualno otapanje pomoći toplom vodom.',
+                },
+                {
+                  subtitle:
+                    '"Treba mi BRZO hlađenje, termostat je na maksimumu, ali frižider i dalje sporo i slabo hladi. Da li da pozovem servis za frižider?"',
+                  text: "Termostat na aparatima ne držati na maksimumu, već izmedju 1/3 do 2/3 u zavisnosti od željene postignute temperature (razlika od maksimuma do minimuma je relativno mala, a sam položaj termostata ne utiče na brzinu hladjenja, već samo na krajnju dostignutu temperaturu.",
+                },
+                {
+                  subtitle:
+                    '"Zamrzivač je napunjen svežim mesom, uključen je SUPER prekidač (sijaju i crvena i žuta lampica), i posle 10 sati rada i dalje sija "žuta lampica". Da li je zamrzivač pokvaren?"',
+                  text: 'Funkciju "SUPER-a" aktivirati minimalno 24h pre unosa sveže hrane da bi zamrzivač postigao što nižu temperaturu, i nakon unosa sveže hrane uprosečivanjem temperature što pre zamrzao novi sadržaj. U protivnom nema svrhe aktiviranja prekidača. SVI kućni uređaji rade ISTOM brzinom hlađenja, menja se samo krajnja temperatura koju treba da postigne. Sa druge strane, ako ne isključite ovu funkciju uređaj će raditi neprestano.',
+                },
+                {
+                  subtitle: '"Neprijatni mirisi, samootapajućeg frižidera"',
+                  text: "Bez obzira na automatski rad i funkcje samootapanja kako frižidera, tako i zamrzivača, preporuka je da se uređaj periodično isključi i otopi zbog higijenskog održavanja. Rashladni aparati koji imaju filtere mirisa i sl. (npr. Electrolux-ov AIR FILTER FOR REFRIGERATOR - šifra za poručivanje 814.26.001), treba da se po preporuci proizvođača proveravaju i menjaju, jer apsorpcijom mirisa vremenom postaju izvor neprijatnih mirisa i zaraze. Unutrašnjost aparata, takođe treba periodično prati i očistiti sredstvima adekvatnim za rashladne uređaje (preporuka za REFRIGERATOR CLEANER - šifra za poručivanje 925.26.004)",
                 },
               ]}
             />

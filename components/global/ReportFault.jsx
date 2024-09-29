@@ -206,8 +206,12 @@ const ReportFault = () => {
       }
     }
 
-    files.forEach((file, index) => {
-      formDataObj.append(`file_${index}`, file);
+    files.forEach((file) => {
+      if (file.type.startsWith("image/")) {
+        formDataObj.append('image', file);
+      } else if (file.type === "application/pdf") {
+        formDataObj.append('pdf', file);
+      }
     });
 
     try {

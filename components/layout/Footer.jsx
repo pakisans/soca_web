@@ -84,6 +84,7 @@ const Footer = () => {
                 <a
                   href="mailto:servis@soca.rs"
                   className="flex items-center gap-2  mt-2 xsm:mt-0 group"
+                  target="_blank"
                 >
                   <MailIcon
                     width={25}

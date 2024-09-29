@@ -11,6 +11,7 @@ import MailIcon from "../icons/MailIcon";
 
 const Breadcrumbs = () => {
   const pathname = usePathname();
+  const normalizedPathname = pathname === "" ? "/" : pathname;
 
   const breadcrumbs = useMemo(() => {
     const pathArray = pathname.split("/").filter(Boolean);
@@ -25,8 +26,6 @@ const Breadcrumbs = () => {
       return { name: formattedPath, url, isLast };
     });
   }, [pathname]);
-
-  if (pathname === "/" || breadcrumbs.length === 0) return null;
 
   const generateStructuredData = () => {
     const items = {
@@ -44,7 +43,7 @@ const Breadcrumbs = () => {
     return JSON.stringify(items);
   };
 
-  return (
+  return (normalizedPathname !== "/" || breadcrumbs ?
     <>
       <script
         id="application/ld+json-breadcrumb"
@@ -89,7 +88,7 @@ const Breadcrumbs = () => {
 
         <div className="flex flex-col xsm:flex-row items-center lg:gap-x-8 mt-8 sm:mt-0 gap-y-5">
           <a
-            href={`tel:(+381) 063 444 085`}
+            href={`tel:+38163444085`}
             className="flex items-center gap-2 group"
           >
             <PhoneIcon
@@ -105,6 +104,7 @@ const Breadcrumbs = () => {
           <a
             href="mailto:servis@soca.rs"
             className="flex items-center gap-2 ml-0 xsm:ml-4 mt-2 xsm:mt-0 group"
+            target="_blank"
           >
             <MailIcon
               width={30}
@@ -118,7 +118,7 @@ const Breadcrumbs = () => {
           </a>
         </div>
       </nav>
-    </>
+    </> : null
   );
 };
 

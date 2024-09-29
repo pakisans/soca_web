@@ -109,7 +109,7 @@ const ProductsList = memo(({ articles }) => {
               ) : (
                 <>
                   <p className="text-red-600 font-bold mb-2 text-[12px]">
-                    Deo nije na stanju
+                    Proizvod nije na stanju
                   </p>
                   <button
                     onClick={(e) => handleSendInquiry(e, article)}
