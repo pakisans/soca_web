@@ -9,6 +9,7 @@ import { headerSchemaData } from "@/lib/SEO/schemaData";
 import { cookies } from "next/headers";
 import LogoutButton from "../buttons/LogoutButton";
 import DataSocaButton from "../buttons/DataSocaButton";
+import UserMenu from "../buttons/UserMenuButton";
 
 const Header = () => {
   const sessionCookie = cookies().get("session");
@@ -35,7 +36,7 @@ const Header = () => {
               height={50}
               className="hover:scale-110 hidden sm:block xsm:hidden"
             />
-            <HomeIcon width={30} height={30} styles={"sm:hidden"} />
+            <HomeIcon width={20} height={20} styles={"sm:hidden"} />
           </Link>
         </div>
         <nav className="hidden lg:flex justify-end items-center space-x-10">
@@ -43,7 +44,7 @@ const Header = () => {
             <li>
               <Link href="/proizvodi" passHref legacyBehavior>
                 <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
-                  Prodaja
+                  Pronađi deo
                 </a>
               </Link>
             </li>
@@ -196,7 +197,7 @@ const Header = () => {
                   <li>
                     <Link href="/servis/partnerstva" passHref legacyBehavior>
                       <a className="block text-night text-[1.4rem] hover:bg-gray-600 hover:font-medium hover:text-mintCream transition-all duration-200 ease-in-out px-4 py-2">
-                        Partnerstva
+                        ELECTROLUX/AEG/ZANUSI PARTNERI
                       </a>
                     </Link>
                   </li>
@@ -219,29 +220,11 @@ const Header = () => {
               <CartIcon width={30} height={30} color={"#1C3738"} />
             </button>
           </Link>
-          {username ? (
-            <div className="relative group">
-              <span className="text-night text-[1.2rem] lg:text-[1.6rem] uppercase hover:text-offRed font-bold cursor-pointer hidden xl:block">
-                {username}
-              </span>
-              <div className="flex justify-center items-center xl:hidden bg-gray-800 text-white rounded-full w-[40px] h-[40px] cursor-pointer">
-                {username
-                  .split(" ")
-                  .map((name) => name[0].toUpperCase())
-                  .join("")}
-              </div>
-              <div className="absolute right-0 mt-[15px] bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <DataSocaButton />
-                <LogoutButton />
-              </div>
-            </div>
-          ) : (
-            <Link href="/prijava" passHref legacyBehavior>
+          {username ? <UserMenu username={username} /> :  <Link href="/prijava" passHref legacyBehavior>
               <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold hidden sm:block">
                 Prijava
               </a>
-            </Link>
-          )}
+            </Link>}
         </div>
         <ResponsiveHeader username={username} />
       </header>

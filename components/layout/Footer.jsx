@@ -35,7 +35,7 @@ const Footer = () => {
             <nav className="flex flex-col md:flex-row gap-4 text-center md:text-left">
               <Link href="/proizvodi" passHref legacyBehavior>
                 <a className="text-lg uppercase hover:text-offRed font-bold">
-                  Prodaja
+                  Pronađi deo
                 </a>
               </Link>
               <Link href="/prodajni-program" passHref legacyBehavior>

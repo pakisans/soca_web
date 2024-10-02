@@ -82,7 +82,7 @@ export default function AboutAndContact() {
                   },
                   {
                     year: 2007,
-                    text: "Direktni ugovor sa FRANKE grupom.",
+                    text: "Direktni ugovor sa SEB grupom.",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-4">

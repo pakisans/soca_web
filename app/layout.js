@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
           <Breadcrumbs />
           <main className="flex flex-grow">
             <>
-              <div className="fixed bottom-[2rem] left-0 mt-5 pl-[.5rem] sm:pl-[2rem]  sm:py-5 pr-2 sm:pr-4 bg-offRed rounded-tr-2xl rounded-br-2xl z-[9999]">
+              <div className="fixed bottom-[5.6rem] xl:bottom-[2rem] left-0 mt-5 pl-[.5rem] sm:pl-[2rem]  sm:py-5 pr-2 sm:pr-4 bg-offRed rounded-tr-2xl rounded-br-2xl z-[9999]">
                 <Link
                   href={"/proizvodi"}
                   passHref
@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
                   </a>
                 </Link>
               </div>
-              <div className="fixed bottom-[2rem] right-0 mt-5 pr-[.5rem] sm:pr-[2rem] py-2 sm:py-5 pl-2 sm:pl-4 bg-offRed rounded-tl-2xl rounded-bl-2xl z-[9999]">
+              <div className="fixed bottom-[5.9rem] xl:bottom-[2rem] right-0 mt-5 pr-[.5rem] sm:pr-[2rem] py-2 sm:py-5 pl-2 sm:pl-4 bg-offRed rounded-tl-2xl rounded-bl-2xl z-[9999]">
                 <ReportFault />
               </div>
               {children}

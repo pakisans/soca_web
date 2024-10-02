@@ -69,7 +69,7 @@ const ResponsiveHeader = ({username}) => {
             <li onClick={handleCloseMenu}>
               <Link href="/proizvodi" passHref legacyBehavior>
                 <a className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold">
-                  Prodaja
+                  Pronađi deo
                 </a>
               </Link>
             </li>
@@ -403,7 +403,7 @@ const ResponsiveHeader = ({username}) => {
                         className="text-mintCream text-[1.4rem] hover:text-offRed"
                         onClick={handleCloseMenu}
                       >
-                        Partnerstva
+                        ELECTROLUX/AEG/ZANUSI PARTNERI
                       </a>
                     </Link>
                   </li>
