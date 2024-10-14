@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Otkrijte industrijske mašine za pranje crnog posuđa iz DV / FV serije firme MEIKO, dizajnirane za visoke performanse i savršene rezultate.",
   keywords:
-    "DV / FV serije, Meiko, industrijske mašine, pranje posuđa, pranje crnog posuđa, efikasnost, ekonomičnost, visoke performanse, šerpe, tiganji, poslužavnici, posude",
+    "DV / FV serije, MEIKO, industrijske mašine, pranje posuđa, pranje crnog posuđa, efikasnost, ekonomičnost, visoke performanse, šerpe, tiganji, poslužavnici, posude",
 };
 
 export default function DVFVSerijeDetails() {

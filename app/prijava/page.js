@@ -24,10 +24,12 @@ export async function handleLogin(formData) {
       cookies().set("session", response.token, {
         secure: true,
         path: "/",
+        maxAge: 7200
       });
       cookies().set("username", response.name, {
         secure: true,
         path: "/",
+        maxAge: 7200
       });
 
       if (rememberMe) {

@@ -247,9 +247,9 @@ export default function ServisProfesionalnihMasinaZaSudove() {
                   ponudu za kupovinu nove mašine za sudove:{" "}
                   <Link
                     className="text-blue-500 hover:text-offRed transition-colors duration-200"
-                    href="/prodajni-program/profesionalne-masine-za-veseraje"
+                    href="/prodajni-program/meiko-profesionalne-masine"
                   >
-                    Pogledajte našu <b>PRIMUS</b> ponudu
+                    Pogledajte našu <b>MEIKO</b> ponudu
                   </Link>
                   .
                 </li>

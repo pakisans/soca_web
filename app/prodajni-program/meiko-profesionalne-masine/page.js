@@ -16,20 +16,58 @@ export default function MeikoProfesionalneMasine() {
     <>
       <section className="flex flex-col items-center  bg-mintCream w-full">
         <h1 className="sr-only">
-          Meiko profesionalne mašine za pranje posuđa i čaša - SOĆA Servis
+          MEIKO profesionalne mašine za pranje posuđa i čaša - SOĆA Servis
         </h1>
         <div className="space-y-20">
           <PageHeader
-            title={"Meiko profesionalne mašine za pranje posuđa i čaša"}
+            title={"MEIKO profesionalne mašine za pranje posuđa i čaša"}
             description={
-              "Otkrijte Meiko profesionalne mašine za pranje posuđa i čaša, koje pružaju izuzetnu efikasnost i pouzdanost u svakom pranju. Naša ponuda obuhvata vrhunske modele koji su dizajnirani da zadovolje sve vaše potrebe, bilo da vodite restoran, hotel ili bilo koji drugi ugostiteljski objekat."
+              "Otkrijte MEIKO profesionalne mašine za pranje posuđa i čaša, koje pružaju izuzetnu efikasnost i pouzdanost u svakom pranju. Naša ponuda obuhvata vrhunske modele koji su dizajnirani da zadovolje sve vaše potrebe, bilo da vodite restoran, hotel ili bilo koji drugi ugostiteljski objekat."
             }
           />
+          <div className="px-[2rem] sm:px-[4rem] max-w">
+            <div className="bg-white p-[20px] rounded-lg shadow-md">
+              <h2 className="text-3xl font-semibold text-night mb-6">
+                MEIKO – Svetski lider u mašinskom pranju
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-700">
+                MEIKO je apsolutni svetski lider u polju mašinskog pranja posuđa i čaša, sa ponudom koja obuhvata širok spektar proizvoda. Naši proizvodi uključuju:
+              </p>
+              <ul className="list-disc list-inside text-lg mt-4 text-gray-700">
+                <li><a href="#podpultne-masine" className="text-offRed hover:underline">Mašine za pranje posuđa i čaša</a></li>
+                <li><a href="#masine-za-crno-posudje" className="text-offRed hover:underline">Mašine za pranje crnog posuđa</a></li>
+                <li><a href="#podpultne-masine" className="text-offRed hover:underline">Mašine sa haubom</a></li>
+                <li>Specijalne mašine za pranje noćnog posuđa u medicinskim ustanovama</li>
+              </ul>
+
+              <h2 className="text-3xl mt-[20px] font-semibold text-night mb-6">
+                Počeci kompanije
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-700">
+                Počeci kompanije datiraju od pre oko 90 godina, na Švarcvaldu, u jugozapadnoj Nemačkoj, sa jasnom vizijom – „stvoriti čistiji svet“. Njihova rešenja za profesionalno pranje, čišćenje i dezinfekciju su toliko dobro globalno prihvaćena da kompanija nije bila u mogućnosti da zadovolji sve potrebe kupaca koristeći samo proizvodni pogon u Ofenburgu, Nemačka.
+              </p>
+
+              <h2 className="text-3xl mt-[20px] font-semibold text-night mb-6">
+                Globalna prisutnost
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-700">
+                Kako bi se odgovorilo na globalnu potražnju, MEIKO je proširio proizvodnju na tri kontinenta. Proizvodni pogoni sada funkcionišu u:
+              </p>
+              <ul className="list-disc list-inside text-lg mt-4 text-gray-700">
+                <li>SAD</li>
+                <li>Kina</li>
+                <li>Nemačka</li>
+              </ul>
+              <p id="podpultne-masine" className="text-lg leading-relaxed text-gray-700 mt-4">
+                Sva tri proizvodna pogona, zajedno sa svim zaposlenima u poslovnim jedinicama, dele jednu zajedničku strast – strast za vrhunskim kvalitetom. Kada vidite zakrivljeno slovo "M", to označava samo jedno – „Made by MEIKO“.
+              </p>
+            </div>
+          </div>
 
           <div className="space-y-20 py-16 px-[2rem] sm:px-[4rem] max-w">
             <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-20">
               <div className="flex-1 p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 duration-600 ease">
-                <div className="flex flex-col md:flex-row items-center">
+                <div  className="flex flex-col md:flex-row items-center">
                   <div className="w-full md:w-1/3 bg-white rounded-lg shadow-md p-4 mb-6 md:mb-0">
                     <Image
                       src="https://www.soca.rs/public/images/masine-podpultne.jpeg"
@@ -44,7 +82,7 @@ export default function MeikoProfesionalneMasine() {
                       Podpultne mašine za pranje posuđa i čaša
                     </h3>
                     <p className="text-lg leading-relaxed text-gray-700">
-                      Meiko nudi širok spektar podpultnih mašina za pranje
+                      MEIKO nudi širok spektar podpultnih mašina za pranje
                       posuđa i čaša koje su idealne za restorane, hotele i druge
                       ugostiteljske objekte. Naši modeli, kao što su M-iClean U
                       i UPster U, osiguravaju brzo i temeljno pranje uz
@@ -73,7 +111,7 @@ export default function MeikoProfesionalneMasine() {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10 mb-20">
+            <div id="masine-sa-haubom" className="flex flex-col md:flex-row-reverse items-center justify-between gap-10 mb-20">
               <div className="flex-1 p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 duration-600 ease">
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="w-full md:w-1/3 bg-white rounded-lg shadow-md p-4 mb-6 md:mb-0">
@@ -90,7 +128,7 @@ export default function MeikoProfesionalneMasine() {
                       Mašine za pranje sa haubom
                     </h3>
                     <p className="text-lg leading-relaxed text-gray-700">
-                      Meiko mašine za pranje sa haubom nude visoku efikasnost i
+                      MEIKO mašine za pranje sa haubom nude visoku efikasnost i
                       kapacitet za brzo i temeljno pranje velikih količina
                       posuđa. Naši modeli, kao što su M-iClean H i UPster H,
                       pružaju vrhunske performanse i maksimalnu higijenu u
@@ -118,7 +156,7 @@ export default function MeikoProfesionalneMasine() {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-20">
+            <div id="masine-za-crno-posudje" className="flex flex-col md:flex-row items-center justify-between gap-10 mb-20">
               <div className="flex-1 p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 duration-600 ease">
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="w-full md:w-1/3 bg-white rounded-lg shadow-md p-4 mb-6 md:mb-0">
@@ -135,7 +173,7 @@ export default function MeikoProfesionalneMasine() {
                       Mašine za pranje crnog posuđa
                     </h3>
                     <p className="text-lg leading-relaxed text-gray-700">
-                      Meiko mašine za pranje crnog posuđa dizajnirane su da se
+                      MEIKO mašine za pranje crnog posuđa dizajnirane su da se
                       nose sa najtežim zadacima pranja, nudeći vrhunske
                       performanse i pouzdanost. Naši modeli DV/FV serije
                       osiguravaju temeljno pranje i odstranjivanje čak i
@@ -162,6 +200,7 @@ export default function MeikoProfesionalneMasine() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
