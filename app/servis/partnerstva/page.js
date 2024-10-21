@@ -1,5 +1,6 @@
 import GoogleMapPartners from "@/components/global/GoogleMapPartners";
 import PageHeader from "@/components/global/PageHeader";
+import Image from "next/image";
 
 export const metadata = {
   title: "Ovlašćeni Servisni Partneri - SOĆA Servis",
@@ -319,6 +320,243 @@ export default function ServisPartneri() {
           </div>
         </div>
       </div>
+
+      <div className="w-full flex flex-col items-center py-16 px-[2rem] md:px-[4rem] bg-gradient-to-r from-gray-600 to-black text-white rounded-lg shadow-lg border-t border-t-white mt-10">
+        <h2 className="text-4xl md:text-6xl text-center sm:text-left leading-[3.6rem] font-bold animate-fade-in">
+          Partnerstvo Electrolux/Aeg/Zanussi
+        </h2>
+
+        <p className="text-[1.8rem] 2xl mt-8 text-left animate-slide-down">
+          SOĆA SERVIS AD je partner ELECTROLUX grupe (ZANUSSI, ELECTROLUX, AEG)
+          za postprodajne aktivnosti u garanciji i van garancije za teritoriju
+          Republike Srbije. Naš zadatak je da korisnici proizvoda ELECTROLUX
+          grupe potvrde maksimalno poverenje i uživaju u ovim tehničkim
+          rešenjima. Pronađite uređaje i delove koji vam trebaju i uživajte u
+          bezbrižnom korišćenju.
+        </p>
+
+        <div className="flex flex-col lg:flex-row items-start gap-10 mt-[40px]">
+        <div className="lg:w-1/5 w-[50%] mx-auto h-[100px] relative">
+            <Image
+              src="https://www.soca.rs/public/images/soca/electrolux.jpg"
+              alt="Electrolux"
+              className="lg:w-1/5 w-full rounded-md shadow-md"
+              fill
+            />
+            </div>
+            <div className="lg:w-4/5">
+              <strong className="text-xl">ELECTROLUX</strong>
+              <p className="mt-2 text-lg">
+                je brend više klase koji je spreman da zadovolji potrebe
+                zahtevnih korisnika, kako u smislu dizajna, tako i u smislu
+                korišćenja, a pogotovo u smislu tehnoloških inovacija. Sve
+                inovacije i proizvodna rešenja su bazirana na visokim ekološkim
+                standardima.
+              </p>
+              <p className="mt-2 text-[1.4rem]">
+                Za više detalja idite na:{" "}
+                <a
+                  href="http://www.electrolux.rs/"
+                  target="_blank"
+                  className="text-offRed hover:underline text-[1.6rem]"
+                >
+                  www.electrolux.rs
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-start gap-10 mt-[20px]">
+            <div className="lg:w-1/5 w-[50%] mx-auto h-[100px] relative">
+            <Image
+              src="https://www.soca.rs/public/images/soca/aeg.jpg"
+              alt="AEG"
+              className="lg:w-1/5 w-full rounded-md shadow-md"
+              fill
+            />
+            </div>
+            <div className="lg:w-4/5">
+              <strong className="text-xl">AEG</strong>
+              <p className="mt-2 text-lg">
+                je brend premium tehnologije koji korisnicima nudi ultimativno
+                visok nivo korišćenja i efikasnosti sa estetski uzvišenim
+                tehnološkim dizajnom aparata. Pripada retkoj grupi svetskih
+                proizvođača ultimativne tehnike.
+              </p>
+              <p className="mt-2 text-[1.4rem]">
+                Za više detalja idite na:{" "}
+                <a
+                  href="http://www.aeg.com/en/AEG_Products/Home_products/"
+                  target="_blank"
+                  className="text-offRed hover:underline text-[1.6rem]"
+                >
+                  www.aeg.com
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/** Zanussi */}
+          <div className="flex flex-col lg:flex-row items-start gap-10 mt-[20px]">
+            <img
+              src="https://www.soca.rs/public/images/soca/zanussi.jpg"
+              alt="Zanussi"
+              className="lg:w-1/5 w-[50%] mx-auto rounded-md shadow-md"
+            />
+            <div className="lg:w-4/5">
+              <strong className="text-xl">ZANUSSI</strong>
+              <p className="mt-2 text-lg">
+                je brend koji mami svojom pouzdanošću i postojanošću, namenjen
+                za široke narodne mase, veoma pristupačnog cenovnog razreda.
+                Njegova tehnička rešenja su jednostavna, efikasna i ekološki
+                usklađena.
+              </p>
+              <p className="mt-2 text-[1.4rem]">
+                Za više detalja idite na:{" "}
+                <a
+                  href="http://zanussi.com/"
+                  target="_blank"
+                  className="text-offRed hover:underline text-[1.6rem]"
+                >
+                  www.zanussi.com
+                </a>
+              </p>
+            </div>
+          </div>
+      </div>
+      <div className="w-full flex flex-col items-center py-16 px-[2rem] md:px-[4rem] bg-mintCream text-black rounded-lg shadow-lg border-t border-t-gray-300">
+      <h3 className="text-4xl md:text-6xl text-center sm:text-left leading-[3.6rem] font-bold animate-fade-in">
+        Partnerstvo Tefal, Krups, Rowenta, Moulinex
+      </h3>
+
+      <p className="text-[1.8rem] mt-8 text-left animate-slide-down">
+        SOĆA SERVIS se trudi da svi korisnici proizvoda Tefal, Moulinex, Rowenta
+        i Krups imaju maksimalni doživljaj kvaliteta i konfora. U saradnji sa
+        našim servis partnerima, obezbeđujemo efikasno rešavanje problema i
+        originalne delove za vaše uređaje.
+      </p>
+
+      {/** Tefal */}
+      <div className="flex flex-col lg:flex-row items-start gap-10 mt-[40px] w-full">
+        <div className="lg:w-1/5 w-[50%] mx-auto h-[100px] relative">
+          <Image
+            src="https://www.soca.rs/public/images/soca/tefal.jpg"
+            alt="Tefal"
+            className="rounded-md shadow-md"
+            fill
+          />
+        </div>
+        <div className="flex flex-col w-full">
+          <strong className="text-xl">TEFAL</strong>
+          <p className="mt-2 text-lg">
+            Tefal proizvodi male kućne aparate i posuđe sa površinama koje se ne
+            lepe, idealne za pripremanje hrane. Ovi proizvodi garantuju kvalitet
+            i jednostavnost korišćenja.
+          </p>
+          <p className="mt-2 text-[1.4rem]">
+            Za više detalja idite na:{" "}
+            <a
+              href="http://www.tefal.co.rs/"
+              target="_blank"
+              className="text-offRed hover:underline text-[1.6rem]"
+            >
+              www.tefal.co.rs
+            </a>
+          </p>
+          </div>
+
+      </div>
+
+      {/** Krups */}
+      <div className="flex flex-col lg:flex-row items-start gap-10 mt-[20px] w-full">
+        <div className="lg:w-1/5 w-[50%] mx-auto h-[100px] relative">
+          <Image
+            src="https://www.soca.rs/public/images/soca/krups.jpg"
+            alt="Krups"
+            className="rounded-md shadow-md"
+            fill
+          />
+        </div>
+        <div className="flex flex-col w-full">
+
+          <strong className="text-xl">KRUPS</strong>
+          <p className="mt-2 text-lg">
+            Krups je nemački proizvođač poznat po svojim kućnim aparatima,
+            uključujući kafe aparate i multipraktike, koji su sinonim za
+            kvalitet i inovaciju.
+          </p>
+          <p className="mt-2 text-[1.4rem]">
+            Za više detalja idite na:{" "}
+            <a
+              href="http://www.krups.co.rs/"
+              target="_blank"
+              className="text-offRed hover:underline text-[1.6rem]"
+            >
+              www.krups.co.rs
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      {/** Moulinex */}
+      <div className="flex flex-col lg:flex-row items-start gap-10 mt-[20px] w-full">
+        <div className="lg:w-1/5 w-[50%] mx-auto h-[100px] relative">
+          <Image
+            src="https://www.soca.rs/public/images/soca/moulinex.jpg"
+            alt="Moulinex"
+            className="rounded-md shadow-md"
+            fill
+          />
+        </div>
+        <div className="flex flex-col w-full">
+          <strong className="text-xl">MOULINEX</strong>
+          <p className="mt-2 text-lg">
+            Moulinex je poznat po kuhinjskim aparatima jednostavnim za
+            korišćenje i pristupačnim rešenjima koja su omiljena među mladima.
+          </p>
+          <p className="mt-2 text-[1.4rem]">
+            Za više detalja idite na:{" "}
+            <a
+              href="http://www.moulinex.co.rs/"
+              target="_blank"
+              className="text-offRed hover:underline text-[1.6rem]"
+            >
+              www.moulinex.co.rs
+            </a>
+          </p>
+        </div>
+      </div>
+
+      {/** Rowenta */}
+      <div className="flex flex-col lg:flex-row items-start gap-10 mt-[20px] w-full">
+        <div className="lg:w-1/5 w-[50%] mx-auto h-[100px] relative">
+          <Image
+            src="https://www.soca.rs/public/images/soca/rowenta.jpg"
+            alt="Rowenta"
+            className="rounded-md shadow-md"
+            fill
+          />
+        </div>
+        <div className="flex flex-col w-full">
+          <strong className="text-xl">ROWENTA</strong>
+          <p className="mt-2 text-lg">
+            Rowenta je lider u proizvodnji pegli, usisivača i uređaja za ličnu
+            higijenu. Njihovi proizvodi se ističu funkcionalnošću i ergonomijom.
+          </p>
+          <p className="mt-2 text-[1.4rem]">
+            Za više detalja idite na:{" "}
+            <a
+              href="http://www.rowenta.co.rs/"
+              target="_blank"
+              className="text-offRed hover:underline text-[1.6rem]"
+            >
+              www.rowenta.co.rs
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
     </section>
   );
 }

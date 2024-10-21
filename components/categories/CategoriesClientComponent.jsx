@@ -194,7 +194,7 @@ const CategoriesClientComponent = ({
             className="text-white text-lg lg:text-[1.5rem] font-bold"
             onClick={() => setIsPartnerMenuOpen(!isPartnerMenuOpen)}
           >
-            Partneri
+            Proizvođači
           </button>
           <div
             className={cn(

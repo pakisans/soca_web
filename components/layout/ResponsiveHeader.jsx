@@ -381,34 +381,17 @@ const ResponsiveHeader = ({username}) => {
                     Servis
                   </a>
                 </Link>
-                <button
-                  className="focus:outline-none"
-                  onClick={() => toggleSubMenu("servis")}
-                >
-                  <ChevronDownIcon
-                    width={14}
-                    height={8}
-                    color="mintCream"
-                    styles={`transition-transform transform ${
-                      subMenuOpen["servis"] ? "rotate-180" : "rotate-0"
-                    }`}
-                  />
-                </button>
               </div>
-              {subMenuOpen["servis"] && (
-                <ul className="mt-2 pl-4 space-y-2">
-                  <li>
-                    <Link href="/servis/partnerstva" passHref legacyBehavior>
-                      <a
-                        className="text-mintCream text-[1.4rem] hover:text-offRed"
-                        onClick={handleCloseMenu}
-                      >
-                        ELECTROLUX/AEG/ZANUSI PARTNERI
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              )}
+              </li>
+            <li>
+              <Link href="/servis/partnerstva" passHref legacyBehavior>
+                <a
+                  className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold"
+                  onClick={handleCloseMenu}
+                >
+                  Servisni partneri
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/o-nama-i-kontakt" passHref legacyBehavior>

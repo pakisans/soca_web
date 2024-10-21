@@ -99,13 +99,22 @@ const ProductsList = memo(({ articles }) => {
                       currency: "RSD",
                     })}
                   </p>
-                  <button
-                    onClick={(e) => handleAddToCart(e, article)}
-                    className="bg-offRed text-white py-4 px-4 text-[1.4rem] rounded hover:bg-red-700 transition duration-300 mt-auto"
-                  >
-                    Dodaj u korpu
-                  </button>
+                  <div className="flex flex-col sm:flex-row items-center gap-10 justify-center">
+                    <button
+                      onClick={(e) => handleAddToCart(e, article)}
+                      className="bg-offRed text-white py-4 px-4 text-[1.4rem] rounded hover:bg-red-700 transition duration-300 mt-auto"
+                    >
+                      Dodaj u korpu
+                    </button>
+                    <button
+                      onClick={(e) => handleSendInquiry(e, article)}
+                      className="bg-yellow-500 text-white py-4 px-4 text-[1.4rem] rounded hover:bg-yellow-700 transition duration-300 mt-auto"
+                    >
+                      Pošaljite upit
+                    </button>
+                  </div>
                 </>
+                
               ) : (
                 <>
                   <p className="text-red-600 font-bold mb-2 text-[12px]">

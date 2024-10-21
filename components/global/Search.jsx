@@ -33,7 +33,7 @@ const Search = () => {
           type="search"
           placeholder="Pronađi deo..."
           className={clsx(
-            "bg-transparent w-full p-4 outline-none rounded-l-[.5rem] placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offRed ml-4 sm:ml-0",
+            "bg-transparent w-full p-4 outline-none rounded-l-[.5rem] focus:outline-none focus:ring-2 focus:ring-offRed ml-4 sm:ml-0 placeholder:font-black placeholder:text-offRed",
             pathname === "/proizvodi"
               ? "text-[1.4rem] sm:text-[2.2rem] xlg:text-[2.8rem]"
               : "text-[1.4rem]"

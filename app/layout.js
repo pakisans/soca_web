@@ -51,6 +51,7 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  console.log(children)
   return (
     <html lang="sr-Latn" className="scroll-smooth">
       <body

@@ -117,7 +117,10 @@ export default async function ProizvodPage({ params, searchParams }) {
                         currency: "RSD",
                       })}
                     </p>
+                    <div className="flex flex-col sm:flex-row items-center gap-10 justify-center">
                     <AddToCartButton article={article} />
+                    <ProizvodPageClient article={article} />
+                    </div>
                   </>
                 ) : (
                   <>

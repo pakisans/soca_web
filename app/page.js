@@ -2,6 +2,7 @@ import ImageSlider from "@/components/global/ImageSlider";
 import Faq from "@/components/home/Faq";
 import Partners from "@/components/home/Partners";
 import CardSection from "@/components/home/CardSection";
+import Link from "next/link";
 
 export const metadata = {
   title: "Početna - SOĆA Servis bele tehnike Novi Sad",
@@ -67,6 +68,24 @@ export default function Home() {
       />
       <CardSection cards={cards} />
       <Partners />
+      <div className="bg-gradient-to-r from-blue-900 via-offRed to-blue-900 text-white py-20 w-full text-center">
+    <h2 className="text-[2.4rem] md:text-[3.6rem] font-extrabold mb-6">
+      Posetite naš izlog na KupujemProdajem
+    </h2>
+    <Link
+      href="https://rezervni-delovi-bela-tehnika.kpizlog.rs/"
+      target="_blank"
+      className="inline-flex items-center px-10 py-6 mt-[1rem] bg-white text-[20px] text-blue-700 rounded-xl shadow-2xl hover:bg-gray-100 transition-transform transform hover:scale-110"
+    >
+      <img
+        src="/images/kp-icon.png"
+        alt="KupujemProdajem izlog"
+        className="w-20 h-20 mr-4"
+      />
+        Link ka izlogu
+    </Link>
+  </div>
+
       <div className="p-16 w-full">
         <Faq />
       </div>

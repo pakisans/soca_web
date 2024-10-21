@@ -43,14 +43,14 @@ const Header = () => {
           <ul className="flex space-x-8">
             <li>
               <Link href="/proizvodi" passHref legacyBehavior>
-                <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
+                <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
                   Pronađi deo
                 </a>
               </Link>
             </li>
             <li className="relative group">
               <Link href="/prodajni-program" passHref legacyBehavior>
-                <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
+                <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
                   Prodajni program
                 </a>
               </Link>
@@ -188,25 +188,21 @@ const Header = () => {
 
             <li className="relative group">
               <Link href="/servis" passHref legacyBehavior>
-                <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
+                <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
                   Servis
                 </a>
               </Link>
-              <div className="absolute left-0 dropdown-menu">
-                <ul className="w-full mt-[2.1rem] bg-mintCream border border-white shadow-xl rounded-[.2rem]">
-                  <li>
-                    <Link href="/servis/partnerstva" passHref legacyBehavior>
-                      <a className="block text-night text-[1.4rem] hover:bg-gray-600 hover:font-medium hover:text-mintCream transition-all duration-200 ease-in-out px-4 py-2">
-                        ELECTROLUX/AEG/ZANUSI PARTNERI
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+            </li>
+            <li className="relative group">
+              <Link href="/servis/partnerstva" passHref legacyBehavior>
+                  <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
+                    Servisni partneri
+                  </a>
+                </Link>
             </li>
             <li>
               <Link href="/o-nama-i-kontakt" passHref legacyBehavior>
-                <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold">
+                <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
                   Kontakt
                 </a>
               </Link>

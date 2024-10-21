@@ -64,7 +64,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
         <section className="mb-8 md:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
-              <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6">
+              <h3 className="text-xl md:text-[20px] font-bold mb-4 md:mb-6">
                 Popravka mašina za sudove na terenu
               </h3>
               <p className="text-base md:text-lg leading-8 md:leading-[2.4rem] mb-6 min-h-[48px]">
@@ -83,7 +83,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
             </div>
 
             <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
-              <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6">
+              <h3 className="text-xl md:text-[20px] font-bold mb-4 md:mb-6">
                 Popravka mašina za sudove u servisu
               </h3>
               <p className="text-base md:text-lg leading-8 md:leading-[2.4rem] mb-6">
@@ -107,7 +107,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
         {/* Dijagnostika */}
         <section className="mb-8 md:mb-16">
           <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
-            <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6 text-center">
+            <h3 className="text-xl md:text-[20px] font-bold mb-4 md:mb-6 text-center">
               Dijagnostika i otklanjanje kvarova
             </h3>
               <div className="flex flex-col gap-10 lg:gap-20 lg:flex-row mt-[20px]">
@@ -142,7 +142,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
 
         {/* Brendovi koje servisiramo */}
         <section className="mb-8 md:mb-16 mx-auto">
-          <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6">
+          <h3 className="text-xl md:text-[20px] font-bold mb-4 md:mb-6">
             Brendovi koje servisiramo
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
@@ -184,7 +184,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
           {/* Saveti */}
           <section className="flex mb-8 md:mb-16 flex-1">
             <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
-              <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6">
+              <h3 className="text-xl md:text-[2rem] font-bold mb-4 md:mb-6">
                 Saveti za korišćenje profesionalne mašine za sudove
               </h3>
               <ul className="list-disc pl-5 space-y-2 text-base md:text-lg">
@@ -217,7 +217,7 @@ export default function ServisProfesionalnihMasinaZaSudove() {
           {/* Postupak servisiranja */}
           <section className="mb-8 md:mb-16 flex-1">
             <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
-              <h3 className="text-xl md:text-[18px] font-bold mb-4 md:mb-6">
+              <h3 className="text-xl md:text-[20px] font-bold mb-4 md:mb-6">
                 Postupak servisiranja profesionalnih mašina za sudove
               </h3>
               <ul className="list-disc pl-5 space-y-2 text-base md:text-lg">
@@ -258,8 +258,8 @@ export default function ServisProfesionalnihMasinaZaSudove() {
           </section>
         </div>
         <div className="mt-12 bg-white p-6 md:p-8 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-bold mb-6">
-            Naši Servisni Partneri
+          <h3 className="text-xl md:text-[2rem] font-bold mb-6">
+            Naši servisni partneri
           </h3>
           <p className="text-lg leading-relaxed mb-6">
             <b>Soća Servis AD</b> se ponosi svojim široko rasprostranjenim i

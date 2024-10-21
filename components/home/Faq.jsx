@@ -13,7 +13,7 @@ export const metadata = {
 const Faq = () => {
   return (
     <div>
-      <p className="w-fit mx-auto mb-[2rem] text-[3.6rem]">
+      <p className="w-fit mx-auto mb-[2rem] text-[2.8rem] md:text-[3.6rem]">
         Saveti i često postavljana pitanja
       </p>
       <Accordion
@@ -232,7 +232,7 @@ const Faq = () => {
           odgovore na pitanja u vezi sa vašim uređajima.
         </p>
         <Link
-          className="text-mintCream text-center bg-gradient-to-r from-gray-700 rounded-tr-xl rounded-bl-xl to-gray-900 p-10 font-bold hover:text-offRed text-[3.2rem]"
+          className="text-mintCream text-center bg-gradient-to-r from-gray-700 rounded-tr-xl rounded-bl-xl to-gray-900 p-10 font-bold hover:text-offRed text-[2.4rem] md:text-[3.2rem]"
           href={"/o-nama-i-kontakt"}
         >
           Kontaktirajte nas

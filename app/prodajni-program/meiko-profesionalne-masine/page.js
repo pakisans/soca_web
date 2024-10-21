@@ -44,7 +44,7 @@ export default function MeikoProfesionalneMasine() {
                 Počeci kompanije
               </h2>
               <p className="text-lg leading-relaxed text-gray-700">
-                Počeci kompanije datiraju od pre oko 90 godina, na Švarcvaldu, u jugozapadnoj Nemačkoj, sa jasnom vizijom – „stvoriti čistiji svet“. Njihova rešenja za profesionalno pranje, čišćenje i dezinfekciju su toliko dobro globalno prihvaćena da kompanija nije bila u mogućnosti da zadovolji sve potrebe kupaca koristeći samo proizvodni pogon u Ofenburgu, Nemačka.
+                Počeci kompanije datiraju od pre oko 90 godina, na Švarcvaldu, u jugozapadnoj Nemačkoj, sa jasnom vizijom – stvoriti čistiji svet. Njihova rešenja za profesionalno pranje, čišćenje i dezinfekciju su toliko dobro globalno prihvaćena da kompanija nije bila u mogućnosti da zadovolji sve potrebe kupaca koristeći samo proizvodni pogon u Ofenburgu, Nemačka.
               </p>
 
               <h2 className="text-3xl mt-[20px] font-semibold text-night mb-6">
@@ -59,7 +59,7 @@ export default function MeikoProfesionalneMasine() {
                 <li>Nemačka</li>
               </ul>
               <p id="podpultne-masine" className="text-lg leading-relaxed text-gray-700 mt-4">
-                Sva tri proizvodna pogona, zajedno sa svim zaposlenima u poslovnim jedinicama, dele jednu zajedničku strast – strast za vrhunskim kvalitetom. Kada vidite zakrivljeno slovo "M", to označava samo jedno – „Made by MEIKO“.
+                Sva tri proizvodna pogona, zajedno sa svim zaposlenima u poslovnim jedinicama, dele jednu zajedničku strast – strast za vrhunskim kvalitetom. Kada vidite zakrivljeno slovo M, to označava samo jedno – Made by MEIKO.
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function MeikoProfesionalneMasine() {
                     </p>
                     <div className="mt-6">
                       <Link
-                        href="/prodajni-program/meiko-profesionalne-masine/masine-sa-haubom"
+                        href="/prodajni-program/meiko-profesionalne-masine/masine-za-pranje-sa-haubom"
                         passHref
                         legacyBehavior
                       >
