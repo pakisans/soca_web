@@ -1,62 +1,65 @@
 // Import js-cookie
-import Cookies from "js-cookie";
-import { redirect } from "next/navigation";
-import { loginUser } from "@/lib/auth";
-import { cookies } from "next/headers";
+import Cookies from 'js-cookie';
+import { redirect } from 'next/navigation';
+import { loginUser } from '@/lib/auth';
+import { cookies } from 'next/headers';
 // import customToast from "@/lib/config/toast-config";
 
 export const metadata = {
-  title: "Prijava - SOĆA",
-  description: "Prijavi se na svoj nalog",
+  title: 'Prijava - SOĆA',
+  description: 'Prijavi se na svoj nalog',
 };
 
 export async function handleLogin(formData) {
-  "use server";
+  'use server';
 
-  const email = formData.get("email");
-  const password = formData.get("password");
-  const rememberMe = formData.get("rememberMe") === "on";
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const rememberMe = formData.get('rememberMe') === 'on';
 
   try {
     const response = await loginUser(email, password);
 
     if (response.token) {
-      cookies().set("session", response.token, {
+      cookies().set('session', response.token, {
         secure: true,
-        path: "/",
-        maxAge: 7200
+        path: '/',
+        maxAge: 7200,
       });
-      cookies().set("username", response.name, {
+      cookies().set('username', response.name, {
         secure: true,
-        path: "/",
-        maxAge: 7200
+        path: '/',
+        maxAge: 7200,
       });
 
       if (rememberMe) {
-        Cookies.set("email", email, { expires: 30 });
-        Cookies.set("password", password, { expires: 30 });
+        Cookies.set('email', email, { expires: 30 });
+        Cookies.set('password', password, { expires: 30 });
       } else {
-        Cookies.remove("email");
-        Cookies.remove("password");
+        Cookies.remove('email');
+        Cookies.remove('password');
       }
 
-      redirect("/");
+      redirect('/');
     }
   } catch (error) {
-    // customToast.error("Neuspešna prijava. Pogrešan email ili lozinka.");
-    return { error: "Pogrešan email ili lozinka." };
+    cookies().set('loginError', true, {
+      path: '/',
+      maxAge: 1,
+    });
+    return { error: 'Pogrešan email ili lozinka.' };
   }
 }
 
 export default async function Page() {
-  const session = cookies().get("session");
+  const session = cookies().get('session');
 
   if (session) {
-    redirect("/");
+    redirect('/');
   }
 
-  const savedEmail = Cookies.get("email") || "";
-  const savedPassword = Cookies.get("password") || "";
+  const savedEmail = Cookies.get('email') || '';
+  const savedPassword = Cookies.get('password') || '';
 
   return (
     <section className="w-full h-full my-auto flex items-center justify-center py-[4rem]">
@@ -111,6 +114,13 @@ export default async function Page() {
               Zapamti me
             </label>
           </div>
+          {cookies().get('loginError') ? (
+            <div className="text-offRed text-[15px] text-center mb-4">
+              {
+                'Prijava nije uspela. Proverite korisničko ime i lozinku i pokušajte ponovo.'
+              }
+            </div>
+          ) : null}
           <button
             type="submit"
             className="w-full py-3 px-4 bg-offRed text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-300 text-lg"

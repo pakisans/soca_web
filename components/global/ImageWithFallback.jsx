@@ -1,13 +1,13 @@
-"use client";
-import { memo, useCallback, useState } from "react";
+'use client';
+import { memo, useCallback, useState } from 'react';
 
-const { default: Image } = require("next/image");
+const { default: Image } = require('next/image');
 
 const ImageWithFallback = ({ src, alt, width, height, styles }) => {
   const [imgSrc, setImgSrc] = useState(src);
 
   const handleError = useCallback(() => {
-    setImgSrc("/images/no-image.jpeg");
+    setImgSrc('/images/no-image.jpeg');
   }, []);
 
   return (
@@ -18,6 +18,8 @@ const ImageWithFallback = ({ src, alt, width, height, styles }) => {
       height={height}
       onError={handleError}
       className={styles}
+      quality={100} // Adjust quality as needed
+      layout="intrinsic" // Maintains the actual resolution
     />
   );
 };

@@ -1,9 +1,9 @@
-import { memo, useState } from "react";
-import ImageWithFallback from "../global/ImageWithFallback";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useCart } from "@/context/ShopCartContext";
-import InquiryModal from "../global/InquryModal";
+import { memo, useState } from 'react';
+import ImageWithFallback from '../global/ImageWithFallback';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useCart } from '@/context/ShopCartContext';
+import InquiryModal from '../global/InquryModal';
 
 const ProductsList = memo(({ articles }) => {
   const pathname = usePathname();
@@ -14,30 +14,28 @@ const ProductsList = memo(({ articles }) => {
   const formatHrefUrl = (article) => {
     const decodedPathname = decodeURIComponent(pathname);
     const slashCount = (decodedPathname.match(/\//g) || []).length;
-    const containsDoubleSlash = slashCount == 2 ? true : false
+    const containsDoubleSlash = slashCount == 2 ? true : false;
 
-    if (pathname === "/proizvodi") {
+    if (pathname === '/proizvodi') {
       return `${pathname}/${article.kategorija?.toLowerCase()}/${
         article.grupa
       }/${article.naziv
         .toLowerCase()
-        .replace(/\//g, "_")
-        .replace(/[^a-z0-9_]+/g, "-")
-        .replace(/^-+|-+$/g, "")}?id=${article.id}`;
-    }else if(containsDoubleSlash){
-      return `${pathname}/${
-        article.id
-      }/${article.naziv
+        .replace(/\//g, '_')
+        .replace(/[^a-z0-9_]+/g, '-')
+        .replace(/^-+|-+$/g, '')}?id=${article.id}`;
+    } else if (containsDoubleSlash) {
+      return `${pathname}/${article.id}/${article.naziv
         .toLowerCase()
-        .replace(/\//g, "_")
-        .replace(/[^a-z0-9_]+/g, "-")
-        .replace(/^-+|-+$/g, "")}?id=${article.id}`;
+        .replace(/\//g, '_')
+        .replace(/[^a-z0-9_]+/g, '-')
+        .replace(/^-+|-+$/g, '')}?id=${article.id}`;
     }
     return `${pathname}/${article.naziv
       .toLowerCase()
-      .replace(/\//g, "_")
-      .replace(/[^a-z0-9_]+/g, "-")
-      .replace(/^-+|-+$/g, "")}?id=${article.id}`;
+      .replace(/\//g, '_')
+      .replace(/[^a-z0-9_]+/g, '-')
+      .replace(/^-+|-+$/g, '')}?id=${article.id}`;
   };
 
   const handleAddToCart = (e, article) => {
@@ -58,6 +56,10 @@ const ProductsList = memo(({ articles }) => {
     setShowModal(true);
   };
 
+  const truncateText = (text, maxLength) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  };
+
   return (
     <>
       {showModal ? (
@@ -74,15 +76,15 @@ const ProductsList = memo(({ articles }) => {
             key={`${article.id}-${article.sifra}`}
             className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:outline outline-4 hover:outline-gray-800 transition-outline duration-600 ease cursor-pointer"
           >
-            <h3 className="text-lg font-semibold text-gray-800 mb-2 lg:text-[1.5rem] uppercase min-h-[5.3rem] text-center">
-              {article.naziv}
+            <h3 className="text-lg font-semibold text-gray-800 lg:text-[1.5rem] uppercase min-h-[6.75rem] mb-4 text-center">
+              {truncateText(`${article.naziv} - ${article.opis}`, 80)}
             </h3>
-            <div className="lg:flex lg:items-center lg:justify-center xl:mb-4 w-[10rem] h-[10rem] lg:w-[20rem] lg:h-[20rem]">
+            <div className="lg:flex lg:items-center lg:justify-center xl:mb-4 w-[10rem] h-[10rem] lg:w-[18rem] lg:h-[23rem]">
               <ImageWithFallback
                 src={`https://www.soca.rs/public${article.imageUrl}`}
                 alt={article.naziv}
-                width={200}
-                height={200}
+                width={300}
+                height={150}
                 styles="w-full h-full"
               />
             </div>
@@ -93,10 +95,10 @@ const ProductsList = memo(({ articles }) => {
               article.kolicina > 0 ? (
                 <>
                   <p className="text-green-600 font-bold text-[1.8rem] mb-2">
-                    Cena:{" "}
-                    {article.prodajna_cena.toLocaleString("sr-RS", {
-                      style: "currency",
-                      currency: "RSD",
+                    Cena:{' '}
+                    {article.prodajna_cena.toLocaleString('sr-RS', {
+                      style: 'currency',
+                      currency: 'RSD',
                     })}
                   </p>
                   <div className="flex flex-col sm:flex-row items-center gap-10 justify-center">
@@ -114,7 +116,6 @@ const ProductsList = memo(({ articles }) => {
                     </button>
                   </div>
                 </>
-                
               ) : (
                 <>
                   <p className="text-red-600 font-bold mb-2 text-[12px]">
@@ -139,16 +140,20 @@ const ProductsList = memo(({ articles }) => {
           </Link>
         ))}
       </div>
-      {!articles || articles?.length == 0 ? <div className="w-full text-center min-h-[300px]"
-        ><p className="text-[2.6rem] leading-[3.6rem] py-[2rem]">Trenutno nema proizvoda koji odgovaraju vašim kriterijumima
-        pretrage. Molimo vas da pokušate sa drugačijim filterima ili
-        pretragom. Naša ponuda se stalno ažurira, pa vas pozivamo da
-        nas posetite ponovo uskoro kako biste videli nove proizvode.</p>
-        </div> : null} 
+      {!articles || articles?.length == 0 ? (
+        <div className="w-full text-center min-h-[300px]">
+          <p className="text-[2.6rem] leading-[3.6rem] py-[2rem]">
+            Trenutno nema proizvoda koji odgovaraju vašim kriterijumima
+            pretrage. Molimo vas da pokušate sa drugačijim filterima ili
+            pretragom. Naša ponuda se stalno ažurira, pa vas pozivamo da nas
+            posetite ponovo uskoro kako biste videli nove proizvode.
+          </p>
+        </div>
+      ) : null}
     </>
   );
 });
 
-ProductsList.displayName = "ProductsList";
+ProductsList.displayName = 'ProductsList';
 
 export default ProductsList;

@@ -1,63 +1,64 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
+import { useState } from 'react';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
 export default function LoginClient({ savedEmail }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter(); // Koristimo router za preusmeravanje
-
   async function loginUser(email, password) {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/login`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
       });
 
       if (!res.ok) {
-        throw new Error("Login failed");
+        throw new Error('Login failed');
       }
 
       const data = await res.json();
       return data;
     } catch (error) {
-      console.error("Login error:", error);
+      console.error('Login error:', error);
       throw error;
     }
   }
 
   const handleLogin = async (formData) => {
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const rememberMe = formData.get("rememberMe") === "on";
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const rememberMe = formData.get('rememberMe') === 'on';
 
     try {
       const response = await loginUser(email, password);
-
+      console.log('aa');
       if (response.token) {
         // Postavljamo kolačiće za sesiju i korisničko ime
-        Cookies.set("session", response.token, { secure: true, path: "/" });
-        Cookies.set("username", response.name, { secure: true, path: "/" });
+        Cookies.set('session', response.token, { secure: true, path: '/' });
+        Cookies.set('username', response.name, { secure: true, path: '/' });
 
         // Ako je korisnik odabrao "Zapamti me", postavljamo kolačiće za email i lozinku
         if (rememberMe) {
-          Cookies.set("email", email, { expires: 30 });
-          Cookies.set("password", password, { expires: 30 });
+          Cookies.set('email', email, { expires: 30 });
+          Cookies.set('password', password, { expires: 30 });
         } else {
-          Cookies.remove("email");
-          Cookies.remove("password");
+          Cookies.remove('email');
+          Cookies.remove('password');
         }
 
         // Preusmeravamo korisnika na početnu stranicu nakon uspešne prijave
-        router.push("/");
+        router.push('/');
       }
     } catch (error) {
-      setError("Pogrešan email ili lozinka.");
+      setError('Pogrešan email ili lozinka.');
+    } finally {
+      console.log('aa');
     }
   };
 
@@ -72,7 +73,7 @@ export default function LoginClient({ savedEmail }) {
     setLoading(false); // Završavamo učitavanje nakon prijave
   };
 
-  const savedPassword = Cookies.get("password") || ""; // Dobijamo sačuvanu lozinku ako postoji
+  const savedPassword = Cookies.get('password') || ''; // Dobijamo sačuvanu lozinku ako postoji
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -122,15 +123,15 @@ export default function LoginClient({ savedEmail }) {
           Zapamti me
         </label>
       </div>
-      {error && (
+      {error ? (
         <div className="text-offRed text-[15px] text-center mb-4">{error}</div>
-      )}
+      ) : null}
       <button
         type="submit"
         className="w-full py-3 px-4 bg-offRed text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-300 text-lg"
         disabled={loading}
       >
-        {loading ? "Prijava..." : "Prijava"}
+        {loading ? 'Prijava...' : 'Prijava'}
       </button>
     </form>
   );

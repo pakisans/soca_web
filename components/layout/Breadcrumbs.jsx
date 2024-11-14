@@ -1,27 +1,27 @@
-"use client";
+'use client';
 import {
   capitalizeFirstLetter,
   replaceUnderscoreWithSlash,
-} from "@/utils/textUtil";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
-import PhoneIcon from "../icons/PhoneIcon";
-import MailIcon from "../icons/MailIcon";
+} from '@/utils/textUtil';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useMemo } from 'react';
+import PhoneIcon from '../icons/PhoneIcon';
+import MailIcon from '../icons/MailIcon';
 
 const Breadcrumbs = () => {
   const pathname = usePathname();
-  const normalizedPathname = pathname === "" ? "/" : pathname;
+  const normalizedPathname = pathname === '' ? '/' : pathname;
 
   const breadcrumbs = useMemo(() => {
-    const pathArray = pathname.split("/").filter(Boolean);
+    const pathArray = pathname.split('/').filter(Boolean);
     return pathArray.map((path, index) => {
       const formattedPath = path
-        .split("-")
+        .split('-')
         .map((word) => capitalizeFirstLetter(decodeURIComponent(word)))
-        .join(" ");
+        .join(' ');
 
-      const url = `/${pathArray.slice(0, index + 1).join("/")}`;
+      const url = `/${pathArray.slice(0, index + 1).join('/')}`;
       const isLast = index === pathArray.length - 1;
       return { name: formattedPath, url, isLast };
     });
@@ -29,13 +29,13 @@ const Breadcrumbs = () => {
 
   const generateStructuredData = () => {
     const items = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
       itemListElement: breadcrumbs.map((item, index) => ({
-        "@type": "ListItem",
+        '@type': 'ListItem',
         position: index + 1,
         item: {
-          "@id": `${process.env.NEXT_PUBLIC_BASE_URL}${item.url}`,
+          '@id': `${process.env.NEXT_PUBLIC_BASE_URL}${item.url}`,
           name: item.name,
         },
       })),
@@ -43,7 +43,7 @@ const Breadcrumbs = () => {
     return JSON.stringify(items);
   };
 
-  return (normalizedPathname !== "/" || breadcrumbs ?
+  return normalizedPathname !== '/' || breadcrumbs ? (
     <>
       <script
         id="application/ld+json-breadcrumb"
@@ -52,11 +52,11 @@ const Breadcrumbs = () => {
       />
       <nav
         aria-label="breadcrumb"
-        className="px-[2rem] sm:px-[4rem] py-[2rem] bg-gradient-to-r from-gray-700 to-black flex flex-col sm:flex-row justify-between items-center"
+        className="px-[2rem] sm:px-[4rem] py-[1rem] bg-gradient-to-r from-gray-700 to-black flex flex-col sm:flex-row justify-between items-center"
       >
         <ol className="list-none p-0 flex flex-wrap items-center">
           <li className="inline">
-            <Link href={"/"} passHref legacyBehavior>
+            <Link href={'/'} passHref legacyBehavior>
               <a className="text-[#66B2FF] und text-[1.8rem] hover:text-offRed">
                 Početna
               </a>
@@ -86,7 +86,7 @@ const Breadcrumbs = () => {
           ))}
         </ol>
 
-        <div className="flex flex-col xsm:flex-row items-center lg:gap-x-8 mt-8 sm:mt-0 gap-y-5">
+        <div className="flex flex-col xsm:flex-row items-center lg:gap-x-8 mt-[5px] sm:mt-0 gap-y-5">
           <a
             href={`tel:+38163444085`}
             className="flex items-center gap-2 group"
@@ -94,8 +94,8 @@ const Breadcrumbs = () => {
             <PhoneIcon
               width={20}
               height={20}
-              color={"#fff"}
-              styles={"group-hover:fill-offRed"}
+              color={'#fff'}
+              styles={'group-hover:fill-offRed'}
             />
             <p className="text-mintCream text-[1.4rem] font-bold group-hover:text-offRed">
               (+381) 063 444 085
@@ -109,8 +109,8 @@ const Breadcrumbs = () => {
             <MailIcon
               width={30}
               height={30}
-              color={"#F7F7FF"}
-              styles={"group-hover:fill-offRed"}
+              color={'#F7F7FF'}
+              styles={'group-hover:fill-offRed'}
             />
             <p className="text-mintCream text-[1.4rem] font-bold group-hover:text-offRed">
               servis@soca.rs
@@ -118,8 +118,8 @@ const Breadcrumbs = () => {
           </a>
         </div>
       </nav>
-    </> : null
-  );
+    </>
+  ) : null;
 };
 
 export default Breadcrumbs;

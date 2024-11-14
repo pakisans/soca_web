@@ -1,12 +1,12 @@
-import ImageWithFallback from "@/components/global/ImageWithFallback";
-import { getArticleById } from "@/services/articlesApi";
-import Script from "next/script";
-import dynamic from "next/dynamic";
-import AddToCartButton from "@/components/buttons/AddToCartButton";
-import PageHeader from "@/components/global/PageHeader";
+import ImageWithFallback from '@/components/global/ImageWithFallback';
+import { getArticleById } from '@/services/articlesApi';
+import Script from 'next/script';
+import dynamic from 'next/dynamic';
+import AddToCartButton from '@/components/buttons/AddToCartButton';
+import PageHeader from '@/components/global/PageHeader';
 
 const ProizvodPageClient = dynamic(
-  () => import("@/components/pages/ProizvodPageClient"),
+  () => import('@/components/pages/ProizvodPageClient'),
   {
     ssr: false,
   }
@@ -19,10 +19,10 @@ export async function generateMetadata({ searchParams }) {
   return {
     title: `Proizvod - ${article.naziv.toUpperCase()}`,
     description: `Detalji o proizvodu ${article.naziv.toUpperCase()}. Saznajte više o ovom proizvodu u našoj ponudi.`,
-    keywords: article.naziv.toUpperCase().split(" ").join(", "),
+    keywords: article.naziv.toUpperCase().split(' ').join(', '),
     ogTitle: `Proizvod - ${article.naziv.toUpperCase()}`,
     ogDescription: `Detalji o proizvodu ${article.naziv.toUpperCase()}.`,
-    ogType: "product",
+    ogType: 'product',
     ogImage: `https://www.soca.rs/public${article.imageUrl}`,
   };
 }
@@ -32,43 +32,43 @@ export default async function ProizvodPage({ params, searchParams }) {
   const article = await getArticleById(id);
 
   const jsonLd = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
     name: article.naziv,
     image: `https://www.soca.rs/public${article.imageUrl}`,
-    description: article.naziv || "Opis proizvoda nije dostupan.",
+    description: article.naziv || 'Opis proizvoda nije dostupan.',
     sku: article.sifra,
     offers: {
-      "@type": "Offer",
+      '@type': 'Offer',
       url: `https://www.soca.rs/proizvodi/${params.kategorija}/${params.grupa}/${params.proizvod}`,
-      priceCurrency: "RSD",
+      priceCurrency: 'RSD',
       price: article.prodajna_cena,
       availability:
         article.kolicina > 0
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock",
+          ? 'https://schema.org/InStock'
+          : 'https://schema.org/OutOfStock',
       hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        returnPolicyCategory: "https://schema.org/FullRefund",
+        '@type': 'MerchantReturnPolicy',
+        returnPolicyCategory: 'https://schema.org/FullRefund',
       },
       shippingDetails: {
-        "@type": "OfferShippingDetails",
+        '@type': 'OfferShippingDetails',
         shippingRate: {
-          "@type": "MonetaryAmount",
-          value: "500",
-          currency: "RSD",
+          '@type': 'MonetaryAmount',
+          value: '500',
+          currency: 'RSD',
         },
         shippingDestination: {
-          "@type": "DefinedRegion",
-          addressCountry: "RS",
+          '@type': 'DefinedRegion',
+          addressCountry: 'RS',
         },
         deliveryTime: {
-          "@type": "ShippingDeliveryTime",
+          '@type': 'ShippingDeliveryTime',
           transitTime: {
-            "@type": "QuantitativeValue",
+            '@type': 'QuantitativeValue',
             minValue: 1,
             maxValue: 5,
-            unitCode: "d",
+            unitCode: 'd',
           },
         },
       },
@@ -90,14 +90,14 @@ export default async function ProizvodPage({ params, searchParams }) {
       <div className="w-full flex flex-col items-center">
         <PageHeader title={`Detalji proizvoda`} description={article.naziv} />
         <div className="mx-auto p-[2rem] sm:p-[4rem]">
-          <div className="bg-white shadow-lg rounded-lg p-6 w-[30rem] xsm:w-[40rem]">
+          <div className="bg-white shadow-lg rounded-lg p-6 w-[30rem] xsm:w-[35rem]">
             <h1 className="text-3xl font-bold mb-4 text-night text-center md:text-4xl uppercase">
-              {article.naziv}
+              {article.naziv} - {article.opis}
             </h1>
             <div className="mb-4">
               <ImageWithFallback
-                width={200}
-                height={200}
+                width={800}
+                height={800}
                 src={decodeURIComponent(decodeSrcForSeo(article))}
                 alt={`Slika proizvoda ${article.naziv}`}
                 styles="rounded-lg shadow-lg mx-auto min-h-[20rem]"
@@ -111,15 +111,15 @@ export default async function ProizvodPage({ params, searchParams }) {
                 article.kolicina > 0 ? (
                   <>
                     <p className="text-green-600 font-bold text-xl md:text-2xl mb-2 uppercase">
-                      CENA:{" "}
-                      {article.prodajna_cena.toLocaleString("sr-RS", {
-                        style: "currency",
-                        currency: "RSD",
+                      CENA:{' '}
+                      {article.prodajna_cena.toLocaleString('sr-RS', {
+                        style: 'currency',
+                        currency: 'RSD',
                       })}
                     </p>
                     <div className="flex flex-col sm:flex-row items-center gap-10 justify-center">
-                    <AddToCartButton article={article} />
-                    <ProizvodPageClient article={article} />
+                      <AddToCartButton article={article} />
+                      <ProizvodPageClient article={article} />
                     </div>
                   </>
                 ) : (
