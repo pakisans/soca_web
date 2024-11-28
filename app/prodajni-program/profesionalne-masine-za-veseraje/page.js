@@ -1,14 +1,14 @@
-import PageHeader from "@/components/global/PageHeader";
-import Image from "next/image";
-import Link from "next/link";
+import PageHeader from '@/components/global/PageHeader';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
-  title: "Profesionalne mašine za vešeraje - SOĆA Servis",
+  title: 'Profesionalne mašine za vešeraje - SOĆA Servis',
   description:
-    "Otkrivamo visokokvalitetne profesionalne mašine za vešeraje, partneri smo proizvođača PRIMUS. Oprema, tehnologija i prateća sredstva koja omogućuju visoku efikasnost, niske troškove i dugotrajnu pouzdanost.",
-  author: "SOĆA Servis AD",
+    'Otkrivamo visokokvalitetne profesionalne mašine za vešeraje, partneri smo proizvođača PRIMUS. Oprema, tehnologija i prateća sredstva koja omogućuju visoku efikasnost, niske troškove i dugotrajnu pouzdanost.',
+  author: 'SOĆA Servis AD',
   keywords:
-    "PRIMUS, profesionalne mašine, vešeraj, oprema za vešeraje, efikasnost, niske troškove, dugotrajna pouzdanost, Novi Sad",
+    'PRIMUS, profesionalne mašine, vešeraj, oprema za vešeraje, efikasnost, niske troškove, dugotrajna pouzdanost, Novi Sad',
 };
 
 export default function ProfesionlneMasineVeseraj() {
@@ -17,7 +17,7 @@ export default function ProfesionlneMasineVeseraj() {
       <h1 className="sr-only">
         Profesionalne mašine za vešeraje - SOĆA Servis
       </h1>
-      <PageHeader title={"Profesionalne mašine za vešeraje"} />
+      <PageHeader title={'Profesionalne mašine za vešeraje'} />
       <div className="py-16 px-[2rem] sm:px-[4rem]">
         <div className="text-left mb-12 w-full">
           <div className="bg-white p-8 rounded-lg shadow-md">
@@ -55,8 +55,15 @@ export default function ProfesionlneMasineVeseraj() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Sušare</button>
-              <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-susare.png'} />
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">
+                Primus Sušare
+              </button>
+              <Image
+                className="border border-offRed"
+                width={300}
+                height={300}
+                src={'https://www.soca.rs/public/images/primus-susare.png'}
+              />
             </Link>
             <Link
               href="https://www.soca.rs/public/pdf/PrimusKomercijalniAparati.pdf              "
@@ -65,8 +72,17 @@ export default function ProfesionlneMasineVeseraj() {
               rel="noopener noreferrer"
               target="_blank"
             >
-               <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Komercijalni Aparati</button>
-               <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-komercijalni-aparati.png'} />
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">
+                Primus Komercijalni Aparati
+              </button>
+              <Image
+                className="border border-offRed"
+                width={300}
+                height={300}
+                src={
+                  'https://www.soca.rs/public/images/primus-komercijalni-aparati.png'
+                }
+              />
             </Link>
             <Link
               href="https://www.soca.rs/public/pdf/PrimusValjciZaPeglanje.pdf"
@@ -75,8 +91,17 @@ export default function ProfesionlneMasineVeseraj() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Valjci za Peglanje</button>
-               <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-valjci-za-peglanje.png'} />
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">
+                Primus Valjci za Peglanje
+              </button>
+              <Image
+                className="border border-offRed"
+                width={300}
+                height={300}
+                src={
+                  'https://www.soca.rs/public/images/primus-valjci-za-peglanje.png'
+                }
+              />
             </Link>
             <Link
               href="https://www.soca.rs/public/pdf/PrimusVesMasine.pdf"
@@ -85,8 +110,15 @@ export default function ProfesionlneMasineVeseraj() {
               target="_blank"
               className="text-lg font-semibold text-white text-center"
             >
-              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">Primus Veš Mašine</button>
-               <Image className="border border-offRed" width={300} height={300} src={'https://www.soca.rs/public/images/primus-ves-masine.png'} />
+              <button className="w-full bg-offRed hover:bg-red-700 transition-all duration-300 py-3 px-6 rounded-md shadow-md">
+                Primus Veš Mašine
+              </button>
+              <Image
+                className="border border-offRed"
+                width={300}
+                height={300}
+                src={'https://www.soca.rs/public/images/primus-ves-masine.png'}
+              />
             </Link>
           </div>
         </section>
@@ -118,6 +150,15 @@ export default function ProfesionlneMasineVeseraj() {
                     investiranja
                   </li>
                 </ul>
+                <div className="w-fit mx-auto">
+                  <Image
+                    width={300}
+                    height={300}
+                    src={
+                      'https://www.soca.rs/public/images/professional-laundry.png'
+                    }
+                  />
+                </div>
               </div>
 
               <div className="p-8 bg-davyGray text-mintCream rounded-lg shadow-md transition-transform transform duration-600 md:w-[49%] ease">
@@ -141,6 +182,14 @@ export default function ProfesionlneMasineVeseraj() {
                     mašine)
                   </li>
                 </ul>
+                <div className="w-fit mx-auto">
+                  <Image
+                    width={600}
+                    className="lg:mt-[10rem]"
+                    height={500}
+                    src={'https://www.soca.rs/public/images/primus-types.png'}
+                  />
+                </div>
               </div>
             </div>
 
@@ -305,81 +354,97 @@ export default function ProfesionlneMasineVeseraj() {
               </ul>
             </div>
 
-            <div className="p-8 bg-offRed text-mintCream rounded-lg shadow-md transition-transform transform duration-600 ease">
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-5">
+            <div className="p-8 bg-gradient-to-r from-gray-800 to-gray-600 text-mintCream rounded-lg shadow-md transition-transform transform duration-600 ease space-y-8">
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-4">
                 Specifičnosti valjka za peglanje veša
               </h3>
-              <ul className="text-lg leading-relaxed list-disc list-inside ml-5">
-                <li>
-                  Energenti (izvor zagrevanja)
-                  <ul className="list-disc list-inside ml-5">
-                    <li>Električno, trofazni priključak</li>
-                    <li>Para pod visokim pritiskom</li>
-                    <li>Zemni gas</li>
-                  </ul>
-                </li>
-                <li>
-                  Način zagrevanja – opciono peglanje uz sušenje
-                  <ul className="list-disc list-inside ml-5">
-                    <li>
-                      Zagrevanje korita (okretanjem valjka se pokreće peglanje,
-                      korito se zagreva - površinsko naleganja veša na valjak
-                      pri peglanju oko 100°)
-                      <ul className="list-disc list-inside ml-5">
-                        <li>
-                          Peglanje uz delimično sušenje (od 5% do 20% preostale
-                          vlage)
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      Zagrevanje cilindra (trake pokreću peglanje,
-                      cilindar/valjak se zagreva - površinsko naleganja veša na
-                      valjak pri peglanju preko 200°)
-                      <ul className="list-disc list-inside ml-5">
-                        <li>
-                          Peglanje uz sušenje od 5% do 40% preostale vlage
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  Regulacija temperature i brzine peglanja
-                  <ul className="list-disc list-inside ml-5">
-                    <li>Fiksna</li>
-                    <li>
-                      Promenljivi broj obrtaja i temperature – veća efikasnost
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  Način ulaganja veša
-                  <ul className="list-disc list-inside ml-5">
-                    <li>Ručno</li>
-                    <li>Automatski</li>
-                  </ul>
-                </li>
-                <li>
-                  Izlaz peglanog veša
-                  <ul className="list-disc list-inside ml-5">
-                    <li>Prolazno/Nazad</li>
-                    <li>Povratno/Napred</li>
-                  </ul>
-                </li>
-                <li>
-                  Slaganje peglanog veša
-                  <ul className="list-disc list-inside ml-5">
-                    <li>
-                      Opciono
-                      <ul className="list-disc list-inside ml-5">
-                        <li>Poluautomatsko</li>
-                        <li>Automatsko</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                {/* Tekstualni sadržaj */}
+                <ul className="text-lg leading-relaxed space-y-4">
+                  <li>
+                    <strong>Energenti (izvor zagrevanja):</strong>
+                    <ul className="list-disc list-inside ml-5">
+                      <li>Električno, trofazni priključak</li>
+                      <li>Para pod visokim pritiskom</li>
+                      <li>Zemni gas</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>
+                      Način zagrevanja – opciono peglanje uz sušenje:
+                    </strong>
+                    <ul className="list-disc list-inside ml-5 space-y-3">
+                      <li>
+                        Zagrevanje korita (okretanjem valjka se pokreće
+                        peglanje, korito se zagreva - površinsko naleganje veša
+                        na valjak pri peglanju oko 100°)
+                        <ul className="list-disc list-inside ml-5">
+                          <li>
+                            Peglanje uz delimično sušenje (od 5% do 20%
+                            preostale vlage)
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        Zagrevanje cilindra (trake pokreću peglanje,
+                        cilindar/valjak se zagreva - površinsko naleganje veša
+                        na valjak pri peglanju preko 200°)
+                        <ul className="list-disc list-inside ml-5">
+                          <li>
+                            Peglanje uz sušenje od 5% do 40% preostale vlage
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Regulacija temperature i brzine peglanja:</strong>
+                    <ul className="list-disc list-inside ml-5">
+                      <li>Fiksna</li>
+                      <li>
+                        Promenljivi broj obrtaja i temperature – veća efikasnost
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Način ulaganja veša:</strong>
+                    <ul className="list-disc list-inside ml-5">
+                      <li>Ručno</li>
+                      <li>Automatski</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Izlaz peglanog veša:</strong>
+                    <ul className="list-disc list-inside ml-5">
+                      <li>Prolazno/Nazad</li>
+                      <li>Povratno/Napred</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Slaganje peglanog veša:</strong>
+                    <ul className="list-disc list-inside ml-5">
+                      <li>
+                        Opciono
+                        <ul className="list-disc list-inside ml-5">
+                          <li>Poluautomatsko</li>
+                          <li>Automatsko</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+                {/* Slika */}
+                <div className="w-full h-auto mx-auto">
+                  <Image
+                    src={'https://www.soca.rs/public/images/i50-160.png'}
+                    alt="Valjak za peglanje veša"
+                    width={600}
+                    height={500}
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="p-8 bg-gunMetal text-mintCream rounded-lg shadow-md transition-transform transform duration-600 ease">
