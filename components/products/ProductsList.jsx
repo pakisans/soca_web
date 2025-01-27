@@ -85,7 +85,7 @@ const ProductsList = memo(({ articles }) => {
                 alt={article.naziv}
                 width={300}
                 height={150}
-                styles="w-full h-full"
+                styles="w-full h-full max-h-[26.2rem]"
               />
             </div>
             <p className="text-gray-600 mb-2 text-[1.8rem]">
