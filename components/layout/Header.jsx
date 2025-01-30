@@ -1,19 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
-import CartIcon from "../icons/CartIcon";
-import HeaderScrollProgress from "./HeaderScrollProgress";
-import ResponsiveHeader from "./ResponsiveHeader";
-import Search from "../global/Search";
-import HomeIcon from "../icons/HomeIcon";
-import { headerSchemaData } from "@/lib/SEO/schemaData";
-import { cookies } from "next/headers";
-import LogoutButton from "../buttons/LogoutButton";
-import DataSocaButton from "../buttons/DataSocaButton";
-import UserMenu from "../buttons/UserMenuButton";
+import Image from 'next/image';
+import Link from 'next/link';
+import CartIcon from '../icons/CartIcon';
+import HeaderScrollProgress from './HeaderScrollProgress';
+import ResponsiveHeader from './ResponsiveHeader';
+import Search from '../global/Search';
+import HomeIcon from '../icons/HomeIcon';
+import { headerSchemaData } from '@/lib/SEO/schemaData';
+import { cookies } from 'next/headers';
+import LogoutButton from '../buttons/LogoutButton';
+import DataSocaButton from '../buttons/DataSocaButton';
+import UserMenu from '../buttons/UserMenuButton';
 
 const Header = () => {
-  const sessionCookie = cookies().get("session");
-  const usernameCookie = cookies().get("username");
+  const sessionCookie = cookies().get('session');
+  const usernameCookie = cookies().get('username');
   const username = usernameCookie
     ? decodeURIComponent(usernameCookie.value)
     : null;
@@ -36,7 +36,7 @@ const Header = () => {
               height={50}
               className="hover:scale-110 hidden sm:block xsm:hidden"
             />
-            <HomeIcon width={20} height={20} styles={"sm:hidden"} />
+            <HomeIcon width={20} height={20} styles={'sm:hidden'} />
           </Link>
         </div>
         <nav className="hidden lg:flex justify-end items-center space-x-10">
@@ -195,10 +195,10 @@ const Header = () => {
             </li>
             <li className="relative group">
               <Link href="/servis/partnerstva" passHref legacyBehavior>
-                  <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
-                    Servisni partneri
-                  </a>
-                </Link>
+                <a className="text-night text-[1.2rem] lg;text-[1.5rem] xl:text-[1.6rem] uppercase hover:text-offRed font-bold">
+                  Servisni partneri
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/o-nama-i-kontakt" passHref legacyBehavior>
@@ -211,16 +211,17 @@ const Header = () => {
         </nav>
         <div className="flex justify-end items-center space-x-5 lg:space-x-10">
           <Search />
-          <Link className="hidden lg:flex" href={"/korpa"}>
+          <Link className="hidden lg:flex" href={'/korpa'}>
             <button className="hover:scale-125" aria-label="Korpa - Cart">
-              <CartIcon width={30} height={30} color={"#1C3738"} />
+              <CartIcon width={30} height={30} color={'#1C3738'} />
             </button>
           </Link>
-          {username ? <UserMenu username={username} /> :  <Link href="/prijava" passHref legacyBehavior>
+          <UserMenu username={username} />
+          {/* {username ? <UserMenu username={username} /> :  <Link href="/prijava" passHref legacyBehavior>
               <a className="text-night text-[1.6rem] uppercase hover:text-offRed font-bold hidden sm:block">
                 Prijava
               </a>
-            </Link>}
+            </Link>} */}
         </div>
         <ResponsiveHeader username={username} />
       </header>

@@ -1,13 +1,13 @@
-"use client";
-import { memo, useState } from "react";
-import Link from "next/link";
-import CartIcon from "../icons/CartIcon";
+'use client';
+import { memo, useState } from 'react';
+import Link from 'next/link';
+import CartIcon from '../icons/CartIcon';
 
-import { useRouter } from "next/navigation";
-import ChevronDownIcon from "../icons/ChevronDownIcon";
-import { handleLogout } from "@/utils/logoutUtil";
+import { useRouter } from 'next/navigation';
+import ChevronDownIcon from '../icons/ChevronDownIcon';
+import { handleLogout } from '@/utils/logoutUtil';
 
-const ResponsiveHeader = ({username}) => {
+const ResponsiveHeader = ({ username }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState({});
   const [animateMenu, setAnimateMenu] = useState(false);
@@ -45,17 +45,17 @@ const ResponsiveHeader = ({username}) => {
     <>
       <button
         className={`lg:hidden text-[3rem] hover:text-offRed transition-transform transform hover:scale-110  ${
-          menuOpen ? "rotate-90" : "rotate-0"
+          menuOpen ? 'rotate-90' : 'rotate-0'
         }`}
         onClick={toggleMenu}
-        style={{ transition: "transform 0.3s ease" }}
+        style={{ transition: 'transform 0.3s ease' }}
       >
         &#9776;
       </button>
       {menuOpen && (
         <nav
           className={`absolute top-full left-0 w-full flex flex-col border-t border-t-offRed items-center lg:hidden bg-gradient-to-r from-gray-800 to-black ${
-            animateMenu ? "animate-slide-up" : "animate-slide-down"
+            animateMenu ? 'animate-slide-up' : 'animate-slide-down'
           }`}
         >
           <ul className="flex flex-col space-y-4 p-4 w-full">
@@ -85,21 +85,21 @@ const ResponsiveHeader = ({username}) => {
                 </Link>
                 <button
                   className="focus:outline-none"
-                  onClick={() => toggleSubMenu("prodajni-program")}
+                  onClick={() => toggleSubMenu('prodajni-program')}
                 >
                   <ChevronDownIcon
                     width={14}
                     height={8}
                     color="mintCream"
                     styles={`transition-transform transform ${
-                      subMenuOpen["prodajni-program"]
-                        ? "rotate-180"
-                        : "rotate-0"
+                      subMenuOpen['prodajni-program']
+                        ? 'rotate-180'
+                        : 'rotate-0'
                     }`}
                   />
                 </button>
               </div>
-              {subMenuOpen["prodajni-program"] && (
+              {subMenuOpen['prodajni-program'] && (
                 <ul className="mt-2 pl-4 space-y-2">
                   <li className="relative">
                     <div className="flex justify-between items-center">
@@ -118,7 +118,7 @@ const ResponsiveHeader = ({username}) => {
                       <button
                         className="focus:outline-none"
                         onClick={() =>
-                          toggleSubMenu("profesionalne-masine-za-veseraje")
+                          toggleSubMenu('profesionalne-masine-za-veseraje')
                         }
                       >
                         <ChevronDownIcon
@@ -126,14 +126,14 @@ const ResponsiveHeader = ({username}) => {
                           height={8}
                           color="mintCream"
                           styles={`transition-transform transform ${
-                            subMenuOpen["profesionalne-masine-za-veseraje"]
-                              ? "rotate-180"
-                              : "rotate-0"
+                            subMenuOpen['profesionalne-masine-za-veseraje']
+                              ? 'rotate-180'
+                              : 'rotate-0'
                           }`}
                         />
                       </button>
                     </div>
-                    {subMenuOpen["profesionalne-masine-za-veseraje"] && (
+                    {subMenuOpen['profesionalne-masine-za-veseraje'] && (
                       <ul className="mt-2 pl-4 space-y-2">
                         <li>
                           <Link
@@ -169,7 +169,7 @@ const ResponsiveHeader = ({username}) => {
                       <button
                         className="focus:outline-none"
                         onClick={() =>
-                          toggleSubMenu("meiko-profesionalne-masine")
+                          toggleSubMenu('meiko-profesionalne-masine')
                         }
                       >
                         <ChevronDownIcon
@@ -177,14 +177,14 @@ const ResponsiveHeader = ({username}) => {
                           height={8}
                           color="mintCream"
                           styles={`transition-transform transform ${
-                            subMenuOpen["meiko-profesionalne-masine"]
-                              ? "rotate-180"
-                              : "rotate-0"
+                            subMenuOpen['meiko-profesionalne-masine']
+                              ? 'rotate-180'
+                              : 'rotate-0'
                           }`}
                         />
                       </button>
                     </div>
-                    {subMenuOpen["meiko-profesionalne-masine"] && (
+                    {subMenuOpen['meiko-profesionalne-masine'] && (
                       <ul className="mt-2 pl-4 space-y-2">
                         <li className="relative">
                           <div className="flex justify-between items-center">
@@ -202,21 +202,21 @@ const ResponsiveHeader = ({username}) => {
                             </Link>
                             <button
                               className="focus:outline-none"
-                              onClick={() => toggleSubMenu("podpultne-masine")}
+                              onClick={() => toggleSubMenu('podpultne-masine')}
                             >
                               <ChevronDownIcon
                                 width={14}
                                 height={8}
                                 color="mintCream"
                                 styles={`transition-transform transform ${
-                                  subMenuOpen["podpultne-masine"]
-                                    ? "rotate-180"
-                                    : "rotate-0"
+                                  subMenuOpen['podpultne-masine']
+                                    ? 'rotate-180'
+                                    : 'rotate-0'
                                 }`}
                               />
                             </button>
                           </div>
-                          {subMenuOpen["podpultne-masine"] && (
+                          {subMenuOpen['podpultne-masine'] && (
                             <ul className="mt-2 pl-4 space-y-2">
                               <li>
                                 <Link
@@ -266,7 +266,7 @@ const ResponsiveHeader = ({username}) => {
                             <button
                               className="focus:outline-none"
                               onClick={() =>
-                                toggleSubMenu("masine-za-pranje-sa-haubom")
+                                toggleSubMenu('masine-za-pranje-sa-haubom')
                               }
                             >
                               <ChevronDownIcon
@@ -274,14 +274,14 @@ const ResponsiveHeader = ({username}) => {
                                 height={8}
                                 color="mintCream"
                                 styles={`transition-transform transform ${
-                                  subMenuOpen["masine-za-pranje-sa-haubom"]
-                                    ? "rotate-180"
-                                    : "rotate-0"
+                                  subMenuOpen['masine-za-pranje-sa-haubom']
+                                    ? 'rotate-180'
+                                    : 'rotate-0'
                                 }`}
                               />
                             </button>
                           </div>
-                          {subMenuOpen["masine-za-pranje-sa-haubom"] && (
+                          {subMenuOpen['masine-za-pranje-sa-haubom'] && (
                             <ul className="mt-2 pl-4 space-y-2">
                               <li>
                                 <Link
@@ -334,7 +334,7 @@ const ResponsiveHeader = ({username}) => {
                       <button
                         className="focus:outline-none"
                         onClick={() =>
-                          toggleSubMenu("masine-za-pranje-crnog-posudja")
+                          toggleSubMenu('masine-za-pranje-crnog-posudja')
                         }
                       >
                         <ChevronDownIcon
@@ -342,14 +342,14 @@ const ResponsiveHeader = ({username}) => {
                           height={8}
                           color="mintCream"
                           styles={`transition-transform transform ${
-                            subMenuOpen["masine-za-pranje-crnog-posudja"]
-                              ? "rotate-180"
-                              : "rotate-0"
+                            subMenuOpen['masine-za-pranje-crnog-posudja']
+                              ? 'rotate-180'
+                              : 'rotate-0'
                           }`}
                         />
                       </button>
                     </div>
-                    {subMenuOpen["masine-za-pranje-crnog-posudja"] && (
+                    {subMenuOpen['masine-za-pranje-crnog-posudja'] && (
                       <ul className="mt-2 pl-4 space-y-2">
                         <li>
                           <Link
@@ -382,7 +382,7 @@ const ResponsiveHeader = ({username}) => {
                   </a>
                 </Link>
               </div>
-              </li>
+            </li>
             <li>
               <Link href="/servis/partnerstva" passHref legacyBehavior>
                 <a
@@ -412,11 +412,11 @@ const ResponsiveHeader = ({username}) => {
                   <a className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold">
                     Korpa
                   </a>
-                  <CartIcon width={30} height={30} color={"#8E1B13"} />
+                  <CartIcon width={30} height={30} color={'#8E1B13'} />
                 </div>
               </Link>
             </li>
-            {username ? (
+            {/* {username ? (
               <li onClick={() => {handleLogout(); handleCloseMenu()}}>
                 <Link href="/#" passHref legacyBehavior>
                   <a className="text-mintCream text-[1.6rem] uppercase hover:text-offRed font-bold">
@@ -432,7 +432,7 @@ const ResponsiveHeader = ({username}) => {
                   </a>
                 </Link>
               </li>
-            )}
+            )} */}
           </ul>
         </nav>
       )}

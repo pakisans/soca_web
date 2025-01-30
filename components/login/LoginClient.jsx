@@ -37,7 +37,7 @@ export default function LoginClient({ savedEmail }) {
 
     try {
       const response = await loginUser(email, password);
-      console.log('aa');
+
       if (response.token) {
         // Postavljamo kolačiće za sesiju i korisničko ime
         Cookies.set('session', response.token, { secure: true, path: '/' });
