@@ -53,6 +53,23 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="sr-Latn" className="scroll-smooth">
+      <head>
+        {/* Google Tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ED6QP8ZGP2"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ED6QP8ZGP2');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${font.className} flex flex-col min-h-screen bg-mintCream`}
       >
