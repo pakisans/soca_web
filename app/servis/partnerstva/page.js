@@ -21,20 +21,28 @@ const partners = [
     lng: 19.836984219044385,
   },
   {
-    grad: 'Bačka Palanka',
-    servis: 'Frigoelektro',
-    adresa: 'Partizanska 22',
-    tel: '021/754300',
-    lat: 45.24844735316703,
-    lng: 19.389006221290547,
+    grad: 'Beograd',
+    servis: 'Aleksa Gavrilovic SERVISER ZA CAS',
+    adresa: 'Gnjilanska 12',
+    tel: '060/6400280',
+    lat: 44.71720481546557,
+    lng: 20.369294486569316,
   },
   {
-    grad: 'Beograd',
-    servis: 'Elektroluks',
-    adresa: 'Ustanička 194',
-    tel: '011/2881040',
-    lat: 44.78249419252231,
-    lng: 20.507250167953895,
+    grad: 'Bajina Bašta',
+    servis: 'DJUNISIJEVIĆ servis',
+    adresa: 'Dušana Višića 2',
+    tel: '031/861359',
+    lat: 43.96682006907374,
+    lng: 19.571966296995203,
+  },
+  {
+    grad: 'Bačka Palanka',
+    servis: 'FRIGOTERM VLADIMIR TURCAN',
+    adresa: 'Jugoslovenske Armije 147',
+    tel: '063/8131291',
+    lat: 45.246748361155745,
+    lng: 19.400419011815888,
   },
   {
     grad: 'Beograd',
@@ -69,44 +77,12 @@ const partners = [
     lng: 21.2584,
   },
   {
-    servis: 'Aleksa Gavrilovic SERVISER ZA CAS',
-    adresa: 'Gnjilanska 12',
-    grad: 'Beograd',
-    lat: 44.71720481546557,
-    lng: 20.369294486569316,
-    tel: '060/6400280',
-  },
-  {
-    grad: 'Bačka Palanka',
-    servis: 'FRIGOTERM VLADIMIR TURCAN',
-    adresa: 'Jugoslovenske Armije 147',
-    tel: '063/8131291',
-    lat: 45.246748361155745,
-    lng: 19.400419011815888,
-  },
-  {
-    grad: 'Bajina Bašta',
-    servis: 'DJUNISIJEVIĆ servis',
-    adresa: 'Dušana Višića 2',
-    tel: '031/861359',
-    lat: 43.96682006907374,
-    lng: 19.571966296995203,
-  },
-  {
     grad: 'Kragujevac',
     servis: 'ELBA 034',
     adresa: 'Bulevar kraljice Marije 2a',
     tel: '034/331861',
     lat: 44.01489874377883,
     lng: 20.902652509466552,
-  },
-  {
-    grad: 'Kragujevac',
-    servis: 'COOL',
-    adresa: 'Kneza Mihaila 52',
-    tel: '034/362942',
-    lat: 44.0165,
-    lng: 20.9114,
   },
   {
     grad: 'Kraljevo',
@@ -126,14 +102,6 @@ const partners = [
   },
   {
     grad: 'Lazarevac',
-    servis: 'Marko Nikolić Servis',
-    adresa: 'Voke Savića 6a',
-    tel: '065/4935285',
-    lat: 44.385407,
-    lng: 20.260059,
-  },
-  {
-    grad: 'Lazarevac',
     servis: 'NIKOLIC PLUS',
     adresa: 'Valjevski put 530',
     tel: '065/4935285',
@@ -147,6 +115,14 @@ const partners = [
     tel: '015/897027',
     lat: 44.5308,
     lng: 19.2276,
+  },
+  {
+    grad: 'Mlaednovac',
+    servis: 'BOJAN DIMITRIJEVIĆ PR SERVIS BDM',
+    adresa: 'KRALJA PETRA PRVOG 319',
+    tel: '066/223003',
+    lat: 44.43734753594693,
+    lng: 20.69444843843616,
   },
   {
     grad: 'Negotin',
@@ -163,14 +139,6 @@ const partners = [
     tel: '018/538490',
     lat: 43.3209,
     lng: 21.8958,
-  },
-  {
-    grad: 'Mlaednovac',
-    servis: 'BOJAN DIMITRIJEVIĆ PR SERVIS BDM',
-    adresa: 'KRALJA PETRA PRVOG 319',
-    tel: '066/223003',
-    lat: 44.43734753594693,
-    lng: 20.69444843843616,
   },
   {
     grad: 'Nova Pazova',
@@ -208,17 +176,17 @@ const partners = [
     grad: 'Požarevac',
     servis: 'Zener Servis',
     adresa: 'Misarska 5',
-    tel: '012/550536',
+    tel: '012/403450',
     lat: 44.6197,
     lng: 21.1878,
   },
   {
-    grad: 'Sombor',
-    servis: 'DALE servis',
-    adresa: 'Miladina i Nikole Kunića 7',
-    tel: '025/302339',
-    lat: 45.75897859747168,
-    lng: 19.106211439404124,
+    grad: 'Smederevo',
+    servis: 'Darko Stojkovic',
+    adresa: 'Jug Bogdanova 7',
+    tel: '026/660493',
+    lat: 44.66091125828008,
+    lng: 20.923663410518266,
   },
   {
     grad: 'Smederevska Palanka',
@@ -227,6 +195,14 @@ const partners = [
     tel: '026/311006',
     lat: 44.365361,
     lng: 20.963699,
+  },
+  {
+    grad: 'Sombor',
+    servis: 'DALE servis',
+    adresa: 'Miladina i Nikole Kunića 7',
+    tel: '025/302339',
+    lat: 45.75897859747168,
+    lng: 19.106211439404124,
   },
   {
     grad: 'Sombor',
@@ -259,14 +235,6 @@ const partners = [
     tel: '035/311720',
     lat: 44.2276,
     lng: 21.1972,
-  },
-  {
-    grad: 'Smederevo',
-    servis: 'Darko Stojkovic',
-    adresa: 'Jug Bogdanova 7',
-    tel: '026/660493',
-    lat: 44.66091125828008,
-    lng: 20.923663410518266,
   },
   {
     grad: 'Šabac',
@@ -354,8 +322,8 @@ export default function ServisPartneri() {
             <table className="min-w-full text-[14px] bg-white shadow-lg rounded-lg overflow-hidden">
               <thead className="bg-offRed text-white">
                 <tr>
-                  <th className="px-4 py-2 text-left">Grad</th>
                   <th className="px-4 py-2 text-left">Servis</th>
+                  <th className="px-4 py-2 text-left">Grad</th>
                   <th className="px-4 py-2 text-left">Adresa</th>
                   <th className="px-4 py-2 text-left">Telefon</th>
                 </tr>
@@ -367,10 +335,10 @@ export default function ServisPartneri() {
                     className="cursor-pointer hover:bg-gray-100 transition-all duration-200"
                     data-partner-index={index}
                   >
+                    <td className="border px-4 py-2">{partner.servis}</td>
                     <td className="border px-4 py-2 text-offRed font-semibold">
                       {partner.grad}
                     </td>
-                    <td className="border px-4 py-2">{partner.servis}</td>
                     <td className="border px-4 py-2">{partner.adresa}</td>
                     <td className="border px-4 py-2">{partner.tel}</td>
                   </tr>
