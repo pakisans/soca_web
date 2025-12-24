@@ -9,6 +9,7 @@ import { ShopCartWrapper } from '@/context/ShopCartContext';
 import Link from 'next/link';
 import SearchIcon from '@/components/icons/SearchIcon';
 import CookieBanner from '@/components/layout/CookieBanner';
+import PromoMessage from '@/components/layout/PromoMessage';
 
 const font = Kanit({
   subsets: ['latin'],
@@ -72,10 +73,13 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`${font.className} flex flex-col min-h-screen bg-mintCream`}
+        id="app-root"
       >
         <ShopCartWrapper>
           <Header />
           <Breadcrumbs />
+          <PromoMessage />
+          <CookieBanner />
           <main className="flex flex-grow">
             <>
               <div className="fixed bottom-[5.6rem] xl:bottom-[2rem] left-0 mt-5 pl-[.5rem] sm:pl-[2rem]  sm:py-5 pr-2 sm:pr-4 bg-offRed rounded-tr-2xl rounded-br-2xl z-[9999]">
@@ -102,7 +106,7 @@ export default function RootLayout({ children }) {
               {children}
             </>
           </main>
-          <CookieBanner />
+
           <Foooter />
           <Toaster position="bottom-right" />
         </ShopCartWrapper>
