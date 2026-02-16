@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
         <ShopCartWrapper>
           <Header />
           <Breadcrumbs />
-          <PromoMessage />
+          {/* <PromoMessage /> */}
           <CookieBanner />
           <main className="flex flex-grow">
             <>
